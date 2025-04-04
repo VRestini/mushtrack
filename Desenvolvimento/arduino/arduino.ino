@@ -3,7 +3,7 @@
 const int PINO_SENSOR_DHT11 = A4;
 const int PINO_SENSOR_LM35 = A5;
 float temperatura;
-DHT sensor(PINO_SENSOR_DHT11, TIPO_SENSOR);
+DHT sensorDHT(PINO_SENSOR_DHT11, TIPO_SENSOR);
 void setup() {
   Serial.begin(9600);
   sensorDHT.begin();
