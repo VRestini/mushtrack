@@ -44,22 +44,14 @@ idCogumelo int primary key auto_increment,
 nome_Cogumelo varchar (45)
 );
 
--- Criação da tabela Parametro
-create table Parametro (
-idParametro int primary key auto_increment,
-tempMaxFrutificacao int,
-tempMaxIncubacao int,
-tempMinFrutificacao int,
-tempMinIncubacao int,
-umiMaxFrutifucacao int, 
-umiMaxIncubacao int, 
-umiMinIncubacao int, 
-umiMinFrutificacao int 
-);
 
 -- Criação da tabela Estágio
 create table Estagio (
 idEstagio int primary key auto_increment,
+tempMinima float, 
+tempMaxima float, 
+umiMinima float,
+umiMaxima float,
 tipo_Estagio varchar (45),
 fkCogumelo int,
 fkParametro int,
@@ -92,6 +84,15 @@ valorSensor int,
 fkEstufa int,
 	constraint fkSensorEstufa foreign key (fkEstufa) references Estufa (idEstufa)
 );
+create table Historico(
+idHistorico int primary key auto_Increment, 
+dataDeCaptura datetime default current_timestamp, 
+valorUmidade float, 
+valorTemperatura float, 
+fkSensor int, 
+constraint fkHistoricoSensor foreign key (fkSensor) references Sensor (idSensor)
+);
+
 
 select * from Empresa;
 select * from Usuario;
