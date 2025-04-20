@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>CALCULADORA V.1.0</h1>
+    Selecione o tipo de cogumelo: <br>
+    <select id="select_cogumelo">
+        <option>Champignon</option>
+        <option>Shimeji</option>
+        <option>Shitake</option>
+    </select><br><br>
+    insira a quantidade de estufas: <br>
+    <input type="number" id="input_qtdEstufas"> <br>
+    insira a Produção da estufa por flush (kg): <br>
+    <input type="number" id="input_prod"> <br>
+    insira o valor da temperatura na estufa: <br>
+    <input type="number" id="input_temp"> <br>
+    insira o valor da umidade na estufa: <br>
+    <input type="number" id="input_umid"> <br>
+    insira o preço do Kg: <br>
+    <input type="number" id="input_preco"><br><br>
+    <button onclick="analisar()">Analisar Produção</button>
+    <center>
+        <div id="div_mensg"></div>
+    </center>
+
+
+</body>
+
+</html>
+<script>
+    var estufa = 0;
+    function analisar() {
+        var estufas = Number(input_qtdEstufas.value)
+        var kg = Number(input_prod.value)
+        var tipo = select_cogumelo.value
+        var preco = Number(input_preco.value)
+        var temp = Number(input_temp.value)
+        var umid = Number(input_umid.value)
+        var flush = 0;
+        var rendiemnto = kg * preco
+        var rendiemntoControlado = rendiemnto * 1.003
+
+
+
+
+
+        if (tipo == 'Champignon') {
+            var contador = 0;
+            while (contador < estufas) {
+                contador += 1;
+                estufa += 1;
+                if ((temp <= 25 && temp >= 12) && (umid <= 95 && umid >= 85)) {
+                    flush = 6;
+                    div_mensg.innerHTML += `<b>Estufa de ${tipo} ${estufa}:</b><br>
+                    STATUS: Ideal para produção <br>
+                    TEMPERATURA: 12°C A 25°C <br>
+                    UMIDADE: 85% A 95% <br>
+                    FLUSHS: 2 a 6 <br><br>
+                    PRODUÇÃO: R$:${rendiemnto.toFixed(2)} <br>
+                    PRODUÇÃO TOTAL: R$:${(rendiemnto * flush).toFixed(2)}<br><br>`
+                } else if ((temp <= 27 && temp >= 10) && (umid <= 97 && umid >= 83)) {
+                    flush = 5;
+                    div_mensg.innerHTML += `<b>Estufa de ${tipo} ${estufa}:</b><br>
+                    STATUS: Produção com possível prejuízo (3%) <br>
+                    TEMPERATURA: ${temp}°C <br>
+                    UMIDADE: ${umid}% <br>
+                    FLUSHS: 2 a 5 <br>
+                    PRODUÇÃO POR FLUSH: R$:${rendiemnto.toFixed(2)} <br>
+                    ESTIMATIVA DA PRODUÇÃO COM CONTROLE DE CLIMA:R$${rendiemntoControlado.toFixed(2)}  <br><br>
+                    PRODUÇÃO TOTAL: ${(rendiemnto * flush).toFixed(2)} <br>
+                    ESTIMATIVA DA PRODUÇÃO TOTAL COM CONTROLE DE CLIMA: ${(rendiemntoControlado * 6).toFixed(2)}<br><br>
+                    `
+                } else {
+                    div_mensg.innerHTML += `<b>Estufa de ${tipo} ${estufa}:</b><br>
+                    STATUS: Crítico para produção <br><br>`
+                }
+            }
+
+
+        } else if (tipo == 'Shimeji') {
+            var contador = 0;
+            while (contador < estufas) {
+                contador += 1;
+                estufa += 1;
+                if ((temp <= 17 && temp >= 10) && (umid <= 90 && umid >= 85)) {
+                    flush = 3;
+                    div_mensg.innerHTML += `<b>Estufa de ${tipo} ${estufa}:</b><br>
+                    STATUS: Ideal para produção <br>
+                    TEMPERATURA: 12°C A 25°C <br>
+                    UMIDADE: 85% A 95% <br>
+                    FLUSHS: 2 a 3 <br><br>
+                    PRODUÇÃO: R$:${rendiemnto.toFixed(2)} <br>
+                    PRODUÇÃO TOTAL: R$:${(rendiemnto * flush).toFixed(2)}<br><br>`
+                } else if ((temp <= 19 && temp >= 8) && (umid <= 92 && umid >= 83)) {
+                    flush = 2;
+                    div_mensg.innerHTML += `<b>Estufa de ${tipo} ${estufa}:</b><br>
+                    STATUS: Produção com possível prejuízo (3%) <br>
+                    TEMPERATURA: ${temp}°C <br>
+                    UMIDADE: ${umid}% <br>
+                    FLUSHS: 2 <br>
+                    PRODUÇÃO POR FLUSH: R$:${rendiemnto.toFixed(2)} <br>
+                    ESTIMATIVA DA PRODUÇÃO COM CONTROLE DE CLIMA:R$${rendiemntoControlado.toFixed(2)}  <br><br>
+                    PRODUÇÃO TOTAL: ${(rendiemnto * flush).toFixed(2)} <br>
+                    ESTIMATIVA DA PRODUÇÃO TOTAL COM CONTROLE DE CLIMA: ${(rendiemntoControlado * 3).toFixed(2)}<br><br>
+                    `
+                } else {
+                    div_mensg.innerHTML += `<b>Estufa de ${tipo} ${estufa}:</b><br>
+                    STATUS: Crítico para produção <br><br>`
+                }
+            }
+
+        } else {
+            var contador = 0;
+            while (contador < estufas) {
+                contador += 1;
+                estufa += 1;
+                if ((temp <= 24 && temp >= 19) && (umid <= 87 && umid >= 83)) {
+                    flush = 5;
+                    div_mensg.innerHTML += `<b>Estufa de ${tipo} ${estufa}:</b><br>
+                    STATUS: Ideal para produção <br>
+                    TEMPERATURA: 12°C A 25°C <br>
+                    UMIDADE: 85% A 95% <br>
+                    FLUSHS: 3 a 5 <br><br>
+                    PRODUÇÃO: R$:${rendiemnto.toFixed(2)} <br>
+                    PRODUÇÃO TOTAL: R$:${(rendiemnto * flush).toFixed(2)}<br><br>`
+                } else if ((temp <= 26 && temp >= 17) && (umid <= 89 && umid >= 81)) {
+                    flush = 4;
+                    div_mensg.innerHTML += `<b>Estufa de ${tipo} ${estufa}:</b><br>
+                    STATUS: Produção com possível prejuízo (3%) <br>
+                    TEMPERATURA: ${temp}°C <br>
+                    UMIDADE: ${umid}% <br>
+                    FLUSHS: 3 a 4 <br>
+                    PRODUÇÃO POR FLUSH: R$:${rendiemnto.toFixed(2)} <br>
+                    ESTIMATIVA DA PRODUÇÃO COM CONTROLE DE CLIMA:R$${rendiemntoControlado.toFixed(2)}  <br><br>
+                    PRODUÇÃO TOTAL: ${(rendiemnto * flush).toFixed(2)} <br>
+                    ESTIMATIVA DA PRODUÇÃO TOTAL COM CONTROLE DE CLIMA: ${(rendiemntoControlado * 5).toFixed(2)}<br><br>
+                    `
+                } else {
+                    div_mensg.innerHTML += `<b>Estufa de ${tipo} ${estufa}:</b><br>
+                    STATUS: Crítico para produção <br><br>`
+                }
+            }
+        }
+
+
+
+
+    }
+
+
+
+</script>
