@@ -2,8 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-}
+  }
 
 
 /* Header */
@@ -59,7 +62,6 @@ nav ul li a:hover {
     height: 660px;
     width: 100%;
     color: rgba(255, 255, 255, 0.716);
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,6 +89,8 @@ nav ul li a:hover {
     color: #471e08b1;
     font-size: 39px;
     font-weight: bold;
+    margin-top: 90px;
+
 }
 
 #sobreNos .content-section p {
@@ -94,7 +98,6 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    line-height: 1.8;
     color: #000000d5;
 }
 
@@ -103,7 +106,7 @@ nav ul li a:hover {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 80px;
+    margin-top: 90px;
 }
 
 .cogumeloShimeji,
@@ -146,10 +149,15 @@ nav ul li a:hover {
 }
 
 /* serviços */
+#serviços{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 
 #serviços .serviços-card .serviços-text h2{
-    display: flex;
-    justify-content: center;
+   text-align: center;
     color: #4E3324;
     font-size: 40px;
 }
@@ -157,23 +165,43 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     text-align: center;
+    font-size: 20px;
+}
+
+.serviços-text h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4E3324;
+    font-size: 36px;
+    font-weight: 700;
+    margin: 40px 0;
+    gap: 20px; 
+}
+
+.serviços-text h2::before,
+.serviços-text h2::after {
+    content: "";
+    flex: 1;
+    height: 3px;
+    background-color: #4E3324;
 }
 
 
-.imagens,
-.card-dados ,
-.card-dashboard,
-.card-alerta{
-display: flex;
-flex-direction: row;
+.container-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 160px;
+    margin: 60px;
+    
+    
 }
 
 .card-dados img,
 .card-dashboard img,
 .card-alerta img{
-    display: flex;
-    justify-content: center;
-    width: 220px;    
+    width: 250px;   
 }
 
 .card-dados p ,
@@ -184,6 +212,96 @@ flex-direction: row;
     align-items: center;
     text-align: center;
     flex-direction: column;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.666);
+    font-size: 19px;
+    
     
 }
 
+
+/* Beneficios */
+
+#beneficios .container-beneficios{
+    background-color: #4e33241b;
+    margin-top: 50px;
+    padding: 30px;
+    
+    
+}
+
+
+
+#beneficios .container-beneficios .beneficios-text h2{
+    color: #4E3324;
+    margin: 10px;
+
+
+
+}
+
+#beneficios .container-beneficios .beneficios-text p{
+    color: #4E3324;
+    margin-top: 25px;
+    margin: 10px;
+
+}
+
+
+.beneficios-card{
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;    
+    justify-content: space-between;
+}
+
+.beneficios-card2{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;    
+    justify-content: space-between;
+
+}
+
+
+
+/* Estilos da Seção Dashboard */
+
+#Dashboard .container-dashboard {
+    background-image: url(assets/banner.png);
+    background-size: cover;
+    background-position: center;
+    height: 800px;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.716);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 40px;
+    box-sizing: border-box;
+
+  }
+  
+ 
+  
+  
+  .conteudo-dashboard h1 {
+    color: white;
+    font-size: 60px;
+    margin-bottom: 15px;
+  }
+  
+  .conteudo-dashboard button {
+    background-color: #D9D9D9;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .conteudo-dashboard button:hover {
+    background-color: #bcbcbc;
+  }
