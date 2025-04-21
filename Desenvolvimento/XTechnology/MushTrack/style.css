@@ -6,7 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-  }
+}
 
 
 /* Header */
@@ -98,6 +98,7 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-size: 20px;
     color: #000000d5;
 }
 
@@ -122,7 +123,7 @@ nav ul li a:hover {
     height: 320px;
     color: rgba(255, 255, 255, 0.734);
     border-radius: 20px;
-  
+
 }
 
 .cogumeloShimeji img,
@@ -143,25 +144,26 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    position: relative;   
-    font-size: 30px;  
-    top: -90px;   
+    position: relative;
+    font-size: 30px;
+    top: -90px;
 }
 
 /* serviços */
-#serviços{
+#serviços {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
 
-#serviços .serviços-card .serviços-text h2{
-   text-align: center;
+#serviços .serviços-card .serviços-text h2 {
+    text-align: center;
     color: #4E3324;
     font-size: 40px;
 }
-#serviços .serviços-card .serviços-text p{
+
+#serviços .serviços-card .serviços-text p {
     display: flex;
     justify-content: center;
     text-align: center;
@@ -170,13 +172,14 @@ nav ul li a:hover {
 
 .serviços-text h2 {
     display: flex;
+    
     align-items: center;
     justify-content: center;
     color: #4E3324;
     font-size: 36px;
     font-weight: 700;
     margin: 40px 0;
-    gap: 20px; 
+    gap: 20px;
 }
 
 .serviços-text h2::before,
@@ -194,19 +197,19 @@ nav ul li a:hover {
     align-items: center;
     gap: 160px;
     margin: 60px;
-    
-    
+
+
 }
 
 .card-dados img,
 .card-dashboard img,
-.card-alerta img{
-    width: 250px;   
+.card-alerta img {
+    width: 250px;
 }
 
-.card-dados p ,
+.card-dados p,
 .card-dashboard p,
-.card-alerta p{
+.card-alerta p {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -215,51 +218,47 @@ nav ul li a:hover {
     font-weight: 600;
     color: rgba(0, 0, 0, 0.666);
     font-size: 19px;
-    
-    
 }
-
 
 /* Beneficios */
 
-#beneficios .container-beneficios{
+
+#beneficios .container-beneficios {
     background-color: #4e33241b;
     margin-top: 50px;
     padding: 30px;
-    
-    
+
 }
 
-
-
-#beneficios .container-beneficios .beneficios-text h2{
+#beneficios .container-beneficios .beneficios-text h2 {
+    text-align: center;
+    margin-top: 30px;
+    border-bottom: 1px solid #4E3324;
     color: #4E3324;
-    margin: 10px;
-
-
 
 }
 
-#beneficios .container-beneficios .beneficios-text p{
+#beneficios .container-beneficios .beneficios-text p {
     color: #4E3324;
-    margin-top: 25px;
-    margin: 10px;
+    margin-top: 30px;
+    font-size: 20px;
+    margin: 20px;
+    text-align: center;
 
 }
 
-
-.beneficios-card{
+.beneficios-card {
     display: flex;
     flex-direction: row;
-    margin-top: 40px;    
-    justify-content: space-between;
+    margin-top: 40px;
+    justify-content: space-evenly;
 }
 
-.beneficios-card2{
+.beneficios-card2 {
     display: flex;
     flex-direction: row;
-    margin-top: 50px;    
-    justify-content: space-between;
+    margin-top: 50px;
+    justify-content: space-evenly;
 
 }
 
@@ -280,18 +279,16 @@ nav ul li a:hover {
     padding: 40px;
     box-sizing: border-box;
 
-  }
-  
- 
-  
-  
-  .conteudo-dashboard h1 {
+}
+
+
+.conteudo-dashboard h1 {
     color: white;
     font-size: 60px;
     margin-bottom: 15px;
-  }
-  
-  .conteudo-dashboard button {
+}
+
+.conteudo-dashboard button {
     background-color: #D9D9D9;
     color: black;
     border: none;
@@ -300,8 +297,42 @@ nav ul li a:hover {
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  .conteudo-dashboard button:hover {
+}
+
+.conteudo-dashboard button:hover {
     background-color: #bcbcbc;
-  }
+}
+
+/* preenchimento: 40px 20px 20px;
+Preenchimento superior é de 40px
+Os preenchimentos direito e esquerdo são 20px
+O preenchimento inferior é de 20px */
+.footer {
+    background-color: #d5cecb;
+    padding: 40px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    width: 1200px;
+    margin: auto;
+    color: #000;
+}
+
+.footer-colunas ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-colunas ul li a {
+    text-decoration: none;
+    color: #000;
+}
+.footer-copyright{
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #4E3324;
+    padding-top: 10px;
+}
