@@ -1,0 +1,328 @@
+@font-face {
+  font-family: 'Dune rise';
+  src: url('font/dune_rise/Dune_Rise.ttf') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #4E3324;
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  color: #4E3324;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 100vh;
+  background-color: #FFFFFF;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: transparent;
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  font-size: 1.8rem;
+  width: 63px;
+  height: 73px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+nav a {
+  color: #4E3324;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.logo img{
+  width: 63px;
+  height: 72px;
+}
+
+h1{
+  font-family: 'girode';
+}
+
+.sobre_nos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+  min-height: 80vh;
+}
+
+/*Título*/
+.titulo {
+  max-width: 50%;
+}
+
+.titulo h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.titulo p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.titulo img {
+  width: 40px;
+  height: 40px;
+}
+
+.login button {
+  background: linear-gradient(to right, #1a0f07, #9d5b26);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login button:hover {
+  background: linear-gradient(to right, #23150A, #895129);
+}
+
+.button {
+  background: linear-gradient(to right, #1a0f07, #9d5b26);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cogumelo img {
+  max-width: 100%;
+  border-radius: 90px;
+  width: 568px;
+  height: 568px;
+
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sobre {
+  padding: 3rem 2rem;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sobre h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.sobre p {
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.equipe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.equipe h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.membros {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.membros img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+/* Missão Visão Valores */
+.info-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.info-cards div {
+  width: 30%;
+  font-size: 0.75rem;
+}
+
+/* Produtos */
+.produtos {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.produtos h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.produto-img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+/* Contato */
+.contato {
+  margin-top: 3rem;
+}
+
+.contato h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 300px;
+}
+
+form input, form textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+form button {
+  background-color: #5a3a1f;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+/* Rodapé */
+footer {
+  margin-top: 3rem;
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 0.7rem;
+  border-top: 1px solid #ccc;
+  color: #999;
+}
+
+/* Seção Mushtrack */
+#mush_track {
+  text-align: center;
+  padding: 80px 40px;
+  background-color: #fff;
+}
+
+.titulo {
+  font-size: 2.5em;
+  color: #432C1C;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+
+/* Container de cards */
+.cards-container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Card individual */
+.card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  overflow: hidden;
+  text-align: left;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-text {
+  padding: 20px;
+}
+
+.card-text h3 {
+  color: #432C1C;
+  margin-bottom: 10px;
+}
+
+.card-text ul {
+  list-style: disc;
+  padding-left: 20px;
+  color: #333;
+  font-size: 0.95em;
+}
+
+/* Botão */
+.btn-mushtrack {
+  margin-top: 40px;
+}
+
+.btn-mushtrack button {
+  background: linear-gradient(to right, #1c0e05, #a56b3d);
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+
+.btn-mushtrack button:hover {
+  transform: scale(1.05);
+}
