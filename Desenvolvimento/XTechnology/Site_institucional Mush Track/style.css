@@ -1,76 +1,148 @@
 @font-face {
-  font-family: 'Dune rise';
-  src: url('font/dune_rise/Dune_Rise.ttf') format('truetype');
+  font-family: 'gidole';
+  src: url('./assets/font/Gidole-Regular.ttf') format('truetype');
 }
-
+@font-face {
+  font-family: 'dune-rise';
+  src: url('./assets/font/Dune_Rise.ttf') format('truetype');
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #4E3324;
+  font-family: gidole;
 }
-
-
 body {
-  margin: 0;
-  font-family: 'Orbitron', sans-serif;
-  color: #4E3324;
-  background-size: cover;
-  background-position: center;
-  position: relative;
   height: 100vh;
-  background-color: #FFFFFF;
+  background-color: #f1f1f1;
+  color: #4E3324;
+}
+section{
+  padding: 5% 6% 4% 6%;
 }
 
-header {
+a{
+  text-decoration: none;
+  color: white;
+  white-space: nowrap;
+}
+
+/*   HEADER    */
+header{
+  padding: 3% 4% 3% 4%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
-  padding: 1rem 2rem;
-  background: transparent;
-  position: relative;
-  z-index: 2;
+  height: 50px;
+  
 }
-
-.logo {
-  font-size: 1.8rem;
-  width: 63px;
-  height: 73px;
-}
-
-nav ul {
+.header_nav{
+  width: 100%;
   display: flex;
+  justify-content: end;
+} 
+.header_nav ul{
+  width: 60%;
   list-style: none;
-  gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
-
-nav a {
+.header_nav a {
   color: #4E3324;
   text-decoration: none;
   font-weight: bold;
 }
 
-.logo img{
-  width: 63px;
-  height: 72px;
+#login_a{
+  color: #FFFFFF;
 }
+
+/* HOME */
+.container_box{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 84%;
+}
+
+.home_text{
+  max-width: 50%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+.home_text p{
+  font-size: 130%;
+}
+
+.home_image{
+  display: flex;
+  align-self: self-end;
+}
+
+.title_1{
+  font-family: 'dune-rise';
+  font-size: 270%;
+}
+
+
+/* Mushtrack */
+.mush{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 4%;
+}
+.cards-container{
+  display: block;
+}
+
 
 h1{
   font-family: 'girode';
 }
 
-.sobre_nos {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  padding: 4rem 2rem;
-  min-height: 80vh;
+
+/* Simulador */
+#route_simulator{
+  margin-top: 7%;
 }
 
+
+/* Sobre nós */
+.about{
+  display: flex;
+  flex-direction: column;
+
+}
+.container_mission{
+  margin-top: 5%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+.container_text_about{
+  width: 30%;
+}
+#container_about_top_text{
+  width: 600px;
+}
+#container_about_image{
+  padding-right: 5%;
+}
+#container_about_top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 /*Título*/
 .titulo {
   max-width: 50%;
+  font-family: dune-rise;
+  white-space: nowrap;
 }
 
 .titulo h1 {
@@ -79,99 +151,16 @@ h1{
   letter-spacing: 2px;
 }
 
-.titulo p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
 
-.titulo img {
-  width: 40px;
-  height: 40px;
-}
 
-.login button {
-  background: linear-gradient(to right, #1a0f07, #9d5b26);
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-weight: bold;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.login button:hover {
-  background: linear-gradient(to right, #23150A, #895129);
-}
-
-.button {
-  background: linear-gradient(to right, #1a0f07, #9d5b26);
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-weight: bold;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.cogumelo img {
-  max-width: 100%;
-  border-radius: 90px;
-  width: 568px;
-  height: 568px;
-
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.sobre {
-  padding: 3rem 2rem;
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.sobre h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.sobre p {
-  max-width: 800px;
-  line-height: 1.6;
-}
-
-.equipe {
+.stakeholders {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 3rem;
+  margin-top: 100px;
 }
 
-.equipe h3 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
 
-.membros {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.membros img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-}
 
 /* Missão Visão Valores */
 .info-cards {
@@ -186,56 +175,6 @@ h1{
   font-size: 0.75rem;
 }
 
-/* Produtos */
-.produtos {
-  margin-top: 3rem;
-  text-align: center;
-}
-
-.produtos h2 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-}
-
-.produto-img {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 10px;
-}
-
-/* Contato */
-.contato {
-  margin-top: 3rem;
-}
-
-.contato h2 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  max-width: 300px;
-}
-
-form input, form textarea {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 0.8rem;
-}
-
-form button {
-  background-color: #5a3a1f;
-  color: white;
-  border: none;
-  padding: 0.5rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  cursor: pointer;
-}
 
 /* Rodapé */
 footer {
@@ -248,28 +187,68 @@ footer {
 }
 
 /* Seção Mushtrack */
-#mush_track {
-  text-align: center;
-  padding: 80px 40px;
-  background-color: #fff;
-}
 
 .titulo {
   font-size: 2.5em;
   color: #432C1C;
   margin-bottom: 40px;
   letter-spacing: 2px;
+  align-self: center;
 }
 
 /* Container de cards */
 .cards-container {
   display: flex;
-  gap: 30px;
+  gap: 50px;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 30px;
 }
 
 /* Card individual */
+
+/* Botão */
+
+.button:hover {
+  transform: scale(1.05);
+}
+.button {
+  text-decoration: none;
+  background: linear-gradient(to right, #1a0f07, #9d5b26);
+  width: 150px;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  text-align: center;
+  transition: transform 0.2s;
+}
+#button_home{
+  margin-top: 230px;
+}
+#button_mush{
+  margin-top: 5%;
+  display: flex;
+  padding-right: 10%;
+  padding-left: 10%;
+  align-self: center;
+}
+.button_4{
+  background: linear-gradient(to right, #1a0f07, #9d5b26);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+
+/* CARDS */
+
+
+
 .card {
   background-color: white;
   border-radius: 12px;
@@ -306,23 +285,25 @@ footer {
   font-size: 0.95em;
 }
 
-/* Botão */
-.btn-mushtrack {
-  margin-top: 40px;
+.card-stakeholder {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 250px;
 }
-
-.btn-mushtrack button {
-  background: linear-gradient(to right, #1c0e05, #a56b3d);
-  color: white;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 30px;
-  font-size: 1em;
-  cursor: pointer;
-  box-shadow: 3px 3px 6px rgba(0,0,0,0.2);
-  transition: transform 0.2s;
+.card-stakeholder:hover {
+  transform: translateY(-5px);
 }
-
-.btn-mushtrack button:hover {
-  transform: scale(1.05);
+.card-stakeholder img {
+  padding: 5%;
+  border-radius: 20px;
+  width: 100%;
+}
+.card-stakeholder h3 {
+  margin-top: -20px;
 }
