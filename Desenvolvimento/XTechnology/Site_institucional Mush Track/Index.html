@@ -79,6 +79,33 @@
 
 <section id="route_simulator" class="container_box mush">
   <h2 class="titulo">SIMULADOR</h2>
+  <div id="simulator">
+    <div id="simulator_input">
+
+      <select id="select_cogumelo" class="select_result">
+          <option value="#">Escolha:</option>
+          <option>Champignon</option>
+          <option>Shimeji</option>
+          <option>Shitake</option>
+      </select>
+
+      <select id="select_estagio" class="select_result">
+          <option value="#">Escolha:</option>
+          <option>Incubação</option>
+          <option>Indução</option>
+          <option>Frutificação</option>
+      </select>
+
+      <input id="input_prod" class="input_result" placeholder="Produção em kg da estufa"> 
+      <input id="input_temp" class="input_result" placeholder="Temperatura média da estufa">       
+      <input id="input_umid" class="input_result" placeholder="Umidade média do ar da estufa">       
+      <input id="input_preco" class="input_result" placeholder="Preço/kg do cogumelo">
+      <button onclick="analisar()" class="button" >Analisar Produção</button>
+    </div>
+    <div id="simulator_result">
+
+    </div>
+  </div>
 </section>
 
 <section class="container_box about" id="route_about">
@@ -178,7 +205,124 @@
    
  
 
-  </section>
+</section>
   
 </body>
 </html>
+<script>
+  var estufa = 0;
+    function analisar() {
+        
+        var kgProducao = Number(input_prod.value)
+        var estagio = select_estagio.value
+        var cogumelo = select_cogumelo.value
+        var precoKg = Number(input_preco.value)
+        var temp = Number(input_temp.value)
+        var umid = Number(input_umid.value)
+        var mensagem = ""
+        if(cogumelo == "#")
+            mensagem = "Erro! Escolha um cogumelo para prosseguir."
+        else if(estagio == "#")
+            mensagem = "Erro! Escolha um estágio para prosseguir."
+        else if (kgProducao <= 0){
+            mensagem = "Erro! Insira uma produção da estufa válida (maior que 0)  para prosseguir."    
+        }
+        else if(temp < 0){
+            mensagem = "Erro! A temperatura média está abaixo de zero. "
+        }
+        else if(umid < 0){
+            mensagem = "Erro! A umidade do ar média está abaixo de zero. "
+        }
+        else if(umid > 100){
+            mensagem = "Erro! A umidade do ar média está acima de 100%. "
+        }
+        else if(precoKg == 0){
+            mensagem = "Erro! Insira um preço do quilo válido (maior que 0) para prosseguir."
+        }
+        else{
+            var flush = 0
+            var rendiemnto = kgProducao * precoKg
+            var rendiemntoControlado = rendiemnto * 1.003
+            var tempMin = 0
+            var tempMax = 0
+            var umiMin = 0
+            var umiMax = 0
+            var flush = 0
+            if(cogumelo == "Champignon"){
+                    flush = 6
+                    tempMax = 26
+                    tempMin = 22
+                    umiMax = 95
+                    umiMin = 85
+                if(estagio == "Incucabação"){            
+                    umiMax = 100
+                    umiMin = 90
+                }else if(estagio == "Indução"){
+                    umiMax=95
+                    umiMin=85
+                    tempmin = 20
+                }
+            }else if(cogumelo == "Shimeji"){
+                flush = 3
+                tempMax = 15
+                tempMin = 10
+                umiMax = 100
+                umiMin = 95
+                if(estagio == "Frutificação"){
+                    umiMax = 95
+                    umiMin = 90
+                }else if(estagio == "Incubação"){
+                    tempMax = 26
+                    tempMin = 22
+
+                }
+            }else{
+                flush = 5
+                tempMax = 17
+                tempMin = 14
+                umiMax = 95
+                umiMin = 85
+                if(estagio == "Incubação"){
+                    tempMax = 28
+                    tempMin = 24
+                    umiMax = 90
+                }
+            }
+            var status = ""
+            if(temp >= tempMin && temp <= tempMax){
+                status = "Ideal para produção"        
+            }else{
+                status = "Possível prejuízo"
+                flush--
+            }
+            if(status == "Ideal para produção"){
+             
+              mensagem += `
+              <div class="simulator_text_result">
+                <h3 class="titulo">Estufa de ${cogumelo}:</h3>
+                <p>STATUS: ${status} </p>
+                <p>TEMPERATURA: ${tempMin}°C A ${tempMax}°C</p>
+                <p>UMIDADE: ${umiMin}% A ${umiMax}% </p>
+                <p>FLUSHS: Até ${flush}</p> 
+                <p>PRODUÇÃO: R$:${rendiemnto.toFixed(2)} </p>
+                <p>PRODUÇÃO TOTAL: R$:${(rendiemnto * flush).toFixed(2)}</p>
+              </div>`
+                
+            }else{                            
+              mensagem += `
+              <div id="simulator_container_text_result">
+                <h3>Estufa de ${cogumelo}:</h3>
+                <p class="simulator_text_result">STATUS: ${status} </p>
+                <p class="simulator_text_result">TEMPERATURA: ${tempMin}°C A ${tempMax}°C</p>
+                <p class="simulator_text_result">UMIDADE: ${umiMin}% A ${umiMax}% </p>
+                <p class="simulator_text_result">FLUSHS: Até ${flush}</p> 
+                <p class="simulator_text_result">PRODUÇÃO: R$:${rendiemnto.toFixed(2)} </p>
+                <p class="simulator_text_result">PRODUÇÃO TOTAL: R$:${(rendiemnto * flush).toFixed(2)}</p>
+                <p class="simulator_text_result">ESTIMATIVA DA PRODUÇÃO TOTAL COM CONTROLE DE CLIMA: R$${(rendiemntoControlado * flush).toFixed(2)}</p>
+              </div>`
+              
+            }       
+        }
+        simulator_result.innerHTML = mensagem
+    }
+</script>

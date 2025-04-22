@@ -9,21 +9,29 @@
 
 <body>
     <h1>CALCULADORA V.1.0</h1>
-    Selecione o tipo de cogumelo: <br>
+    Selecione o cogumelo: <br>
     <select id="select_cogumelo">
+        <option value="#">Escolha:</option>
         <option>Champignon</option>
         <option>Shimeji</option>
         <option>Shitake</option>
     </select><br><br>
-    insira a quantidade de estufas: <br>
+    Selecione o estágio do flush: <br>
+    <select id="select_estagio">
+        <option value="#">Escolha:</option>
+        <option>Incubação</option>
+        <option>Indução</option>
+        <option>Frutificação</option>
+    </select><br><br>
+    Quantidade de estufas: <br>
     <input type="number" id="input_qtdEstufas"> <br>
-    insira a Produção da estufa por flush (kg): <br>
+    Produção por estufa: <br>
     <input type="number" id="input_prod"> <br>
-    insira o valor da temperatura na estufa: <br>
+    Temperatura média da estufa: <br>
     <input type="number" id="input_temp"> <br>
-    insira o valor da umidade na estufa: <br>
+    Umidade na estufa: <br>
     <input type="number" id="input_umid"> <br>
-    insira o preço do Kg: <br>
+    Preço do cogumelo em kg: <br>
     <input type="number" id="input_preco"><br><br>
     <button onclick="analisar()">Analisar Produção</button>
     <center>
@@ -37,123 +45,115 @@
 <script>
     var estufa = 0;
     function analisar() {
-        var estufas = Number(input_qtdEstufas.value)
-        var kg = Number(input_prod.value)
-        var tipo = select_cogumelo.value
-        var preco = Number(input_preco.value)
+        var qtdEstufas = Number(input_qtdEstufas.value)
+        var kgProducao = Number(input_prod.value)
+        var estagio = select_estagio.value
+        var cogumelo = select_cogumelo.value
+        var precoKg = Number(input_preco.value)
         var temp = Number(input_temp.value)
         var umid = Number(input_umid.value)
-        var flush = 0;
-        var rendiemnto = kg * preco
-        var rendiemntoControlado = rendiemnto * 1.003
-
-
-
-
-
-        if (tipo == 'Champignon') {
-            var contador = 0;
-            while (contador < estufas) {
-                contador += 1;
-                estufa += 1;
-                if ((temp <= 25 && temp >= 12) && (umid <= 95 && umid >= 85)) {
-                    flush = 6;
-                    div_mensg.innerHTML += `<b>Estufa de ${tipo} ${estufa}:</b><br>
-                    STATUS: Ideal para produção <br>
-                    TEMPERATURA: 12°C A 25°C <br>
-                    UMIDADE: 85% A 95% <br>
-                    FLUSHS: 2 a 6 <br><br>
-                    PRODUÇÃO: R$:${rendiemnto.toFixed(2)} <br>
-                    PRODUÇÃO TOTAL: R$:${(rendiemnto * flush).toFixed(2)}<br><br>`
-                } else if ((temp <= 27 && temp >= 10) && (umid <= 97 && umid >= 83)) {
-                    flush = 5;
-                    div_mensg.innerHTML += `<b>Estufa de ${tipo} ${estufa}:</b><br>
-                    STATUS: Produção com possível prejuízo (3%) <br>
-                    TEMPERATURA: ${temp}°C <br>
-                    UMIDADE: ${umid}% <br>
-                    FLUSHS: 2 a 5 <br>
-                    PRODUÇÃO POR FLUSH: R$:${rendiemnto.toFixed(2)} <br>
-                    ESTIMATIVA DA PRODUÇÃO COM CONTROLE DE CLIMA:R$${rendiemntoControlado.toFixed(2)}  <br><br>
-                    PRODUÇÃO TOTAL: ${(rendiemnto * flush).toFixed(2)} <br>
-                    ESTIMATIVA DA PRODUÇÃO TOTAL COM CONTROLE DE CLIMA: ${(rendiemntoControlado * 6).toFixed(2)}<br><br>
-                    `
-                } else {
-                    div_mensg.innerHTML += `<b>Estufa de ${tipo} ${estufa}:</b><br>
-                    STATUS: Crítico para produção <br><br>`
-                }
-            }
-
-
-        } else if (tipo == 'Shimeji') {
-            var contador = 0;
-            while (contador < estufas) {
-                contador += 1;
-                estufa += 1;
-                if ((temp <= 17 && temp >= 10) && (umid <= 90 && umid >= 85)) {
-                    flush = 3;
-                    div_mensg.innerHTML += `<b>Estufa de ${tipo} ${estufa}:</b><br>
-                    STATUS: Ideal para produção <br>
-                    TEMPERATURA: 12°C A 25°C <br>
-                    UMIDADE: 85% A 95% <br>
-                    FLUSHS: 2 a 3 <br><br>
-                    PRODUÇÃO: R$:${rendiemnto.toFixed(2)} <br>
-                    PRODUÇÃO TOTAL: R$:${(rendiemnto * flush).toFixed(2)}<br><br>`
-                } else if ((temp <= 19 && temp >= 8) && (umid <= 92 && umid >= 83)) {
-                    flush = 2;
-                    div_mensg.innerHTML += `<b>Estufa de ${tipo} ${estufa}:</b><br>
-                    STATUS: Produção com possível prejuízo (3%) <br>
-                    TEMPERATURA: ${temp}°C <br>
-                    UMIDADE: ${umid}% <br>
-                    FLUSHS: 2 <br>
-                    PRODUÇÃO POR FLUSH: R$:${rendiemnto.toFixed(2)} <br>
-                    ESTIMATIVA DA PRODUÇÃO COM CONTROLE DE CLIMA:R$${rendiemntoControlado.toFixed(2)}  <br><br>
-                    PRODUÇÃO TOTAL: ${(rendiemnto * flush).toFixed(2)} <br>
-                    ESTIMATIVA DA PRODUÇÃO TOTAL COM CONTROLE DE CLIMA: ${(rendiemntoControlado * 3).toFixed(2)}<br><br>
-                    `
-                } else {
-                    div_mensg.innerHTML += `<b>Estufa de ${tipo} ${estufa}:</b><br>
-                    STATUS: Crítico para produção <br><br>`
-                }
-            }
-
-        } else {
-            var contador = 0;
-            while (contador < estufas) {
-                contador += 1;
-                estufa += 1;
-                if ((temp <= 24 && temp >= 19) && (umid <= 87 && umid >= 83)) {
-                    flush = 5;
-                    div_mensg.innerHTML += `<b>Estufa de ${tipo} ${estufa}:</b><br>
-                    STATUS: Ideal para produção <br>
-                    TEMPERATURA: 12°C A 25°C <br>
-                    UMIDADE: 85% A 95% <br>
-                    FLUSHS: 3 a 5 <br><br>
-                    PRODUÇÃO: R$:${rendiemnto.toFixed(2)} <br>
-                    PRODUÇÃO TOTAL: R$:${(rendiemnto * flush).toFixed(2)}<br><br>`
-                } else if ((temp <= 26 && temp >= 17) && (umid <= 89 && umid >= 81)) {
-                    flush = 4;
-                    div_mensg.innerHTML += `<b>Estufa de ${tipo} ${estufa}:</b><br>
-                    STATUS: Produção com possível prejuízo (3%) <br>
-                    TEMPERATURA: ${temp}°C <br>
-                    UMIDADE: ${umid}% <br>
-                    FLUSHS: 3 a 4 <br>
-                    PRODUÇÃO POR FLUSH: R$:${rendiemnto.toFixed(2)} <br>
-                    ESTIMATIVA DA PRODUÇÃO COM CONTROLE DE CLIMA:R$${rendiemntoControlado.toFixed(2)}  <br><br>
-                    PRODUÇÃO TOTAL: ${(rendiemnto * flush).toFixed(2)} <br>
-                    ESTIMATIVA DA PRODUÇÃO TOTAL COM CONTROLE DE CLIMA: ${(rendiemntoControlado * 5).toFixed(2)}<br><br>
-                    `
-                } else {
-                    div_mensg.innerHTML += `<b>Estufa de ${tipo} ${estufa}:</b><br>
-                    STATUS: Crítico para produção <br><br>`
-                }
-            }
+        var mensagem = ""
+        if(cogumelo == "#")
+            mensagem = "Erro! Escolha um cogumelo para prosseguir."
+        else if(estagio == "#")
+            mensagem = "Erro! Escolha um estágio para prosseguir."
+        else if(qtdEstufas <= 0){
+            mensagem = "Erro! Insira uma quantidade válida (maior que 0) de estufas."
         }
+        else if (kgProducao <= 0){
+            mensagem = "Erro! Insira uma produção da estufa válida (maior que 0)  para prosseguir."    
+        }
+        else if(temp < 0){
+            mensagem = "Erro! A temperatura média está abaixo de zero. "
+        }
+        else if(umid < 0){
+            mensagem = "Erro! A umidade do ar média está abaixo de zero. "
+        }
+        else if(umid > 100){
+            mensagem = "Erro! A umidade do ar média está acima de 100%. "
+        }
+        else if(precoKg == 0){
+            mensagem = "Erro! Insira um preço do quilo válido (maior que 0) para prosseguir."
+        }
+        else{
+            var flush = 0
+            var rendiemnto = kgProducao * precoKg
+            var rendiemntoControlado = rendiemnto * 1.003
+            var tempMin = 0
+            var tempMax = 0
+            var umiMin = 0
+            var umiMax = 0
+            var flush = 0
+            if(cogumelo == "Champignon"){
+                    flush = 6
+                    tempMax = 26
+                    tempMin = 22
+                    umiMax = 95
+                    umiMin = 85
+                if(estagio == "Incucabação"){            
+                    umiMax = 100
+                    umiMin = 90
+                }else if(estagio == "Indução"){
+                    umiMax=95
+                    umiMin=85
+                    tempmin = 20
+                }
+            }else if(cogumelo == "Shimeji"){
+                flush = 3
+                tempMax = 15
+                tempMin = 10
+                umiMax = 100
+                umiMin = 95
+                if(estagio == "Frutificação"){
+                    umiMax = 95
+                    umiMin = 90
+                }else if(estagio == "Incubação"){
+                    tempMax = 26
+                    tempMin = 22
 
-
-
-
+                }
+            }else{
+                flush = 5
+                tempMax = 17
+                tempMin = 14
+                umiMax = 95
+                umiMin = 85
+                if(estagio == "Incubação"){
+                    tempMax = 28
+                    tempMin = 24
+                    umiMax = 90
+                }
+            }
+            var status = ""
+            if(temp >= tempMin && temp <= tempMax){
+                status = "Ideal para produção"        
+            }else{
+                status = "Possível prejuízo"
+                flush--
+            }
+            if(status == "Ideal para produção"){
+                for(var contador = 1;contador <= qtdEstufas; contador++){
+                    mensagem += `<b>Estufa de ${cogumelo} ${contador}:</b><br>
+                        STATUS: ${status} <br>
+                        TEMPERATURA: ${tempMin}°C A ${tempMax}°C <br>
+                        UMIDADE: ${umiMin}% A ${umiMax}% <br>
+                        FLUSHS: Até ${flush} <br><br>
+                        PRODUÇÃO: R$:${rendiemnto.toFixed(2)} <br>
+                        PRODUÇÃO TOTAL: R$:${(rendiemnto * flush).toFixed(2)}<br><br>`
+                }
+            }else{
+                for(var contador = 1;contador <= qtdEstufas; contador++){
+                    mensagem += `<b>Estufa de ${cogumelo} ${contador}:</b><br>
+                        STATUS: ${status} <br>
+                        TEMPERATURA: ${tempMin}°C A ${tempMax}°C <br>
+                        UMIDADE: ${umiMin}% A ${umiMax}% <br>
+                        FLUSHS: Até ${flush} <br><br>
+                        PRODUÇÃO POR FLUSH: R$:${rendiemnto.toFixed(2)} <br>
+                        PRODUÇÃO TOTAL: R$:${(rendiemnto * flush).toFixed(2)} <br>
+                        ESTIMATIVA DA PRODUÇÃO TOTAL COM CONTROLE DE CLIMA: ${(rendiemntoControlado * flush).toFixed(2)}<br><br>`
+                }
+            }       
+        }
+        div_mensg.innerHTML = mensagem
     }
-
-
-
 </script>

@@ -27,7 +27,7 @@ a{
   white-space: nowrap;
 }
 
-/*   HEADER    */
+/***************************  HEADER  ************/
 header{
   padding: 3% 4% 3% 4%;
   display: flex;
@@ -87,7 +87,7 @@ header{
 }
 
 
-/* Mushtrack */
+/************************** Mushtrack ******************************/
 .mush{
   text-align: center;
   display: flex;
@@ -104,9 +104,52 @@ h1{
 }
 
 
-/* Simulador */
+/******************************* Simulador *****************************/
+
 #route_simulator{
   margin-top: 7%;
+}
+#simulator{
+  display: flex;
+  flex-direction: row;
+}
+#simulator_input{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items:center;
+  height: 100%;
+  width: 60%;
+}
+#simulator_result{
+  height: 100%;
+  width: 40%;
+}
+#simulator_container_text_result{
+  display: flex;
+  flex-direction: column;
+  
+}
+.simulator_text_result{
+  align-self: self-start;
+}
+
+.input_result, .select_result{
+  width: 10px;
+  background-position: left;
+  background-size: 1.5em;
+  padding-left: 1.5em;
+  padding-left: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:0px 0 20px 0 ;
+  width: 340px;
+  height: 35px ;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  border: none;
+  color: #333;
 }
 
 
@@ -150,9 +193,6 @@ h1{
   margin-bottom: 1rem;
   letter-spacing: 2px;
 }
-
-
-
 .stakeholders {
   display: flex;
   flex-direction: column;
@@ -205,9 +245,10 @@ footer {
   margin-top: 30px;
 }
 
-/* Card individual */
 
-/* Botão */
+
+
+/******************************** Botão ********************************/
 
 .button:hover {
   transform: scale(1.05);
@@ -225,6 +266,7 @@ footer {
   align-items: center; 
   text-align: center;
   transition: transform 0.2s;
+  border: transparent;
 }
 #button_home{
   margin-top: 230px;
@@ -245,7 +287,7 @@ footer {
 }
 
 
-/* CARDS */
+/******************************** CARDS *************************/
 
 
 
