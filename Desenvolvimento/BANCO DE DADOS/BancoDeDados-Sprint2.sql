@@ -1,21 +1,34 @@
-create database PISprint2;
 
-use PISprint2;
+CREATE DATABASE MushTrack;
+use MushTrack;
 
--- Criação da tabela Cadastro
-create table Cadastro (
-idEmpresa int primary key auto_increment,
-nome_Empresa varchar (45),
-cnpj char (14),
-nome_Usuario varchar (45), 
-email_1 varchar (70),
-email_2 varchar (70),
-status_Usuario varchar(45),
-permissao_Usuario varchar (45),
-constraint chkPermissaoUsuario check (permissao_Usuario in ('Administrador', 'Gestor', 'Funcionário')),
-constraint chkStatusUsuario check (status_Usuario in ('Ativo', 'Inativo'))
-);
 
+-- Criação da tabela Empresa
+ create table Empresa (
+ idEmpresa int primary key auto_increment,
+ nome_Empresa varchar (45),
+ cnpj char (14),
+ email_Empresa varchar (70),
+ cep_Empresa varchar (20)
+ );
+ 
+ -- Criação da tabela Usuário
+ create table Usuario (
+ idUsuario int primary key auto_increment,
+ nome_Usuario varchar (45),
+ email_Usuario varchar (70),
+ tel_Usuario char (11),
+ cpf_Usuario char (11),
+ status_Usuario varchar (45),
+ permissao_Usuario varchar (45),
+ 	constraint chkPermissaoUsuario check (permissao_Usuario in ('Administrador', 'Gestor', 'Funcionário')),
+ 	constraint chkStatusUsuario check (status_Usuario in ('Ativo', 'Inativo')),
+ foto_Usuario varchar (300),
+ fkEmpresa int, 
+ 	constraint fkUsuarioEmpresa foreign key (fkEmpresa) references Empresa (idEmpresa)
+ );
+ 
+ 
 -- Criação da tabela Registro
 create table Registro (
 idRegistro int primary key auto_increment,
