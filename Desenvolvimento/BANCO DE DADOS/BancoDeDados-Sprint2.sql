@@ -3,13 +3,14 @@ CREATE DATABASE MushTrack;
 use MushTrack;
 
 
+
 -- Criação da tabela Empresa
  create table Empresa (
  idEmpresa int primary key auto_increment,
  nome_Empresa varchar (45),
  cnpj char (14),
  email_Empresa varchar (70),
- cep_Empresa varchar (20)
+ Nome_Representante varchar (45)
  );
  
  -- Criação da tabela Usuário
@@ -55,9 +56,7 @@ umiMinima float,
 umiMaxima float,
 tipo_Estagio varchar (45),
 fkCogumelo int,
-fkParametro int,
-	constraint fkEstagioCogumelo foreign key (fkCogumelo) references Cogumelo (idCogumelo),
-    constraint fkEstagioParametro foreign key (fkParametro) references Parametro (idParametro)
+	constraint fkEstagioCogumelo foreign key (fkCogumelo) references Cogumelo (idCogumelo)
 );
 
 -- Criação da tabela Estufa 
@@ -98,7 +97,7 @@ constraint fkHistoricoSensor foreign key (fkSensor) references Sensor (idSensor)
 select * from Empresa;
 select * from Usuario;
 select * from Cogumelo;
-select * from Parametro;
+select * from Historico;
 select * from Estagio;
 select * from Estufa;
 select * from Sensor;
