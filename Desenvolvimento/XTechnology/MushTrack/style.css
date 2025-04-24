@@ -285,7 +285,7 @@ header {
 }
 
 
-.conteudo-dashboard h1 {
+.conteudo-dashboard a {
     color: white;
     font-size: 60px;
     margin-bottom: 15px;

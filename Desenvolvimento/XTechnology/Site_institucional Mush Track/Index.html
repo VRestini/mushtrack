@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>X TECHNOLOGY</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" type="imagex/png" href="./assets/img/xTechWhite.png">
+
 </head>
 
 <body>
@@ -18,6 +20,7 @@
             <li><a href="#route_simulator">Simulador</a></li>
             <li><a href="#route_about">Sobre Nós</a></li>
             <li><a class="button_4" id="login_a" href="../Site_institucional Mush Track/login.html">Login</a></li>
+            <li><a class="button_5" id="login_a" href="../Site_institucional Mush Track/cadastroEmpresa.html">Cadastrar</a></li>
         </ul>
     </nav>
   </header>
@@ -28,7 +31,7 @@
       <p>Da agricultura à indústria, inovação para quem busca mais controle e produtividade!</p>
       <div></div>
       <div class="button" id="button_home">
-        <a href="#" >Registre-se</a>
+        <a href="" >Registre-se</a>
       </div>
     </div>
     <div class="home_image">
@@ -83,14 +86,14 @@
     <div id="simulator_input">
 
       <select id="select_cogumelo" class="select_result">
-          <option value="#">Escolha:</option>
+          <option value="#">Escolha a espécie :</option>
           <option>Champignon</option>
           <option>Shimeji</option>
           <option>Shitake</option>
       </select>
 
       <select id="select_estagio" class="select_result">
-          <option value="#">Escolha:</option>
+          <option value="#">Escolha o estágio:</option>
           <option>Incubação</option>
           <option>Indução</option>
           <option>Frutificação</option>
@@ -242,7 +245,7 @@
         else{
             var flush = 0
             var rendiemnto = kgProducao * precoKg
-            var rendiemntoControlado = rendiemnto * 1.003
+            var rendiemntoControlado = rendiemnto * 1.044
             var tempMin = 0
             var tempMax = 0
             var umiMin = 0
@@ -318,7 +321,7 @@
                 <p class="simulator_text_result">FLUSHS: Até ${flush}</p> 
                 <p class="simulator_text_result">PRODUÇÃO: R$:${rendiemnto.toFixed(2)} </p>
                 <p class="simulator_text_result">PRODUÇÃO TOTAL: R$:${(rendiemnto * flush).toFixed(2)}</p>
-                <p class="simulator_text_result">ESTIMATIVA DA PRODUÇÃO TOTAL COM CONTROLE DE CLIMA: R$${(rendiemntoControlado * flush).toFixed(2)}</p>
+                <p class="simulator_text_result_Total">ESTIMATIVA DA PRODUÇÃO TOTAL COM CONTROLE DE CLIMA: R$${(rendiemntoControlado * flush).toFixed(2)}</p>
               </div>`
               
             }       

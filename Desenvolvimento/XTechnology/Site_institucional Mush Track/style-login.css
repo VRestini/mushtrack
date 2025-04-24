@@ -43,8 +43,10 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 87.4vh;
     background-image: url(../MushTrack/assets/imagemInicio.png);
+    background-size: cover;
+    background-position: center;
 }
 
 .container {
@@ -54,73 +56,91 @@ header {
 }
 
 .card-login {
-    padding: 70px;
-    border-radius: 15px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    background-color: #4E3324;
+    display: block;
+    justify-content: space-between;
+    background-color: #4a2d1f;
+    border-radius: 16px;
+    padding: 60px;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
+    width: 700px;
 }
 
 #imgLogo {
     width: 80px;
-    margin-top: -90px;    
-}
+    margin-bottom: 20px;
+  }
 
 .campo input {
-    width: 390px;
-    height: 35px;
-    margin-top: 29px;
-    border-radius: 10px;
+    display: block;
+    flex-direction: column;
+    width: 400px;
+    margin: 10px;
+    padding: 12px 12px 12px 60px;
     border: none;
+    border-radius: 20px;
+    background-color: #f2f2f2 !important;
+    font-size: 14px;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-    padding-left: 40px;
     background-repeat: no-repeat;
     background-position: 10px center;
-    background-size: 20px;
+    background-size: 25px;
+    margin-top: 20px;
 }
 
 #email_input {
-    background-image: url(assets/img/iconemail.png);
+    background-image: url(./assets/img/iconemail.png);
 }
 
 #senha_input {
-    background-image: url(assets/img/iconsenha.png);
+    background-image: url(./assets/img/iconsenha.png);
 }
 
 /* Botão Login */
-.button {
-    margin-top: 30px;
-    background: #FFFFFF;
-    width: 390px;
-    height: 40px;
-    color: white;
+
+.button:hover {
+    transform: scale(1.05);
+
+    
+  }
+  .button {
+    text-decoration: none;
+    background-color: #625140;
+    display: block;
+    flex-direction: column;
+    width: 400px;
+    margin: 10px;
+    padding: 12px 12px 12px 60px;
     border-radius: 20px;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
+    text-align: center;
     transition: transform 0.2s;
-}
+    margin-top: 20px;
 
-.button:hover {
-    transform: scale(1.05);
-}
+  }
+  
 
-#button_home a {
+#button_home a{
     text-decoration: none;
-    color: #4E3324;
-    font-weight: 600;
-}
-
-.button_4 {
-    background: linear-gradient(to right, #1a0f07, #9d5b26);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 35px;
+    
+}
+.button_4 {
+  background: linear-gradient(to right, #1a0f07, #9d5b26);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  color: white;
 }
 
 /* Registro */
@@ -130,15 +150,9 @@ header {
     align-items: center;
     margin: 20px;
     transition: transform 0.2s;
-
 }
 
 .Registrar a {
     color: #ffffff;
     font-weight: 300;
-    
-}
-
-.button:hover {
-    transform: scale(1.05);
 }
