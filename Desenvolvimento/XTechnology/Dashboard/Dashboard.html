@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashtrack</title>
+    <link rel="stylesheet" href="Dash.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>  
+</head>
+
+<body>
+    <div class="menu_hamburger">
+        <img src="img/logo_mush.png" alt="Logo MushTrack"><br><br>
+            <ul>
+                <li>Cadastro estufas</li>
+                <li>Estágio</li>
+                <li>Sensores</li>
+                <li>Configurações</li>
+            </ul>
+    </div>
+
+        <header class="topo">
+            <span><img src="img/icon_home.png" style="width: 40px; height: 45px;" alt=""> Início</span> | <strong
+                style="color: #4E3324;">Dashtrack</strong>
+        </header>
+
+
+
+    <!-- Kpis -->
+     <div class="graficos_pai">
+    <div class="container_kpi">
+        <div class="kpi">
+            <canvas id="myKpi1" ></canvas>
+            <p>Umidade Atual</p>
+        </div>
+
+        <div class="kpi">
+            <canvas id="myKpi2"></canvas>
+            <p>Umidade Ideal</p>
+        </div>
+
+        <div class="kpi">
+            <canvas id="myKpi3"></canvas>
+            <p>Quantas vezes no m</p>
+        </div>
+
+        <div class="kpi">
+            <canvas id="myKpi4" ></canvas>
+        </div>
+
+    </div>
+    <!-- Gráficos -->
+    <div class="container_graficos">
+        <div class="cards">
+            <canvas id="myChart" style="position: relative; height:40vh; width:40vw"></canvas>
+        </div>
+
+        <div>
+            <canvas id="myChart2" style="position: relative; height:40vh; width:40vw"></canvas>
+        </div>
+    </div>
+</div>
+
+    <!-- <div class="container">
+        <div class="cards">
+          <div class="card">
+            <h3>Shimeji Umidade</h3>
+            <canvas id="umidadeChart"></canvas>
+          </div>
+          <div class="card">
+            <h3>Shimeji Temperatura</h3>
+            <canvas id="temperaturaChart"></canvas>
+          </div>
+        </div>
+      </div> -->
+
+    <aside class="card_estufas">
+        <div class="shimeji">
+            <h3>Shimeji</h3>
+            <img src="img/shimeji_card.png" alt="">
+        </div>
+        <div class="Champignon">
+            <h3>Champignon de Paris</h3>
+            <img src="img/champignon_card.png" alt="">
+        </div>
+        <div class="shiitake">
+            <h3>Shiitake</h3>
+            <img src="img/shiitake_card.png" alt="">
+        </div>
+        </div>
+    </aside>
+
+    <footer>
+        © Copyright MushTrack. Todos os direitos reservados
+    </footer>
+</body>
+
+</html>
+<script>
+    // kpi donut
+
+    Chart.register(ChartDataLabels);
+
+// Função para criar cada KPI circular (doughnut chart)
+function criarKpiDoughnut(id, valor, cor) {
+    new Chart(document.getElementById(id), {
+        type: 'doughnut',
+        data: {
+            labels: ['Valor', 'Faltante'],
+            datasets: [{
+                data: [valor, 100 - valor],
+                backgroundColor: [cor, '#f0e6e0'],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            cutout: '70%', // deixa um espaço no meio (rosquinha)
+            plugins: {
+                datalabels: {
+                    display: true,
+                    formatter: (value, ctx) => {
+                        if (ctx.dataIndex === 0) return `${valor}%`;
+                        return '';
+                    },
+                    color: '#4E3324',
+                    font: {
+                        size: 24,
+                        weight: 'bold'
+                    }
+                },
+                legend: { display: false },
+                tooltip: { enabled: false }
+            }
+        }
+    });
+}
+
+// Criando cada KPI com seus respectivos valores
+criarKpiDoughnut('myKpi1', 80, 'rgb(137, 81, 41)'); // Umidade Atual
+criarKpiDoughnut('myKpi2', 90, 'rgb(137, 81, 41)'); // Umidade Ideal
+criarKpiDoughnut('myKpi3', 6, 'rgb(137, 81, 41)');  // Vezes que atingiu 29°C
+criarKpiDoughnut('myKpi4', 25, 'rgb(137, 81, 41)');
+
+    //Gráfico 1
+    const labels = [
+        '12:00',
+        '13:00',
+        '14:00',
+        '15:00',
+        '16:00',
+        '17:00',
+    ];
+
+    const data =
+    {
+        labels: labels,
+        datasets:
+            [{
+                label: 'Umidade',
+                backgroundColor: 'rgb(54, 162, 235)',
+                borderColor: 'rgb(54, 162, 235)',
+                data: [80, 82, 80, 85, 80, 83],
+            }
+            ]
+    };
+
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+    };
+    //Gráfico 2
+    const labelsBar = [
+        'Janeiro',
+        'Fevereiro',
+        'Março',
+        'Abril',
+        'Maio',
+        'Junho',
+    ];
+
+    const dataBar =
+    {
+        labels: labelsBar,
+        datasets:
+            [
+                {
+                    label: 'Temperatura Média',
+                    backgroundColor: 'rgb(255, 99, 132)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    data: [22, 24, 27, 23, 20, 18],
+                },
+            ]
+    };
+
+    const config2 = {
+        type: 'bar',
+        data: dataBar,
+        options: {}
+    };
+
+   
+
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+
+    const myChart2 = new Chart(
+        document.getElementById('myChart2'),
+        config2
+    );
+
+
+</script>
