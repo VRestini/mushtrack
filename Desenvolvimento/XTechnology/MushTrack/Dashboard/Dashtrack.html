@@ -16,17 +16,17 @@
     <button id="toggleSidebar" class="menu-btn">☰</button>
     <div class="sidebar" id="sidebar">
       <ul>
-        <li>Cadastro estufas</li>
-        <li>Estágio estufa</li>
-        <li>Sensores</li>
-        <li>Configurações</li>
+        <li><a href="">Cadastro estufas</a></li>
+        <li><a href="">Estágio estufa</a/></li>
+        <li><a href="">Sensores</a></li>
+        <li><a href="">Configurações</a></li>
       </ul>
     </div>
   </div>
 
   <div class="main">
     <div class="top_bar">
-      <a href=""><img src="img/icon_home.png" alt=""></a><a href="">
+      <a href=""><img src="img/icon_home.png" alt=""></a><a href="D:\Ana Faculdade Arquivos\mushtrack\Desenvolvimento\XTechnology\MushTrack\index.html">
         <h2>Início</h2>
       </a><a href="">
         <h2>| Dashtrack</h2>
@@ -36,20 +36,21 @@
     <!--Kpis-->
     <div class="indicator-group">
       <div class="indicator">
+        <h4>Umidade Atual<br><strong>60%</strong></h4>
         <canvas id="umidadeAtual" width="100" height="100"></canvas>
-        <p>Umidade Atual<br><strong>60%</strong></p>
       </div>
       <div class="indicator">
+        <h4>Umidade Ideal<br><strong>90%</strong></h4>
         <canvas id="umidadeIdeal" width="100" height="100"></canvas>
-        <p>Umidade Ideal<br><strong>90%</strong></p>
       </div>
       <div class="indicator">
+        <h4>Quantas vezes no mês atingiu 29°C <br>
+        <strong> 6</strong></h4>
         <canvas id="alertas" width="100" height="100"></canvas>
-        <p>Quantas vezes no mês atingiu 29°C<br><strong>6</strong></p>
       </div>
       <div class="indicator">
+        <h4>Temperatura Ideal<br><strong>25°C</strong></h4>
         <canvas id="temperaturaIdeal" width="100" height="100"></canvas>
-        <p>Temperatura Ideal<br><strong>25°C</strong></p>
       </div>
     </div>
 
@@ -70,15 +71,19 @@
   <div class="alerts">
     <div class="alert_card">
     
-      <p> Data alerta: 24/04/25   </p><img src="img/warning sign.png" alt="">
+      <img src="img/warning sign.png" alt="">
+      <div>
+        <p> Data alerta: 08/04/25</p> 
+      </div>
       <h3>
         <p>Cuidado! <br> Umidade está abaixo do ideal<br> Você corre o risco de perder seu substrato!</p>
       </h3>
 
     </div>
     <div class="alert_card">
-      <p> Data alerta: 24/04/25  </p><img src="img/warning sign.png" alt="">
-      <h3>Cuidado Temperatura Elevada<br> Risco de deformidades e <br> pragas em seus cogumelos</h3>
+      <img src="img/warning sign.png" alt="">
+      <p> Data alerta: 24/04/25  </p>
+      <h3>Cuidado! <br> Temperatura Elevada<br> Risco de deformidades e <br> pragas em seus cogumelos</h3>
     </div>
     <div class="chart_sensores">
       <h3>Status sensores</h3>
@@ -161,12 +166,12 @@
     new Chart(document.getElementById('barChart'), {
       type: 'bar',
       data: {
-        labels: ['24/04/25 08:00', '24/04/25 09:00', '24/04/25 10:00', '24/04/25 11:00', '24/04/25 12:00'],
+        labels:['24/04/25 08:00', '24/04/25 09:00', '24/04/25 10:00', '24/04/25 11:00', '24/04/25 12:00'],
         datasets: [{
           label: 'Umidade (%)',
           data: [90, 85, 65, 70, 55],
           backgroundColor: '#77492b'
-        }]
+        }],
       },
       options: {
         plugins: { legend: { display: false } },
@@ -181,7 +186,6 @@
 
 
     new Chart(document.getElementById('lineChart'), {
-      // const labels = ();
       type: 'line',
       data: {
         labels: ['24/04/25 08:00', '24/04/25 09:00', '24/04/25 10:00', '24/04/25 11:00', '24/04/25 12:00'],
@@ -217,7 +221,42 @@
         }
       }
     });
-   
+    new Chart(document.getElementById('lineChartSensores'), {
+      type: 'line',
+      data: {
+        labels: ['24/04/25 08:00', '24/04/25 09:00', '24/04/25 10:00', '24/04/25 11:00', '24/04/25 12:00'],
+
+        datasets: [{
+          label: 'Temperatura (°C)',
+          data: [16, 22, 21, 23, 28],
+          borderColor: '#77492b',
+          fill: false,
+          tension: 0.3
+        },
+        {
+          label: 'TemperaturaMax (°C)',
+          data: [30, 30, 30, 30, 30],
+          borderColor: 'red',
+          fill: false,
+          tension: 0.3
+        }, {
+          label: 'TemperaturaMin (°C)',
+          data: [8, 8, 8, 8, 8],
+          borderColor: 'green',
+          fill: false,
+          tension: 0.3
+        }]
+      },
+      options: {
+        plugins: { legend: { display: false } },
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 35
+          }
+        }
+      }
+    });
   </script>
 </body>
 

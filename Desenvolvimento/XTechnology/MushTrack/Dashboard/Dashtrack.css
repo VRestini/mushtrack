@@ -67,7 +67,10 @@ body {
     padding: 20px;
     transition: transform 0.3s ease;
 }
-
+.sidebar ul li a{
+    text-decoration: none;
+    color: #3e1f0d;
+}
 .sidebar.hidden {
     transform: translateX(-220px);
 }
@@ -91,10 +94,15 @@ body {
 }
 
 .indicator {
+    display: flex;
+    align-items: center;
     text-align: center;
     width: 150px;
 }
 
+.indicator strong{
+    color: #b21613;
+}
 /* estilos dos Gráficos*/
 .charts {
     display: flex;
@@ -137,6 +145,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     width: 291px;
     /* height: 419px; */
     background-color: #fef3ec;

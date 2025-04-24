@@ -28,7 +28,9 @@
 
   <div class="main">
     <div class="top_bar">
-      <a href=""><img src="img/icon_home.png" alt=""></a><a href=""><h2>Início</h2></a><a href="">
+      <a href=""><img src="img/icon_home.png" alt=""></a><a href="">
+        <h2>Início</h2>
+      </a><a href="">
         <h2>| Dashtrack</h2>
       </a>
     </div>
@@ -36,11 +38,11 @@
     <div class="indicator-group">
       <div class="indicator">
         <canvas id="umidadeAtual" width="100" height="100"></canvas>
-        <p>Umidade Atual<br><strong>80%</strong></p>
+        <p>Umidade Atual<br><strong>85%</strong></p>
       </div>
       <div class="indicator">
         <canvas id="umidadeIdeal" width="100" height="100"></canvas>
-        <p>Umidade Ideal<br><strong>90%</strong></p>
+        <p>Umidade Ideal<br><strong>95%</strong></p>
       </div>
       <div class="indicator">
         <canvas id="alertas" width="100" height="100"></canvas>
@@ -72,21 +74,21 @@
           <img src="img/shimeji_card.png" alt="shimeji" />
         </div>
     </a>
-  
+
     <a href="D:\Dashboard\DashtrackChampignon.html" class="card_link">
       <div class="estufa_card">
         <span>Champignon de Paris</span>
         <img src="img/champignon_card.png" alt="champignon" />
       </div>
     </a>
-  
+
     <a href="D:\Dashboard\DashtrackShiitake.html" class="card_link">
       <div class="estufa_card">
         <span>Shiitake</span>
         <img src="img/shiitake_card.png" alt="shitake" />
       </div>
     </a>
-    </div>
+  </div>
   </div>
 
   <footer>
@@ -111,17 +113,17 @@
 
     new Chart(document.getElementById('umidadeAtual'), {
       type: 'doughnut',
-      data: { labels: ['Usado', 'Faltante'], datasets: [{ data: [80, 20], backgroundColor: ['#77492b', '#f2e9e4'] }] },
+      data: { labels: ['Usado', 'Faltante'], datasets: [{ data: [85, 15], backgroundColor: ['#77492b', '#f2e9e4'] }] },
       options: chartOptions
     });
     new Chart(document.getElementById('umidadeIdeal'), {
       type: 'doughnut',
-      data: { labels: ['Usado', 'Faltante'], datasets: [{ data: [90, 10], backgroundColor: ['#77492b', '#f2e9e4'] }] },
+      data: { labels: ['Usado', 'Faltante'], datasets: [{ data: [95, 10], backgroundColor: ['#77492b', '#f2e9e4'] }] },
       options: chartOptions
     });
     new Chart(document.getElementById('alertas'), {
       type: 'doughnut',
-      data: { labels: ['Eventos', 'Restante'], datasets: [{ data: [6, 10], backgroundColor: ['#77492b', '#f2e9e4'] }] },
+      data: { labels: ['Eventos', 'Restante'], datasets: [{ data: [1, 10], backgroundColor: ['#77492b', '#f2e9e4'] }] },
       options: chartOptions
     });
     new Chart(document.getElementById('temperaturaIdeal'), {
