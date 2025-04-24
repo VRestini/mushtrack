@@ -107,8 +107,14 @@ h1{
 /******************************* Simulador *****************************/
 
 #route_simulator{
-  margin-top: 7%;
+  margin-top: 1%;
 }
+
+.container_box.mush {
+  padding-top: 250px;
+  border: 90px;
+}
+
 #simulator{
   display: flex;
   flex-direction: row;
@@ -116,22 +122,47 @@ h1{
 #simulator_input{
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   align-items:center;
-  height: 100%;
+  height: 115%;
   width: 60%;
+  background-color: #4E3324;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
 }
+
+.simulador_text_tipo{
+  padding-bottom: 15px;
+}
+
 #simulator_result{
-  height: 100%;
-  width: 40%;
+  height: 115%;
+  width: 60%;
+  background-color: #4E3324;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius:15px;
 }
 #simulator_container_text_result{
   display: flex;
   flex-direction: column;
+  color: #ccc;
+  font-size: 25px;
+  padding-top: 50px;
+  padding-bottom: 20px;
   
 }
 .simulator_text_result{
   align-self: self-start;
+  color: #ccc;
+  justify-content: center;
+}
+
+.simulator_text_result_Total{
+  display: flex;
+  padding-top: 15px;
+  text-align: start;
+  color: rgb(140, 236, 140);
+  font-size: 24px;
 }
 
 .input_result, .select_result{
