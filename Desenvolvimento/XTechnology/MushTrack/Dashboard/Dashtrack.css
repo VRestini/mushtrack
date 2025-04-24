@@ -1,0 +1,159 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ffff;
+}
+
+.menu_hamburger {
+    width: 200px;
+    /* height: 100vh; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    padding: 20px 10px;
+    box-sizing: border-box;
+}
+
+.menu_hamburger h1 {
+    font-size: 18px;
+    text-align: center;
+}
+
+.menu_hamburger ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+}
+
+.menu_hamburger ul li {
+    margin: 20px 0;
+    color: #5c4033;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menu_hamburger img {
+    padding-left: 20px;
+    width: 45px;
+    height: 47px;
+}
+
+.main {
+    margin-left: 200px;
+    padding: 20px;
+}
+
+.main h2{
+    color: #5c4033;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Esconde a sidebar inicialmente */
+.sidebar {
+    height: 100vh;
+    padding: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .sidebar.hidden {
+    transform: translateX(-220px);
+  }
+  
+  /* Estilo do botão hambúrguer */
+  .menu-btn {
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: #3e1f0d;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+
+.indicator-group {
+    display: flex;
+    gap: 50px;
+    margin: 20px 0;
+    justify-content: space-evenly;
+}
+
+.indicator {
+    text-align: center;
+    width: 150px;
+}
+
+.charts {
+    display: flex;
+    gap: 40px;
+    margin-top: 0;
+    padding-left: 50px;
+    flex: auto;
+    justify-content: space-around;
+}
+
+.chart-card {
+    width: 591px;
+    /* height: 419px; */
+    background-color: #fef3ec;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* flex: 1; */
+}
+
+.chart-card h3 {
+    text-align: center;
+    color: #5c4033;
+    margin-bottom: 10px;
+}
+
+.estufas {
+    position: absolute;
+    right: 30px;
+    top: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.estufa-card {
+    background-color: #5c4033;
+    color: white;
+    padding: 10px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.estufa-card img {
+    width: 50px;
+    margin-top: 5px;
+}
+
+.estufa-card :hover{
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.card_link {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+footer {
+    background-color: #e8dcd5;
+    text-align: center;
+    padding: 10px;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #5c4033;
+}
