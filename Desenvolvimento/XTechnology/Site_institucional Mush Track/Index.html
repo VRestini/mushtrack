@@ -301,14 +301,14 @@
             if(status == "Ideal para produção"){
              
               mensagem += `
-              <div class="simulator_text_result">
-                <h3 class="titulo">Estufa de ${cogumelo}:</h3>
-                <p>STATUS: ${status} </p>
-                <p>TEMPERATURA: ${tempMin}°C A ${tempMax}°C</p>
-                <p>UMIDADE: ${umiMin}% A ${umiMax}% </p>
-                <p>FLUSHS: Até ${flush}</p> 
-                <p>PRODUÇÃO: R$:${rendiemnto.toFixed(2)} </p>
-                <p>PRODUÇÃO TOTAL: R$:${(rendiemnto * flush).toFixed(2)}</p>
+              <div id="simulator_container_text_result">
+                <h3 id = "simulator_text_estufa"> Estufa de ${cogumelo}:</h3>
+                <p class = "simulator_text_result">STATUS: ${status} </p>
+                <p class = "simulator_text_result" >TEMPERATURA: ${tempMin}°C A ${tempMax}°C</p>
+                <p class ="simulator_text_result" >UMIDADE: ${umiMin}% A ${umiMax}% </p>
+                <p class = "simulator_text_result">FLUSHS: Até ${flush}</p> 
+                <p class = "simulator_text_result">PRODUÇÃO: R$:${rendiemnto.toFixed(2)} </p>
+                <p class = "simulator_text_result">PRODUÇÃO TOTAL: R$:${(rendiemnto * flush).toFixed(2)}</p>
               </div>`
                 
             }else{                            
