@@ -316,6 +316,14 @@ footer {
   border-radius: 20px;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
 }
+.button_5 {
+  background: linear-gradient(to right, #1a0f07, #9d5b26);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  color: white;
+}
 
 
 /******************************** CARDS *************************/
