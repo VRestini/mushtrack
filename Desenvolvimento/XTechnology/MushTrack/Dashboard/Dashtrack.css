@@ -4,6 +4,7 @@ body {
     background-color: #ffff;
 }
 
+/* Menu lateral */
 .menu_hamburger {
     width: 200px;
     /* height: 100vh; */
@@ -39,12 +40,13 @@ body {
     height: 47px;
 }
 
+/* Principal que guarda os gráficos */
 .main {
     margin-left: 200px;
     padding: 20px;
 }
 
-.main h2{
+.main h2 {
     color: #5c4033;
 }
 
@@ -59,23 +61,23 @@ body {
     height: 100vh;
     padding: 20px;
     transition: transform 0.3s ease;
-  }
-  
-  .sidebar.hidden {
+}
+
+.sidebar.hidden {
     transform: translateX(-220px);
-  }
-  
-  /* Estilo do botão hambúrguer */
-  .menu-btn {
+}
+
+/* Estilo do botão hambúrguer */
+.menu-btn {
     font-size: 28px;
     background: none;
     border: none;
     color: #3e1f0d;
     cursor: pointer;
     margin-left: 10px;
-  }
-  
+}
 
+/*Container pai das kpis*/
 .indicator-group {
     display: flex;
     gap: 50px;
@@ -88,6 +90,7 @@ body {
     width: 150px;
 }
 
+/* estilos dos Gráficos*/
 .charts {
     display: flex;
     gap: 40px;
@@ -113,6 +116,18 @@ body {
     margin-bottom: 10px;
 }
 
+/*Estilo Estufas*/
+
+.menu_estufas {
+    position: fixed;
+    top: 150px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
 .estufas {
     position: absolute;
     right: 30px;
@@ -122,23 +137,26 @@ body {
     gap: 20px;
 }
 
-.estufa-card {
-    background-color: #5c4033;
-    color: white;
-    padding: 10px;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+.estufa_card {
+    background-color: #5c3b24;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 12px;
+  width: 180px;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  transition: transform 0.3s;
 }
 
-.estufa-card img {
+.estufa_card img {
     width: 50px;
     margin-top: 5px;
 }
 
-.estufa-card :hover{
+.estufa_card :hover {
     transform: scale(1.03);
     cursor: pointer;
 }
@@ -148,7 +166,7 @@ body {
     color: inherit;
 }
 
-
+/*Footer*/
 footer {
     background-color: #e8dcd5;
     text-align: center;
