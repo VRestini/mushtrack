@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -10,26 +10,23 @@
 
 <body>
     <header>
-        <div class="container-Header">
-            <img class="logo" src="assets/img/xtechBrown.png" alt="Logo MushTrack" />
-            <nav>
-                <ul>
-                    <li><a href="../Site_institucional Mush Track/Index.html">Início</a></li>
-                    <li><a href="#mushtack">MushTrack</a></li>
-                    <li><a href="../simulador.html">Simulador</a></li>
-                    <li><a href="#sobreNos">Sobre nós</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                    <li><a class="a-Login" href="#login">Login</a></li>
-                </ul>
-            </nav>
-        </div>
+        <img src="./assets/img/xtechBrown.png" alt="Logo XTech" height="40px">
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../Site_institucional Mush Track/Index.html">Inicio</a></li>
+                <li><a href="../MushTrack/index.html">MushTrack</a></li>
+                <li><a href="Index.html/#route_simulator">Simulador</a></li>
+                <li><a href="#route_about">Sobre Nós</a></li>
+                <li><a class="button_4" id="login_a" href="../Site_institucional Mush Track/login.html">Login</a></li>
+            </ul>
+        </nav>
     </header>
 
+    
     <div class="login">
-
         <div class="container">
             <div class="card-login">
-                <img   id="imgLogo" src="../MushTrack/assets/logo.png" alt="Logo Mushtrack">
+                <img id="imgLogo" src="../Site_institucional Mush Track/assets/img/mushtrack_logo.png" alt="Logo MushTrack">
                 <div class="formulario">
                     <div class="campo">
                         <input id="email_input" type="text" placeholder="Email">
@@ -38,18 +35,40 @@
                         <input id="senha_input" type="password" placeholder="Senha">
                     </div>
                     <div class="button" id="button_home">
-                        <a href="#">Entrar</a>
+                        <a onclick="entrar()" href="#">Entrar</a>
                     </div>
                     <div class="Registrar">
-                        <a href="">Não possui conta? Cadatrar</a>
+                        <a href="#">Não possui conta? Cadastrar</a>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
-    </div>
-
 </body>
 
 </html>
+
+<script>
+    function entrar() {
+      var email = email_input.value;
+      var senha = senha_input.value
+  
+      var emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  
+      if (email === "" || senha === "") {
+        alert("Por favor, preencha todos os campos.");
+      }
+  
+      if (!emailValido) {
+        alert("Por favor, insira um e-mail válido.");
+      }
+  
+      if (senha.length < 6) {
+        alert("A senha deve conter pelo menos 6 caracteres.");
+      }
+  
+      alert("Login efetuado com sucesso!");
+      window.location.href = "../MushTrack/index.html";
+    }
+  </script>
+  
