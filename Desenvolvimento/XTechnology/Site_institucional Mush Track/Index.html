@@ -85,14 +85,14 @@
     <div id="simulator_input">
 
       <select id="select_cogumelo" class="select_result">
-          <option value="#">Escolha:</option>
+          <option value="#">Escolha a espécie :</option>
           <option>Champignon</option>
           <option>Shimeji</option>
           <option>Shitake</option>
       </select>
 
       <select id="select_estagio" class="select_result">
-          <option value="#">Escolha:</option>
+          <option value="#">Escolha o estágio:</option>
           <option>Incubação</option>
           <option>Indução</option>
           <option>Frutificação</option>
@@ -320,7 +320,7 @@
                 <p class="simulator_text_result">FLUSHS: Até ${flush}</p> 
                 <p class="simulator_text_result">PRODUÇÃO: R$:${rendiemnto.toFixed(2)} </p>
                 <p class="simulator_text_result">PRODUÇÃO TOTAL: R$:${(rendiemnto * flush).toFixed(2)}</p>
-                <p class="simulator_text_result">ESTIMATIVA DA PRODUÇÃO TOTAL COM CONTROLE DE CLIMA: R$${(rendiemntoControlado * flush).toFixed(2)}</p>
+                <p class="simulator_text_result_Total">ESTIMATIVA DA PRODUÇÃO TOTAL COM CONTROLE DE CLIMA: R$${(rendiemntoControlado * flush).toFixed(2)}</p>
               </div>`
               
             }       
