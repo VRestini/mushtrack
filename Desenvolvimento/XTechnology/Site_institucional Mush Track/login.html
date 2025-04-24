@@ -22,11 +22,12 @@
         </nav>
     </header>
 
-    
+
     <div class="login">
         <div class="container">
             <div class="card-login">
-                <img id="imgLogo" src="../Site_institucional Mush Track/assets/img/mushtrack_logo.png" alt="Logo MushTrack">
+                <img id="imgLogo" src="../Site_institucional Mush Track/assets/img/mushtrack_logo.png"
+                    alt="Logo MushTrack">
                 <div class="formulario">
                     <div class="campo">
                         <input id="email_input" type="text" placeholder="Email">
@@ -50,25 +51,27 @@
 
 <script>
     function entrar() {
-      var email = email_input.value;
-      var senha = senha_input.value
-  
-      var emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  
-      if (email === "" || senha === "") {
-        alert("Por favor, preencha todos os campos.");
-      }
-  
-      if (!emailValido) {
-        alert("Por favor, insira um e-mail válido.");
-      }
-  
-      if (senha.length < 6) {
-        alert("A senha deve conter pelo menos 6 caracteres.");
-      }
-  
-      alert("Login efetuado com sucesso!");
-      window.location.href = "../MushTrack/index.html";
+        var email = email_input.value
+        var senha = senha_input.value
+
+        //  valida se o email ta no formato correto
+        var emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+        if (email == "" || senha == "") {
+            alert("Por favor, preencha todos os campos.");
+        } else if (!emailValido) {
+            alert("Por favor, insira um e-mail válido.");
+        } else if (senha.length < 6) {
+            alert("A senha deve conter pelo menos 6 caracteres.");
+        } 
+        
+        if (email == "usuario@gmail.com" && senha == "sptech") {
+            alert("Login efetuado com sucesso!");
+
+
+            window.location.href = "../MushTrack/index.html";
+        } else {
+            alert ("Usuário ou senha estão incorretos !")
+        }
     }
-  </script>
-  
+</script>
