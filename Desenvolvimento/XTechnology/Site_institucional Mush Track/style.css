@@ -107,11 +107,12 @@ h1{
 /******************************* Simulador *****************************/
 
 #route_simulator{
-  margin-top: 1%;
+  margin-top: 10%;
+  justify-content: flex-start;
 }
 
 .container_box.mush {
-  padding-top: 250px;
+  /* padding-top: 250px; */
   border: 90px;
 }
 
@@ -217,10 +218,11 @@ h1{
 .about{
   display: flex;
   flex-direction: column;
+  margin-top: 10%;
 
 }
 .container_mission{
-  margin-top: 5%;
+  margin-top: 10%;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -277,13 +279,44 @@ h1{
 
 
 /* Rodapé */
-footer {
+/* footer {
   margin-top: 3rem;
   padding: 1rem 0;
   text-align: center;
   font-size: 0.7rem;
   border-top: 1px solid #ccc;
   color: #999;
+} */
+
+.footer {
+  background-color: #d5cecb;
+  padding: 40px;
+  margin-top: 160vh;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  width: 1200px;
+  margin: auto;
+  color: #000;
+}
+
+.footer-colunas ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-colunas ul li a {
+  text-decoration: none;
+  color: #000;
+}
+.footer-copyright{
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #4E3324;
+  padding-top: 10px;
 }
 
 /* Seção Mushtrack */
