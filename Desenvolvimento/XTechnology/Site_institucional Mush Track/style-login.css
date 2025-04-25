@@ -1,12 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600&family=Poppins:wght@300;400;600;700&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+@font-face {
+  font-family: 'gidole';
+  src: url('./assets/font/Gidole-Regular.ttf') format('truetype');
 }
-
+@font-face {
+  font-family: 'dune-rise';
+  src: url('./assets/font/Dune_Rise.ttf') format('truetype');
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: gidole;
+}
 /* Header */
 header {
     padding: 3% 4%;
@@ -121,6 +126,8 @@ header {
     text-align: center;
     transition: transform 0.2s;
     margin-top: 20px;
+    cursor: pointer;
+    
 
   }
   
@@ -142,6 +149,15 @@ header {
   box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
   color: white;
 }
+
+.button_5 {
+    background: linear-gradient(to right, #1a0f07, #9d5b26);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    color: white;
+  }
 
 /* Registro */
 .Registrar {

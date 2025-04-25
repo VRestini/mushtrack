@@ -53,29 +53,29 @@
         var temp = Number(input_temp.value)
         var umid = Number(input_umid.value)
         var mensagem = ""
-        if(cogumelo == "#")
+        if (cogumelo == "#")
             mensagem = "Erro! Escolha um cogumelo para prosseguir."
-        else if(estagio == "#")
+        else if (estagio == "#")
             mensagem = "Erro! Escolha um estágio para prosseguir."
-        else if(qtdEstufas <= 0){
+        else if (qtdEstufas <= 0) {
             mensagem = "Erro! Insira uma quantidade válida (maior que 0) de estufas."
         }
-        else if (kgProducao <= 0){
-            mensagem = "Erro! Insira uma produção da estufa válida (maior que 0)  para prosseguir."    
+        else if (kgProducao <= 0) {
+            mensagem = "Erro! Insira uma produção da estufa válida (maior que 0)  para prosseguir."
         }
-        else if(temp < 0){
+        else if (temp < 0) {
             mensagem = "Erro! A temperatura média está abaixo de zero. "
         }
-        else if(umid < 0){
+        else if (umid < 0) {
             mensagem = "Erro! A umidade do ar média está abaixo de zero. "
         }
-        else if(umid > 100){
+        else if (umid > 100) {
             mensagem = "Erro! A umidade do ar média está acima de 100%. "
         }
-        else if(precoKg == 0){
+        else if (precoKg == 0) {
             mensagem = "Erro! Insira um preço do quilo válido (maior que 0) para prosseguir."
         }
-        else{
+        else {
             var flush = 0
             var rendiemnto = kgProducao * precoKg
             var rendiemntoControlado = rendiemnto * 1.044
@@ -84,55 +84,55 @@
             var umiMin = 0
             var umiMax = 0
             var flush = 0
-            if(cogumelo == "Champignon"){
-                    flush = 6
-                    tempMax = 26
-                    tempMin = 22
-                    umiMax = 95
-                    umiMin = 85
-                if(estagio == "Incucabação"){            
+            if (cogumelo == "Champignon") {
+                flush = 6
+                tempMax = 26
+                tempMin = 22
+                umiMax = 95
+                umiMin = 85
+                if (estagio == "Incucabação") {
                     umiMax = 100
                     umiMin = 90
-                }else if(estagio == "Indução"){
-                    umiMax=95
-                    umiMin=85
+                } else if (estagio == "Indução") {
+                    umiMax = 95
+                    umiMin = 85
                     tempmin = 20
                 }
-            }else if(cogumelo == "Shimeji"){
+            } else if (cogumelo == "Shimeji") {
                 flush = 3
                 tempMax = 15
                 tempMin = 10
                 umiMax = 100
                 umiMin = 95
-                if(estagio == "Frutificação"){
+                if (estagio == "Frutificação") {
                     umiMax = 95
                     umiMin = 90
-                }else if(estagio == "Incubação"){
+                } else if (estagio == "Incubação") {
                     tempMax = 26
                     tempMin = 22
 
                 }
-            }else{
+            } else {
                 flush = 5
                 tempMax = 17
                 tempMin = 14
                 umiMax = 95
                 umiMin = 85
-                if(estagio == "Incubação"){
+                if (estagio == "Incubação") {
                     tempMax = 28
                     tempMin = 24
                     umiMax = 90
                 }
             }
             var status = ""
-            if(temp >= tempMin && temp <= tempMax){
-                status = "Ideal para produção"        
-            }else{
+            if (temp >= tempMin && temp <= tempMax) {
+                status = "Ideal para produção"
+            } else {
                 status = "Possível prejuízo"
                 flush--
             }
-            if(status == "Ideal para produção"){
-                for(var contador = 1;contador <= qtdEstufas; contador++){
+            if (status == "Ideal para produção") {
+                for (var contador = 1; contador <= qtdEstufas; contador++) {
                     mensagem += `<b>Estufa de ${cogumelo} ${contador}:</b><br>
                         STATUS: ${status} <br>
                         TEMPERATURA: ${tempMin}°C A ${tempMax}°C <br>
@@ -141,8 +141,8 @@
                         PRODUÇÃO: R$:${rendiemnto.toFixed(2)} <br>
                         PRODUÇÃO TOTAL: R$:${(rendiemnto * flush).toFixed(2)}<br><br>`
                 }
-            }else{
-                for(var contador = 1;contador <= qtdEstufas; contador++){
+            } else {
+                for (var contador = 1; contador <= qtdEstufas; contador++) {
                     mensagem += `<b>Estufa de ${cogumelo} ${contador}:</b><br>
                         STATUS: ${status} <br>
                         TEMPERATURA: ${tempMin}°C A ${tempMax}°C <br>
@@ -152,7 +152,7 @@
                         PRODUÇÃO TOTAL: R$:${(rendiemnto * flush).toFixed(2)} <br>
                         ESTIMATIVA DA PRODUÇÃO TOTAL COM CONTROLE DE CLIMA: ${(rendiemntoControlado * flush).toFixed(2)}<br><br>`
                 }
-            }       
+            }
         }
         div_mensg.innerHTML = mensagem
     }

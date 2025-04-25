@@ -33,7 +33,7 @@ header {
 .header_nav a {
     color: #4E3324;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 #login_a {
@@ -285,9 +285,9 @@ header {
 }
 
 
-.conteudo-dashboard a {
+.conteudo-dashboard h1 {
     color: white;
-    font-size: 60px;
+    font-size: 50px;
     margin-bottom: 15px;
 }
 
@@ -346,4 +346,48 @@ O preenchimento inferior é de 20px */
     margin-top: 30px;
     border-top: 1px solid #4E3324;
     padding-top: 10px;
+}
+
+/* Botão do cadastro */
+
+.button:hover {
+    transform: scale(1.05);
+
+    
+  }
+  .button {
+    text-decoration: none;
+    background-color: #625140;
+    width: 340px;
+    height: 40px ;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    text-align: center;
+    transition: transform 0.2s;
+
+  }
+  
+
+#button_home a{
+    text-decoration: none;
+    color: white;
+}
+.button_4 {
+  background: linear-gradient(to right, #1a0f07, #9d5b26);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  color: white;
+}
+.button_5 {
+  background: linear-gradient(to right, #1a0f07, #9d5b26);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  color: white;
 }

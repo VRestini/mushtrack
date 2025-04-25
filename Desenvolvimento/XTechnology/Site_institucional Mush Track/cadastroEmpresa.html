@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style-cadastroempresa.css">
-    <title>Cadastro da Empresa</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style-cadastroempresa.css">
+  <title>Cadastro da Empresa</title>
 </head>
 
 <body>
@@ -13,79 +13,82 @@
   <header>
     <img src="./assets/img/xtechBrown.png" alt="Logo XTech" height="40px">
     <nav class="header_nav">
-        <ul>
-            <li><a href="../Site_institucional Mush Track/Index.html">Inicio</a></li>
-            <li><a href="../MushTrack/index.html">MushTrack</a></li>
-            <li><a href="Index.html/#route_simulator">Simulador</a></li>
-            <li><a href="#route_about">Sobre Nós</a></li>
-            <li><a class="button_4" id="login_a" href="../Site_institucional Mush Track/login.html">Login</a></li>
-            <li><a class="button_5" id="login_a" href="../Site_institucional Mush Track/cadastroEmpresa.html">Cadastrar</a></li>
-        </ul>
+      <ul>
+        <li><a href="../Site_institucional Mush Track/Index.html">Início</a></li>
+        <li><a href="../MushTrack/index.html">MushTrack</a></li>
+        <li><a href="Index.html#route_simulator">Simulador</a></li>
+        <li><a href="#route_about">Sobre Nós</a></li>
+        <li><a class="button_4" id="login_a" href="../Site_institucional Mush Track/login.html">Login</a></li>
+        <li><a class="button_5" id="login_a" href="../Site_institucional Mush Track/cadastroEmpresa.html">Cadastrar</a>
+        </li>
+      </ul>
     </nav>
-</header>
-    <div class="banner">
-        <div class="cadastro">
-            <div class="container">
-                <div class="card-cadastro">
-                    <img id="imgLogo" src="assets/img/logobranca.png" alt="Logo Mushtrack">
+  </header>
+  <div class="banner">
+    <div class="cadastro">
+      <div class="container">
+        <div class="card-cadastro">
+          <img id="imgLogo" src="assets/img/logobranca.png" alt="Logo Mushtrack">
 
-                    <div class="formulario">
-                        <div class="coluna-esquerda">
-                          <div class="campo">
-                            <input id="input_cnpj" type="text" placeholder="CNPJ - XX.XXX.XXX/XXXX-XX">
-                          </div>
-                          <div class="campo">
-                            <input id="input_nomeEmpresa" type="text" placeholder="Nome da empresa">
-                          </div>
-                          <div class="campo">
-                            <input id="input_nomeRepresentante" type="text" placeholder="Nome do Representante">
-                          </div>
-                        </div>
-                      
-                        <div class="coluna-direita">
-                          <div class="campo">
-                            <input id="input_email" type="text" placeholder="Email">
-                          </div>
-                          <div class="campo">
-                            <input id="input_senha" type="password" placeholder="Senha">
-                          </div>
-                          <div class="campo">
-                            <input id="input_confirmeSenha" type="password" placeholder="Confirmar senha">
-                          </div>
-                        </div>
-                    </div>
-                        <div class="button" onclick="analisartextos()" id = "button_home">
-                          <a href="#">Cadastrar</a>
-                        </div>
-                      
-                      
-                </div>
+          <div class="formulario">
+            <div class="coluna-esquerda">
+              <div class="campo">
+                <input id="input_cnpj" type="text" placeholder="CNPJ - XX.XXX.XXX/XXXX-XX">
+              </div>
+              <div class="campo">
+                <input id="input_nomeEmpresa" type="text" placeholder="Nome da empresa">
+              </div>
+              <div class="campo">
+                <input id="input_nomeRepresentante" type="text" placeholder="Nome do Representante">
+              </div>
             </div>
+
+            <div class="coluna-direita">
+              <div class="campo">
+                <input id="input_email" type="text" placeholder="Email">
+              </div>
+              <div class="campo">
+                <input id="input_senha" type="password" placeholder="Senha">
+              </div>
+              <div class="campo">
+                <input id="input_confirmeSenha" type="password" placeholder="Confirmar senha">
+              </div>
+            </div>
+          </div>
+          <div class="button" onclick="analisartextos()" id="button_home">
+            <a href="#">Cadastrar</a>
+          </div>
+
+
         </div>
+      </div>
+    </div>
 
 </body>
+
 </html>
 <script>
-    function analisartextos(){
-        var cnpj = input_cnpj.value;
-        var nomeEmpresa = input_nomeEmpresa.value;
-        var nomeRepresentante = input_nomeRepresentante.value;
-        var email = input_email.value;
-        var senha = input_senha.value;
-        var confirmarSenha = input_confirmeSenha.value;
+  function analisartextos() {
+    var cnpj = input_cnpj.value;
+    var nomeEmpresa = input_nomeEmpresa.value;
+    var nomeRepresentante = input_nomeRepresentante.value;
+    var email = input_email.value;
+    var senha = input_senha.value;
+    var confirmarSenha = input_confirmeSenha.value;
 
 
-        if(email == "" || senha == ""){
-          alert("Por favor, preencha todos os campos!");
-        } else if (email.indexOf("@") ==-1) { //Se dentro do email ele passar pelos caracteres e não achar arroba ele retorna -1 que é porque não existe no e-mail. 
-          alert("O e-mail precisa conter '@'.");
-        } else if(senha.length < 6){ //o length conta a quantidade de caracteres que tem na palavra e se for menor que 6 ele devolve essa mensagem abaixo 
-          alert("A senha deve conter pelo menos 6 caracteres.");
-        } else if( senha !== confirmarSenha){
-          alert("As senhas não coincidem.");
-        } else {
-          alert("Cadastro efetuado com sucesso!");
-        } 
-      
+    if (email == "" || senha == "") {
+      alert("Por favor, preencha todos os campos!");
+    } else if (email.indexOf("@") == -1) { //Se dentro do email ele passar pelos caracteres e não achar arroba ele retorna -1 que é porque não existe no e-mail. 
+      alert("O e-mail precisa conter '@'.");
+    } else if (senha.length < 6) { //o length conta a quantidade de caracteres que tem na palavra e se for menor que 6 ele devolve essa mensagem abaixo 
+      alert("A senha deve conter pelo menos 6 caracteres.");
+    } else if (senha !== confirmarSenha) {
+      alert("As senhas não coincidem.");
+    } else {
+      alert("Cadastro efetuado com sucesso!");
     }
+
+  }
 </script>
+
