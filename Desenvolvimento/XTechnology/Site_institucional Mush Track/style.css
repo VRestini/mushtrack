@@ -14,7 +14,7 @@
 }
 body {
   height: 100vh;
-  background-color: #f1f1f1;
+  background-color: #f1eeee;
   color: #4E3324;
 }
 section{
@@ -81,6 +81,10 @@ header{
   align-self: self-end;
 }
 
+.home_image img{
+  border-radius: 30px;
+  width: 550px;
+}
 .title_1{
   font-family: 'dune-rise';
   font-size: 270%;
@@ -291,7 +295,7 @@ h1{
 .footer {
   background-color: #d5cecb;
   padding: 40px;
-  margin-top: 160vh;
+  margin-top: 170vh;
 }
 
 .footer-container {
