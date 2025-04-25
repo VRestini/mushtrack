@@ -73,7 +73,7 @@
     
       <img src="img/warning sign.png" alt="">
       <div>
-        <p> Data alerta: 08/04/25</p> 
+        <p> Data alerta: 21/04/25</p> 
       </div>
       <h3>
         <p>Cuidado! <br> Umidade está abaixo do ideal<br> Você corre o risco de perder seu substrato!</p>
@@ -163,32 +163,47 @@
       options: chartOptions
     });
 
-    new Chart(document.getElementById('barChart'), {
-      type: 'bar',
-      data: {
-        labels:['24/04/25 08:00', '24/04/25 09:00', '24/04/25 10:00', '24/04/25 11:00', '24/04/25 12:00'],
-        datasets: [{
-          label: 'Umidade (%)',
-          data: [90, 85, 65, 70, 55],
-          backgroundColor: '#77492b'
-        }],
-      },
-      options: {
-        plugins: { legend: { display: false } },
-        scales: {
-          y: {
-            beginAtZero: true,
-            max: 100
-          }
-        }
+    const umidades = [63, 85, 65, 70, 55];
+
+const cores = umidades.map(valor => {
+  if (valor < 65) return '#b21613';         // Umidade baixa
+  else if (valor < 75) return '#d77f09'; // Umidade média
+  else return '#77492b';                  // Umidade alta
+});
+
+new Chart(document.getElementById('barChart'), {
+  type: 'bar',
+  data: {
+    labels: [
+      '21/04/25 08:00', 
+      '22/04/25 08:00', 
+      '23/04/25 08:00', 
+      '24/04/25 08:00', 
+      '25/04/25 08:00'
+    ],
+    datasets: [{
+      label: 'Umidade (%)',
+      data: umidades,
+      backgroundColor: cores
+    }],
+  },
+  options: {
+    plugins: { legend: { display: false } },
+    scales: {
+      y: {
+        beginAtZero: true,
+        max: 100
       }
-    });
+    }
+  }
+});
 
 
-    new Chart(document.getElementById('lineChart'), {
+
+    new Chart(document.getElementById('lineChart').getContext('2d'), {
       type: 'line',
       data: {
-        labels: ['24/04/25 08:00', '24/04/25 09:00', '24/04/25 10:00', '24/04/25 11:00', '24/04/25 12:00'],
+        labels: ['21/04/25 08:00', '22/04/25 08:00', '23/04/25 08:00', '24/04/25 08:00', '25/04/25 08:00'],
 
         datasets: [{
           label: 'Temperatura (°C)',
@@ -201,6 +216,8 @@
           label: 'TemperaturaMax (°C)',
           data: [30, 30, 30, 30, 30],
           borderColor: 'red',
+          bordeDash: [5,5],
+          pointRadius: 3,
           fill: false,
           tension: 0.3
         }, {
@@ -208,55 +225,30 @@
           data: [8, 8, 8, 8, 8],
           borderColor: 'green',
           fill: false,
-          tension: 0.3
+          tension: 0.4
         }]
       },
-      options: {
-        plugins: { legend: { display: false } },
-        scales: {
-          y: {
-            beginAtZero: true,
-            max: 35
-          }
-        }
+      options: { responsive: true,
+  plugins: {
+    legend: {
+      display: true,
+      position: 'top'
+    },
+    title: {
+      display: true,
+      // text: 'Shimeji Temperatura'
+    }
+  },
+  scales: {
+    y: {
+      beginAtZero: true,
+      title: {
+        display: true,
+        text: 'Temperatura (°C)'
       }
-    });
-    new Chart(document.getElementById('lineChartSensores'), {
-      type: 'line',
-      data: {
-        labels: ['24/04/25 08:00', '24/04/25 09:00', '24/04/25 10:00', '24/04/25 11:00', '24/04/25 12:00'],
+    }
+  }}});
 
-        datasets: [{
-          label: 'Temperatura (°C)',
-          data: [16, 22, 21, 23, 28],
-          borderColor: '#77492b',
-          fill: false,
-          tension: 0.3
-        },
-        {
-          label: 'TemperaturaMax (°C)',
-          data: [30, 30, 30, 30, 30],
-          borderColor: 'red',
-          fill: false,
-          tension: 0.3
-        }, {
-          label: 'TemperaturaMin (°C)',
-          data: [8, 8, 8, 8, 8],
-          borderColor: 'green',
-          fill: false,
-          tension: 0.3
-        }]
-      },
-      options: {
-        plugins: { legend: { display: false } },
-        scales: {
-          y: {
-            beginAtZero: true,
-            max: 35
-          }
-        }
-      }
-    });
   </script>
 </body>
 
