@@ -46,8 +46,8 @@ header {
 /* Cadastro */
 
 .banner {
-    background-image: url(../MushTrack/assets/imagemInicio.png);
-    height: 867px;
+  background-image: url(./MushTrack/assets/imagemInicio.png);
+  height: 867px;
     width: 100%;
 }
 .container{

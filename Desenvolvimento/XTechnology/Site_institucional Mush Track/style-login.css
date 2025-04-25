@@ -49,7 +49,7 @@ header {
     justify-content: center;
     align-items: center;
     height: 87.4vh;
-    background-image: url(../MushTrack/assets/imagemInicio.png);
+    background-image: url(./MushTrack/assets/imagemInicio.png);
     background-size: cover;
     background-position: center;
 }
