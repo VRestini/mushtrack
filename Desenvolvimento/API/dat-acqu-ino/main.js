@@ -1,4 +1,4 @@
-// importa os bibliotecas necessários
+// importa os bibliotecas necessários 
 const serialport = require('serialport');
 const express = require('express');
 const mysql = require('mysql2');
@@ -61,17 +61,11 @@ const serial = async (
 
         // insere os dados no banco de dados (se habilitado)
         if (HABILITAR_OPERACAO_INSERIR) {
-            console.log("valores inseridos no banco: ", valoresSensorTemperatura + ", " +valoresSensorUmidade );
+            console.log('\n valores inseridos no banco: ', valoresSensorTemperatura[valoresSensorTemperatura.length -1] + ", " +valoresSensorUmidade[valoresSensorUmidade.length-1]);
             // este insert irá inserir os dados na tabela "medida"
             await poolBancoDados.execute(
-                //'SELECT * FROM Historico;'
-                // 'INSERT INTO Historico(valorUmidade) VALUES (?);',
-                // [sensorDHT11],
-                // 'INSERT INTO Historico(valorTemperatura) VALUES (?);',
-                // [sensorLM35]
-                //'INSERT INTO Historico (data, valorUmidade, valorTemperatura) VALUES (2025-04-08, '+valoresSensorUmidade+','+valoresSensorTemperatura+');',
-                'INSERT INTO Historico (valorUmidade, valorTemperatura) VALUES (?,?);',
-                 [sensorDHT11, sensorLM35]
+                'INSERT INTO Historico (fkSensor ,valorUmidade, valorTemperatura) VALUES (?,?,?);',
+                 [1,sensorDHT11, sensorLM35]
             );
         
 
