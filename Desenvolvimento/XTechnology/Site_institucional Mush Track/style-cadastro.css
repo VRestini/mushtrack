@@ -88,7 +88,7 @@ header {
     justify-content: center;
     margin-top: 20px;
   }
-.coluna-esquerda, .coluna-direita {
+.coluna-esquerda, .coluna-direita, .coluna-central {
     display: flex;
     flex-direction: column;
     margin: 0 10px; 
@@ -109,7 +109,7 @@ header {
 
 
   }
-  #input_nomeRepresentante{
+  #input_nomeRepresentante, #input_nomeUsuario{
     background: url(assets/img/icone-usuario.png);
     background-repeat: no-repeat;
     background-position: 20px center;
