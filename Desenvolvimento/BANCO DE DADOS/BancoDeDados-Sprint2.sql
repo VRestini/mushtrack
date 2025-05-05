@@ -1,144 +1,168 @@
-CREATE DATABASE MushTrack;
+
+-- CREATE DATABASE MushTrack;
 use MushTrack;
 
 -- Criação da tabela Empresa
  create table Empresa (
  idEmpresa int primary key auto_increment,
  nome_Empresa varchar (45),
- cnpj char (14),
+ cnpj_Empresa char (14),
  email_Empresa varchar (70),
  Nome_Representante varchar (45)
  );
  
-insert into Empresa (nome_Empresa, cnpj, email_Empresa, Nome_Representante) values 
-('Estufas do Sabor', '12345678000195', 'contato@estufasdosabor.com', 'João Silva'),
-('Cogumelos da Terra', '98765432000100', 'info@cogumelosdaterra.com', 'Maria Oliveira'),
-('Cultivo Verde', '11122233000145', 'sac@cultivoverde.com', 'Carlos Pereira'),
-('Fungos Gourmet', '22233344000156', 'contato@fungosgourmet.com', 'Ana Costa'),
-('Estufas Naturais', '33344455000167', 'atendimento@estufasnaturais.com', 'Roberto Santos');
- 
  -- Criação da tabela Usuário
  create table Usuario (
  idUsuario int primary key auto_increment,
- nome_Usuario varchar (45),
- email_Usuario varchar (70),
- tel_Usuario char (11),
- cpf_Usuario char (11),
+ nome_Usuario varchar(45),
+ email_Usuario varchar(70),
+ senha_Usuario varchar(45),
  status_Usuario varchar (45),
- permissao_Usuario varchar (45),
- 	constraint chkPermissaoUsuario check (permissao_Usuario in ('Administrador', 'Gestor', 'Funcionário')),
  	constraint chkStatusUsuario check (status_Usuario in ('Ativo', 'Inativo')),
  fkEmpresa int, 
  	constraint fkUsuarioEmpresa foreign key (fkEmpresa) references Empresa (idEmpresa)
  );
-insert into Usuario (nome_Usuario, email_Usuario, tel_Usuario, cpf_Usuario, status_Usuario, permissao_Usuario, foto_Usuario, fkEmpresa) values 
-('Lucas Almeida', 'lucas.almeida@email.com', '11987654321', '12345678901', 'Ativo', 'Administrador', 1),
-('Fernanda Souza', 'fernanda.souza@email.com', '11976543210', '10987654321', 'Ativo', 'Gestor', 2),
-('Carlos Mendes', 'carlos.mendes@email.com', '11965432109', '09876543210', 'Inativo', 'Funcionário', 3),
-('Ana Clara', 'ana.clara@email.com', '11954321098', '98765432100', 'Ativo', 'Funcionário', 1),
-('Roberto Lima', 'roberto.lima@email.com', '11943210987', '87654321009', 'Ativo', 'Gestor', 2);
  
--- Criação da tabela Registro
-create table Registro (
-idRegistro int primary key auto_increment,
-tipo_Registro varchar (45),
-dt_Registro datetime,
-descricao_Registro varchar (400),
-fkUsuario int,
-	constraint fkRegistroUsuario foreign key (fkUsuario) references Usuario (idUsuario)
-);
-
-insert into Registro (tipo_Registro, dt_Registro, descricao_Registro, fkUsuario) values 
-('Entrada', '2023-10-01 08:00:00', 'Usuário Lucas Almeida registrou a entrada.', 1),
-('Saída', '2023-10-01 17:00:00', 'Usuário Fernanda Souza registrou a saída.', 2),
-('Entrada', '2023-10-02 08:15:00', 'Usuário Carlos Mendes registrou a entrada.', 3),
-('Saída', '2023-10-02 16:45:00', 'Usuário Ana Clara registrou a saída.', 4),
-('Entrada', '2023-10-03 09:00:00', 'Usuário Roberto Lima registrou a entrada.', 5);
-
--- Criação da tabela Cogumelo
+ -- Criação da tabela Cogumelo
 create table Cogumelo (
 idCogumelo int primary key auto_increment,
 nome_Cogumelo varchar (45)
 );
-insert into Cogumelo (nome_Cogumelo) values
-('Shimeji'),
-('Shitake'),
-('Champignon de Paris');
 
--- Criação da tabela Estágio
-create table Estagio (
-idEstagio int primary key auto_increment,
-tempMinima float, 
-tempMaxima float, 
-umiMinima float,
-umiMaxima float,
-tipo_Estagio varchar (45),
-fkCogumelo int,
-	constraint fkEstagioCogumelo foreign key (fkCogumelo) references Cogumelo (idCogumelo)
-);
-INSERT INTO Estagio (tempMinima, tempMaxima, umiMinima, umiMaxima, tipo_Estagio, fkCogumelo) 
-VALUES 
-(15.0, 20.0, 60.0, 80.0, 'Germinação', 1), 
-(18.0, 25.0, 50.0, 70.0, 'Frutificação', 1), 
-(20.0, 25.0, 55.0, 75.0, 'Germinação', 2),  
-(22.0, 28.0, 60.0, 80.0, 'Frutificação', 2),
-(16.0, 22.0, 65.0, 85.0, 'Germinação', 3);  
-
--- Criação da tabela Estufa 
+ -- Criação da tabela Estufa 
 create table Estufa (
 idEstufa int primary key auto_increment,
 nome_Estufa varchar (45),
 fkCogumelo int,
 fkEmpresa int,
-	constraint fkEstufaCogumelo foreign key (fkCogumelo) references Cogumelo (idCogumelo),
-    constraint fkEstufaEmpresa foreign key (fkEmpresa) references Empresa (idEmpresa)
+	constraint fkEstufaCogumelo foreign key (fkCogumelo) references Cogumelo(idCogumelo),
+    constraint fkEstufaEmpresa foreign key (fkEmpresa) references Empresa(idEmpresa)
 );
-INSERT INTO Estufa (nome_Estufa, fkCogumelo, fkEmpresa) 
-VALUES 
-('Estufa 1 - Shimeji', 1, 1), 
-('Estufa 2 - Shitake', 2, 2), 
-('Estufa 3 - Champignon', 3, 1),  
-('Estufa 4 - Shimeji', 1, 3), 
-('Estufa 5 - Shitake', 2, 2);  
 
 -- Criação da tabela Sensor 
 create table Sensor (
 idSensor int primary key auto_increment,
 tipo_Sensor varchar (45),
+nome_Sensor varchar(45),
 status_Sensor varchar (45),
 	constraint chkStatusSensor check (status_Sensor in ('Ativo', 'Inativo')),
-numeroSeries int, 
+numero_Serie int, 
 dtInstalacao datetime,
 dtManutencao datetime, 
-valorSensor int,
+posicao_Sensor varchar(45),
 fkEstufa int,
 	constraint fkSensorEstufa foreign key (fkEstufa) references Estufa (idEstufa)
 );
-insert into Sensor (tipo_Sensor, status_Sensor, numeroSeries, dtInstalacao, dtManutencao, valorSensor, fkEstufa) values 
-('Temperatura', 'Ativo', 1001, '2023-01-15 10:00:00', '2023-06-15 10:00:00', 25, 1),
-('Umidade', 'Ativo', 1002, '2023-02-20 11:00:00', '2023-07-20 11:00:00', 60, 2), 
-('CO2', 'Inativo', 1003, '2023-03-10 09:30:00', '2023-08-10 09:30:00', 400, 3),  
-('Luminosidade', 'Ativo', 1004, '2023-04-05 14:00:00', '2023-09-05 14:00:00', 300, 4), 
-('Pressão', 'Ativo', 1005, '2023-05-12 08:45:00', '2023-10-12 08:45:00', 1010, 5); 
-create table Historico(
-idHistorico int primary key auto_Increment, 
-dataDeCaptura datetime default current_timestamp, 
-valorUmidade float, 
-valorTemperatura float, 
+
+
+-- Criação da tabela Estágio
+create table Estagio (
+idEstagio int primary key auto_increment,
+tipo_Estagio varchar (45),
+fkCogumelo int,
+	constraint fkEstagioCogumelo foreign key (fkCogumelo) references Cogumelo (idCogumelo)
+);
+
+create table Parametro (
+idParametro int primary key auto_increment,
+temp_Minima decimal(4,2),
+temp_Maxima decimal(4,2),
+umi_Minima decimal(4,2),
+umi_Maxima decimal(4,2),
+fk_Cogumelo int,
+fk_Estagio int,
+constraint fkParametroCogumelo foreign key (fk_cogumelo) references Cogumelo(idCogumelo),
+constraint fkParametroEstagio foreign key (fk_Estagio) references Estagio(idEstagio) 
+);
+
+create table Dados(
+idDados int primary key auto_Increment, 
+data_Captura datetime default current_timestamp, 
+dados_Umidade float, 
+dados_Temperatura float, 
 fkSensor int, 
 constraint fkHistoricoSensor foreign key (fkSensor) references Sensor (idSensor)
 );
 
-select * from empresa join usuario on fkempresa = idEmpresa;
+create table Alerta (
+idAlerta int primary key auto_increment,
+data_Alerta datetime default current_timestamp,
+descricao_Alerta varchar(60),
+fkDados int,
+fkSensor int,
+constraint fkAlertaDados foreign key (fkDados) references Dados(idDados),
+constraint fkAlertaSensor foreign key (fkSensor) references Sensor(idSensor)
+);
+
+
+-- Empresa
+INSERT INTO Empresa (nome_Empresa, cnpj_Empresa, email_Empresa, Nome_Representante) VALUES
+('MushTrack Agro', '12345678000195', 'contato@mushtrack.com', 'Ana Lima'),
+('FungiTech Ltda', '98765432000101', 'suporte@fungitech.com', 'Carlos Souza');
+
+-- Usuario
+INSERT INTO Usuario (nome_Usuario, email_Usuario, senha_Usuario, status_Usuario, fkEmpresa) VALUES
+('João Mendes', 'joao@mushtrack.com', 'senha123', 'Ativo', 1),
+('Mariana Silva', 'mariana@fungitech.com', '1234senha', 'Ativo', 2),
+('Lucas Rocha', 'lucas@mushtrack.com', 'admin123', 'Inativo', 1);
+
+-- Cogumelo
+INSERT INTO Cogumelo (nome_Cogumelo) VALUES
+('Shimeji Preto'),
+('Champignon de Paris'),
+('Shiitake');
+
+-- Estufa
+INSERT INTO Estufa (nome_Estufa, fkCogumelo, fkEmpresa) VALUES
+('Estufa 01', 1, 1),
+('Estufa 02', 2, 1),
+('Estufa Fungi', 3, 2);
+
+-- Sensor
+INSERT INTO Sensor (tipo_Sensor, nome_Sensor, status_Sensor, numero_Serie, dtInstalacao, dtManutencao, posicao_Sensor, fkEstufa) VALUES
+('Temperatura', 'TempSensor A', 'Ativo', 1001, '2025-01-01 08:00:00', '2025-04-01 10:00:00', 'Centro', 1),
+('Umidade', 'UmiSensor B', 'Ativo', 1002, '2025-01-02 09:00:00', '2025-04-02 10:00:00', 'Leste', 1),
+('Temperatura', 'TempSensor C', 'Inativo', 1003, '2025-02-01 10:00:00', '2025-04-10 10:00:00', 'Norte', 3);
+
+-- Estagio
+INSERT INTO Estagio (tipo_Estagio, fkCogumelo) VALUES
+('Incubação', 1),
+('Frutificação', 1),
+('Colheita', 1),
+('Incubação', 2),
+('Frutificação', 3);
+
+-- Parametro
+INSERT INTO Parametro (temp_Minima, temp_Maxima, umi_Minima, umi_Maxima, fk_Cogumelo, fk_Estagio) VALUES
+(18.00, 22.00, 85.00, 95.00, 1, 1), -- Incubação Shimeji
+(20.00, 24.00, 80.00, 90.00, 1, 2), -- Frutificação Shimeji
+(22.00, 25.00, 70.00, 85.00, 2, 4), -- Incubação Champignon
+(16.00, 21.00, 90.00, 95.00, 3, 5); -- Frutificação Shiitake
+
+-- Dados
+INSERT INTO Dados (dados_Umidade, dados_Temperatura, fkSensor) VALUES
+(88.5, 21.0, 1),
+(92.0, 20.5, 1),
+(89.0, 22.0, 2),
+(95.5, 23.5, 3);
+
+-- Alerta
+INSERT INTO Alerta (descricao_Alerta, fkDados, fkSensor) VALUES
+('Temperatura fora do ideal', 1, 1),
+('Umidade acima do ideal', 4, 3);
 
 
 select * from Empresa;
 select * from Usuario;
 select * from Cogumelo;
-select * from Historico;
+select * from Dados;
 select * from Estagio;
 select * from Estufa;
 select * from Sensor;
+select * from Parametro;
+select * from Alerta;
+
+
 
 
 
