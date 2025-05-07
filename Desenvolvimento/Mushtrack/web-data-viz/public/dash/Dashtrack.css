@@ -1,0 +1,257 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ffff;
+}
+
+/* Menu lateral */
+.menu_hamburger {
+    width: 200px;
+    /* height: 100vh; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    padding: 20px 10px;
+    box-sizing: border-box;
+}
+
+.menu_hamburger h1 {
+    font-size: 18px;
+    text-align: center;
+}
+
+.menu_hamburger ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+}
+
+.menu_hamburger ul li {
+    margin: 20px 0;
+    color: #5c4033;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menu_hamburger img {
+    padding-left: 20px;
+    width: 45px;
+    height: 47px;
+}
+
+/* Principal que guarda os gráficos */
+.main {
+    margin-left: 200px;
+    padding: 20px;
+}
+
+.main h2 {
+    color: #5c4033;
+}
+
+.top_bar {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.top_bar h2 {
+    text-decoration: none;
+
+}
+
+/* Esconde a sidebar inicialmente */
+.sidebar {
+    margin-top: -30px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+.sidebar ul li a{
+    text-decoration: none;
+    color: #3e1f0d;
+}
+.sidebar.hidden {
+    transform: translateX(-220px);
+}
+
+/* Estilo do botão hambúrguer */
+.menu-btn {
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: #3e1f0d;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/*Container pai das kpis*/
+.indicator-group {
+    display: flex;
+    gap: 50px;
+    margin: 20px 0;
+    justify-content: space-evenly;
+}
+
+.indicator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 150px;
+}
+
+.indicator strong{
+    color: #b21613;
+}
+/* estilos dos Gráficos*/
+.charts {
+    display: flex;
+    gap: 40px;
+    margin-top: 0;
+    padding-left: 50px;
+    flex: auto;
+    justify-content: space-around;
+}
+
+.chart-card {
+    width: 591px;
+    /* height: 419px; */
+    background-color: #fef3ec;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* flex: 1; */
+}
+
+.chart-card h3 {
+    text-align: center;
+    color: #5c4033;
+    margin-bottom: 10px;
+}
+
+/*Alertas*/
+
+.alerts{
+    display: flex;
+    gap: 100px;
+    margin-top: 0;
+    padding-left: 260px;
+    flex: auto;
+    justify-content: space-around;
+}
+
+.alert_card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 291px;
+    /* height: 419px; */
+    background-color: #fef3ec;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* flex: 1; */
+}
+
+.alert_card h3{
+    color: #b21613;
+}
+.alert_card p{
+    color: #b21613;
+
+}
+
+.chart_sensores{
+    display: flex;
+    width: 295px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fef3ec;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart_sensores h3{
+    color: #b21613;
+}
+
+.chart_sensores p{
+    color: green;
+}
+/*Estilo Estufas*/
+
+.menu_estufas {
+    position: fixed;
+    top: 150px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.estufas {
+    position: fixed;
+    left: 30px;
+    top: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.estufa_card {
+    background-color: #5c3b24;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 12px;
+    width: 180px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+.estufa_shimeji{
+    background-color: #b21613;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 12px;
+    width: 180px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+.estufa_card img {
+    width: 50px;
+    margin-top: 5px;
+}
+
+.estufa_card :hover {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.card_link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*Footer*/
+footer {
+    background-color: #e8dcd5;
+    text-align: center;
+    padding: 80px;
+    margin-top: 45px;
+    font-size: 14px;
+    color: #5c4033;
+}
