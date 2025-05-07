@@ -85,10 +85,10 @@ header{
   border-radius: 30px;
   width: 550px;
 }
-.title_1{
-  font-family: 'dune-rise';
-  font-size: 270%;
-}
+  .title_1{
+    font-family: 'dune-rise';
+    font-size: 270%;
+  }
 
 
 /************************** Mushtrack ******************************/
@@ -341,8 +341,6 @@ h1{
   flex-wrap: wrap;
   margin-top: 30px;
 }
-
-
 
 
 /******************************** Botão ********************************/
