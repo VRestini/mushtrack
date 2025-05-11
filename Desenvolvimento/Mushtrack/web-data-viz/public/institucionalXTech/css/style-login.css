@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'gidole';
-  src: url('../assets/font/Gidole-Regular.ttf') format('truetype');
+  src: url('../../assets/font/Gidole-Regular.ttf') format('truetype');
 }
 @font-face {
   font-family: 'dune-rise';
-  src: url('../assets/font/Dune_Rise.ttf') format('truetype');
+  src: url('../../assets/font/Dune_Rise.ttf') format('truetype');
 }
 * {
   margin: 0;
@@ -49,7 +49,7 @@ header {
     justify-content: center;
     align-items: center;
     height: 87.4vh;
-    background-image: url(../assets/img/imagemInicio.png);
+    background-image: url(../../assets/img/imagemInicio.png);
     background-size: cover;
     background-position: center;
 }
@@ -96,11 +96,11 @@ header {
 }
 
 #email_input {
-    background-image: url(../assets/img/iconemail.png);
+    background-image: url(../../assets/img/iconemail.png);
 }
 
 #senha_input {
-    background-image: url(../assets/img/iconsenha.png);
+    background-image: url(../../assets/img/iconsenha.png);
 }
 
 /* Botão Login */

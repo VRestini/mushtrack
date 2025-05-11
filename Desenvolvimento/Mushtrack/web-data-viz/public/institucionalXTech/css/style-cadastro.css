@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'gidole';
-  src: url('../assets/font/Gidole-Regular.ttf') format('truetype');
+  src: url('../../assets/font/Gidole-Regular.ttf') format('truetype');
 }
 @font-face {
   font-family: 'dune-rise';
-  src: url('../assets/font/Dune_Rise.ttf') format('truetype');
+  src: url('../../assets/font/Dune_Rise.ttf') format('truetype');
 }
 * {
   margin: 0;
@@ -46,7 +46,7 @@ header {
 /* Cadastro */
 
 .banner {
-  background-image: url(../assets/img/imagemInicio.png);
+  background-image: url(../../assets/img/imagemInicio.png);
   height: 867px;
     width: 100%;
 }
@@ -95,14 +95,14 @@ header {
   }
 
   #input_cnpj{
-    background: url(../assets/img/icone-empresa.png);
+    background: url(../../assets/img/icone-empresa.png);
     background-repeat: no-repeat;
     background-position: 20px center;
     background-size: 24px 24px;
 
   }
   #input_nomeEmpresa{
-    background: url(../assets/img/icone-empresa.png);
+    background: url(../../assets/img/icone-empresa.png);
     background-repeat: no-repeat;
     background-position: 20px center;
     background-size: 24px 24px;
@@ -110,26 +110,26 @@ header {
 
   }
   #input_nomeRepresentante, #input_nomeUsuario{
-    background: url(../assets/img/icone-usuario.png);
+    background: url(../../assets/img/icone-usuario.png);
     background-repeat: no-repeat;
     background-position: 20px center;
     background-size: 24px 24px;
     
   } 
   #input_email{
-    background: url(../assets/img/icone-email.png);
+    background: url(../../assets/img/icone-email.png);
     background-repeat: no-repeat;
     background-position: 20px center;
     background-size: 24px 24px;
   }
   #input_senha{
-    background: url(../assets/img/senha-icone.png);
+    background: url(../../assets/img/senha-icone.png);
     background-repeat: no-repeat;
     background-position: 20px center;
     background-size: 24px 24px;
   }
   #input_confirmeSenha{
-    background: url(../assets/img/senha-icone.png);
+    background: url(../../assets/img/senha-icone.png);
     background-repeat: no-repeat;
     background-position: 20px center;
     background-size: 24px 24px;

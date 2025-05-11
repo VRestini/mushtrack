@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="/web-data-viz/public/css/style-login.css">
+    <link rel="stylesheet" href="./css/style-login.css">
     <link rel="shortcut icon" type="imagex/png" href="./assets/img/xTechWhite.png">
 
 </head>
@@ -23,7 +23,7 @@
                 <li><a class="button_5" id="login_a" href="cadastroEmpresa.html">Cadastrar</a></li>
             </ul>
         </nav>
-    </header>
+      </header>
     <div class="login">
         <div class="container">
             <div class="card-login">
@@ -36,10 +36,12 @@
                     <div class="campo">
                         <input id="senha_input" type="password" placeholder="Senha">
                     </div>
-                    <div class="button" id="button_home">
-                        <a onclick="entrar()" >Entrar</a>
+                    <div class="button" id="button_home" onclick="entrar()" >
+                        <a >Entrar</a>
                     </div>
-                    
+                    <div class="Registrar">
+                        <a href="./cadastroEmpresa.html">Não possui conta? Cadastrar</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -52,8 +54,6 @@
     function entrar() {
         var email = email_input.value
         var senha = senha_input.value
-
-        //  valida se o email ta no formato correto
         var emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
         if (email == "" || senha == "") {
@@ -62,15 +62,15 @@
             alert("Por favor, insira um e-mail válido.");
         } else if (senha.length < 6) {
             alert("A senha deve conter pelo menos 6 caracteres.");
+        }else{
+            if (email == "usuario@gmail.com" && senha == "sptech") {
+                alert("Login efetuado com sucesso!");
+                window.location.href = "../mushtrack/Dashtrack.html";
+            } else {
+                alert ("Usuário ou senha estão incorretos !")
+            }
         } 
         
-        if (email == "usuario@gmail.com" && senha == "sptech") {
-            alert("Login efetuado com sucesso!");
-
-
-            window.location.href = "MushTrack/Dashboard/Dashtrack.html";
-        } else {
-            alert ("Usuário ou senha estão incorretos !")
-        }
+        
     }
 </script>

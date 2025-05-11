@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MushTrack Dashboard</title>
+  <link rel="stylesheet" href="./css/Dashtrack.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+  <div class="menu_hamburger">
+    <img src="img/logo_mush.png" alt="Logo MushTrack"><br><br>
+    <button id="toggleSidebar" class="menu-btn">☰</button>
+    <div class="sidebar" id="sidebar">
+      <ul>
+        <li><a href="">Cadastro estufas</a></li>
+        <li><a href="">Estágio estufa</a/></li>
+        <li><a href="">Sensores</a></li>
+        <li><a href="">Configurações</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="top_bar">
+      <a href=""><img src="img/icon_home.png" alt=""></a><a href="D:\Ana Faculdade Arquivos\mushtrack\Desenvolvimento\XTechnology\Site_institucional Mush Track\MushTrack\index.html">
+        <h2>Início</h2>
+      </a><a href="">
+        <h2>| Dashtrack</h2>
+      </a>
+    </div>
+
+    <!--Kpis-->
+    <div class="indicator-group">
+      <div class="indicator">
+        <h4>Umidade Atual<br><strong>60%</strong></h4>
+        <canvas id="umidadeAtual" width="100" height="100"></canvas>
+      </div>
+      <div class="indicator">
+        <h4>Umidade Ideal<br><strong>90%</strong></h4>
+        <canvas id="umidadeIdeal" width="100" height="100"></canvas>
+      </div>
+      <div class="indicator">
+        <h4>Quantas vezes no mês atingiu 29°C <br>
+        <strong> 6</strong></h4>
+        <canvas id="alertas" width="100" height="100"></canvas>
+      </div>
+      <div class="indicator">
+        <h4>Temperatura Ideal<br><strong>25°C</strong></h4>
+        <canvas id="temperaturaIdeal" width="100" height="100"></canvas>
+      </div>
+    </div>
+
+    <!--Gráficos-->
+    <div class="charts">
+      <div class="chart-card">
+        <h3>Shimeji Umidade</h3>
+        <canvas id="barChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <h3>Shimeji Temperatura</h3>
+        <canvas id="lineChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!--Alertas-->
+  <div class="alerts">
+    <div class="alert_card">
+    
+      <img src="img/warning sign.png" alt="">
+      <div>
+        <p> Data alerta: 21/04/25</p> 
+      </div>
+      <h3>
+        <p>Cuidado! <br> Umidade está abaixo do ideal<br> Você corre o risco de perder seu substrato!</p>
+      </h3>
+
+    </div>
+    <div class="alert_card">
+      <img src="img/warning sign.png" alt="">
+      <p> Data alerta: 24/04/25  </p>
+      <h3>Cuidado! <br> Temperatura Elevada<br> Risco de deformidades e <br> pragas em seus cogumelos</h3>
+    </div>
+    <div class="chart_sensores">
+      <h3>Status sensores</h3>
+      <p>Funcionando</p>
+      <h4>(Id SUN23) - Sensor Umidade Norte</h4>
+      <h4>(Id SUS24) - Sensor Umidade Sul</h4>
+      <h4>(Id STN25) - Sensor Temperatura Norte</h4>
+    </div>
+    </div>
+  </div>
+  
+  
+  <!--Estufas-->
+  <div class="menu_estufas">
+    <a href="Dashtrack.html" class="card_link">
+      <div class="estufas">
+        <div class="estufa_shimeji">
+          <span>Shimejii</span>
+          <img src="img/shimeji_card.png" alt="shimeji" />
+        </div>
+    </a>
+
+    <a href="DashtrackChampignon.html" class="card_link">
+      <div class="estufa_card">
+        <span>Champignon de Paris</span>
+        <img src="img/champignon_card.png" alt="champignon" />
+      </div>
+    </a>
+
+    <a href="DashtrackShiitake.html" class="card_link">
+      <div class="estufa_card">
+        <span>Shiitake</span>
+        <img src="img/shiitake_card.png" alt="shitake" />
+      </div>
+    </a>
+  </div>
+  </div>
+
+  <footer>
+    © Copyright MushTrack. Todos os direitos reservados
+  </footer>
+
+  <script>
+
+    const alternarBtn = document.getElementById('toggleSidebar');
+    const lateralBar = document.getElementById('sidebar');
+
+    alternarBtn.addEventListener('click', () => {
+      lateralBar.classList.toggle('hidden');
+    });
+    const chartOptions = {
+      cutout: '60%',
+      responsive: false,
+      plugins: {
+        legend: { display: false }
+      }
+    };
+
+    new Chart(document.getElementById('umidadeAtual'), {
+      type: 'doughnut',
+      data: { labels: ['Usado', 'Faltante'], datasets: [{ data: [60, 40], backgroundColor: ['#b21613', '#f2e9e4'] }] },
+      options: chartOptions
+    });
+    new Chart(document.getElementById('umidadeIdeal'), {
+      type: 'doughnut',
+      data: { labels: ['Usado', 'Faltante'], datasets: [{ data: [90, 10], backgroundColor: ['#77492b', '#f2e9e4'] }] },
+      options: chartOptions
+    });
+    new Chart(document.getElementById('alertas'), {
+      type: 'doughnut',
+      data: { labels: ['Eventos', 'Restante'], datasets: [{ data: [6, 10], backgroundColor: ['#77492b', '#f2e9e4'] }] },
+      options: chartOptions
+    });
+    new Chart(document.getElementById('temperaturaIdeal'), {
+      type: 'doughnut',
+      data: { labels: ['Ideal', 'Outros'], datasets: [{ data: [25, 5], backgroundColor: ['#77492b', '#f2e9e4'] }] },
+      options: chartOptions
+    });
+
+    const umidades = [63, 85, 65, 70, 55];
+
+const cores = umidades.map(valor => {
+  if (valor < 65) return '#b21613';         // Umidade baixa
+  else if (valor < 75) return '#d77f09'; // Umidade média
+  else return '#77492b';                  // Umidade alta
+});
+
+new Chart(document.getElementById('barChart'), {
+  type: 'bar',
+  data: {
+    labels: [
+      '21/04/25 08:00', 
+      '22/04/25 08:00', 
+      '23/04/25 08:00', 
+      '24/04/25 08:00', 
+      '25/04/25 08:00'
+    ],
+    datasets: [{
+      label: 'Umidade (%)',
+      data: umidades,
+      backgroundColor: cores
+    }],
+  },
+  options: {
+    plugins: { legend: { display: false } },
+    scales: {
+      y: {
+        beginAtZero: true,
+        max: 100
+      }
+    }
+  }
+});
+
+
+
+    new Chart(document.getElementById('lineChart').getContext('2d'), {
+      type: 'line',
+      data: {
+        labels: ['21/04/25 08:00', '22/04/25 08:00', '23/04/25 08:00', '24/04/25 08:00', '25/04/25 08:00'],
+
+        datasets: [{
+          label: 'Temperatura (°C)',
+          data: [16, 22, 21, 23, 28],
+          borderColor: '#77492b',
+          fill: false,
+          tension: 0.3
+        },
+        {
+          label: 'TemperaturaMax (°C)',
+          data: [30, 30, 30, 30, 30],
+          borderColor: 'red',
+          bordeDash: [5,5],
+          pointRadius: 3,
+          fill: false,
+          tension: 0.3
+        }, {
+          label: 'TemperaturaMin (°C)',
+          data: [8, 8, 8, 8, 8],
+          borderColor: 'green',
+          fill: false,
+          tension: 0.4
+        }]
+      },
+      options: { responsive: true,
+  plugins: {
+    legend: {
+      display: true,
+      position: 'top'
+    },
+    title: {
+      display: true,
+      // text: 'Shimeji Temperatura'
+    }
+  },
+  scales: {
+    y: {
+      beginAtZero: true,
+      title: {
+        display: true,
+        text: 'Temperatura (°C)'
+      }
+    }
+  }}});
+
+  </script>
+</body>
+
+</html>
