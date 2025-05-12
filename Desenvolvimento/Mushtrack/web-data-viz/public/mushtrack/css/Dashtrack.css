@@ -1,4 +1,4 @@
-/* Importando fontes */
+/*  fontes */
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100..900&family=Poppins:wght@100..900&family=Roboto:wght@100..900&display=swap');
 
 * {
@@ -194,10 +194,10 @@ body{
 
   .graficos {
   
-    
-    gap: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
     margin-top: 40px;
-    padding: 20px;
     width: 100%;
   }
 
