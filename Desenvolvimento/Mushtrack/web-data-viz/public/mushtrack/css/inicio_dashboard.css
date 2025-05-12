@@ -18,8 +18,8 @@ body {
 }
 
 .container {
-  display: flex;
-  height: 100vh;
+    display: flex;
+    height: 1000px;
 }
 
 .container_menu {
@@ -69,7 +69,11 @@ body {
   margin-right: 10px;
 }
 
-
+.main-content {
+    display: flex;
+    flex-direction: column;
+    width: 85%; /* Exemplo, ajuste conforme necessário */
+}
 .usuario_container {
     display: flex;
     justify-content: space-between;
@@ -79,7 +83,7 @@ body {
 
 .usuario h1 {
     color: #4B2E2E;
-    font-size: 24px;
+    font-size: 30px;
 }
 
 .perfil_usuario {
@@ -122,39 +126,58 @@ body {
 }
 
 .cogumelos {
-  display: flex;
-    flex-direction: column;
+    display: flex;
+    flex-direction: column; /* Para organizar o título e os cards verticalmente */
     justify-content: flex-start;
     padding: 20px;
     box-sizing: border-box;
-    margin-top: 20px;
+    margin-top: 5%;
     padding-left: 20px; /* Alinhar com o conteúdo principal */
 }
 
-.cogumelos h2 {
-    margin-top: 0;
-    margin-bottom: 15px;
+.cogumelos h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
+    
 }
 
 .cards {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+  
 }
-
 .shimeji_card, .champignon_card, .shiitake_card {
-    background-color: #543e32;
+    background-color: #4e3324;
     color: white;
     border-radius: 5px;
-    padding: 15px;
     text-align: center;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    padding: 15px;
+    width: 250px;
+    margin-left: 30px;
 }
 
 .shimeji_card a, .champignon_card a, .shiitake_card a {
     text-decoration: none;
     color: white;
-    display: block;
- 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: flex-start; 
+    width: 40%;
+    height: 150px;
+    margin-bottom: 10px;
+    font-size: 20px;
 }
 
+
+.shimeji_card a img, .champignon_card a img, .shiitake_card a img {
+    width: 90%;
+   margin-top: 20px;
+}
