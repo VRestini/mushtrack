@@ -1,62 +1,95 @@
--- Arquivo de apoio, caso você queira criar tabelas como as aqui criadas para a API funcionar.
--- Você precisa executar os comandos no banco de dados para criar as tabelas,
--- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
+CREATE DATABASE MushTrack
+use MushTrack;
 
-/*
-comandos para mysql server
-*/
-
-CREATE DATABASE aquatech;
-
-USE aquatech;
-
-CREATE TABLE empresa (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	razao_social VARCHAR(50),
-	cnpj CHAR(14),
-	codigo_ativacao VARCHAR(50)
+-- Criação da tabela Empresa
+ create table Empresa (
+ idEmpresa int primary key auto_increment,
+ nome_Empresa varchar (45),
+ cnpj_Empresa char (14),
+ email_Empresa varchar (70),
+ Nome_Representante varchar (45)
+ );
+ 
+ -- Criação da tabela Usuário
+ create table Usuario (
+ idUsuario int primary key auto_increment,
+ nome_Usuario varchar(45),
+ email_Usuario varchar(70),
+ senha_Usuario varchar(45),
+ status_Usuario varchar (45),
+ 	constraint chkStatusUsuario check (status_Usuario in ('Ativo', 'Inativo')),
+ fkEmpresa int, 
+ 	constraint fkUsuarioEmpresa foreign key (fkEmpresa) references Empresa (idEmpresa)
+ );
+ 
+ -- Criação da tabela Cogumelo
+create table Cogumelo (
+idCogumelo int primary key auto_increment,
+nome_Cogumelo varchar (45)
 );
 
-CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
+ -- Criação da tabela Estufa 
+create table Estufa (
+idEstufa int primary key auto_increment,
+nome_Estufa varchar (45),
+fkCogumelo int,
+fkEmpresa int,
+	constraint fkEstufaCogumelo foreign key (fkCogumelo) references Cogumelo(idCogumelo),
+    constraint fkEstufaEmpresa foreign key (fkEmpresa) references Empresa(idEmpresa)
 );
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
+-- Criação da tabela Sensor 
+create table Sensor (
+idSensor int primary key auto_increment,
+tipo_Sensor varchar (45),
+nome_Sensor varchar(45),
+status_Sensor varchar (45),
+	constraint chkStatusSensor check (status_Sensor in ('Ativo', 'Inativo')),
+numero_Serie int, 
+dtInstalacao datetime,
+dtManutencao datetime, 
+posicao_Sensor varchar(45),
+fkEstufa int,
+	constraint fkSensorEstufa foreign key (fkEstufa) references Estufa (idEstufa)
 );
 
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	descricao VARCHAR(300),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
+
+-- Criação da tabela Estágio
+create table Estagio (
+idEstagio int primary key auto_increment,
+tipo_Estagio varchar (45),
+fkCogumelo int,
+	constraint fkEstagioCogumelo foreign key (fkCogumelo) references Cogumelo (idCogumelo)
 );
 
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
-
-create table medida (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	dht11_umidade DECIMAL,
-	dht11_temperatura DECIMAL,
-	luminosidade DECIMAL,
-	lm35_temperatura DECIMAL,
-	chave TINYINT,
-	momento DATETIME,
-	fk_aquario INT,
-	FOREIGN KEY (fk_aquario) REFERENCES aquario(id)
+create table Parametro (
+idParametro int primary key auto_increment,
+temp_Minima decimal(4,2),
+temp_Maxima decimal(4,2),
+umi_Minima decimal(4,2),
+umi_Maxima decimal(4,2),
+fk_Cogumelo int,
+fk_Estagio int,
+constraint fkParametroCogumelo foreign key (fk_cogumelo) references Cogumelo(idCogumelo),
+constraint fkParametroEstagio foreign key (fk_Estagio) references Estagio(idEstagio) 
 );
 
-insert into empresa (razao_social, codigo_ativacao) values ('Empresa 1', 'ED145B');
-insert into empresa (razao_social, codigo_ativacao) values ('Empresa 2', 'A1B2C3');
-insert into aquario (descricao, fk_empresa) values ('Aquário de Estrela-do-mar', 1);
-insert into aquario (descricao, fk_empresa) values ('Aquário de Peixe-dourado', 2);
+create table Dados(
+idDados int primary key auto_Increment, 
+data_Captura datetime default current_timestamp, 
+dados_Umidade float, 
+dados_Temperatura float, 
+fkSensor int, 
+constraint fkHistoricoSensor foreign key (fkSensor) references Sensor (idSensor)
+);
+
+create table Alerta (
+idAlerta int primary key auto_increment,
+data_Alerta datetime default current_timestamp,
+descricao_Alerta varchar(60),
+fkDados int,
+fkSensor int,
+constraint fkAlertaDados foreign key (fkDados) references Dados(idDados),
+constraint fkAlertaSensor foreign key (fkSensor) references Sensor(idSensor)
+);
+

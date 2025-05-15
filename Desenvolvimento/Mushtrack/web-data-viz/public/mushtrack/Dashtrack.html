@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dashboard MushTrack</title>
   <link rel="stylesheet" href="css/Dashtrack.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -94,35 +93,16 @@
       <!-- Gráficos -->
       <div class="graficos">
         <div class="grafico">
-          <h4 style="color: #05004E;">Sensores de Temperatura (°C)</h4>
-          <div class="alertas">
-            <h3><img src="img/alertaDAsh.png" alt="">Alertas Recentes</h3>
-            <ul>
-              <li>Dados do dia 05/05/2045</li>
-
-            </ul>
-          </div>
-
-          <canvas id="graficoTemperatura">
-
-          </canvas>
+          <h4>Sensores de Temperatura (°C)</h4>
+          <canvas id="graficoTemperatura"></canvas>
         </div>
         <div class="grafico">
-          <h4 style="color: #05004E;">Sensores de umidade (%)</h4>
-            <div class="alertas">
-            <h3><img src="img/alertaDAsh.png" alt="">Alertas Recentes</h3>
-            <ul>
-              <li>Dados do dia 05/05/2045</li>
-
-            </ul>
-          </div>
+          <h4>Sensores de umidade (%)</h4>
           <canvas id="graficoUmidade"></canvas>
         </div>
       </div>
     </div>
   </div>
-
-
 </body>
 
 <script>
@@ -136,7 +116,6 @@
       labels: horas,
       datasets: [{
         label: 'Temperatura (°C)',
-        barPercentage: .2,
         data: [24, 22, 25, 27, 26, 23, 24],
         backgroundColor: '#4E3324',
         borderRadius: 5,
@@ -179,5 +158,4 @@
     }
   });
 </script>
-
 </html>

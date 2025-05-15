@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/style-cadastro.css">
+  <link rel="stylesheet" href="./institucionalXTech/css/style-cadastro.css">
   <title>Cadastro da Empresa</title>
 </head>
 
@@ -12,14 +12,14 @@
   <header>
     <img src="../assets/img/xtechBrown.png" alt="" height="40px">
     <nav class="header_nav">
-        <ul>
-            <li><a href="Index.html">Home</a></li>
-            <li><a href="Index.html">MushTrack</a></li>
-            <li><a href="Index.html">Simulador</a></li>
-            <li><a href="Index.html">Sobre Nós</a></li>
-            <li><a class="button_4" id="login_a" href="loginEmpresa.html">Login</a></li>
-            <li><a class="button_5" id="login_a" href="cadastroEmpresa.html">Cadastrar</a></li>
-        </ul>
+      <ul>
+        <li><a href="Index.html">Home</a></li>
+        <li><a href="Index.html">MushTrack</a></li>
+        <li><a href="Index.html">Simulador</a></li>
+        <li><a href="Index.html">Sobre Nós</a></li>
+        <li><a class="button_4" id="login_a" href="loginEmpresa.html">Login</a></li>
+        <li><a class="button_5" id="login_a" href="cadastroEmpresa.html">Cadastrar</a></li>
+      </ul>
     </nav>
   </header>
   <div class="banner">
@@ -53,7 +53,7 @@
               </div>
             </div>
           </div>
-          <div class="button" onclick="analisartextos()" id="button_home">
+          <div class="button" onclick="cadastrar()" id="button_home">
             <a href="#">Cadastrar</a>
           </div>
 
@@ -66,7 +66,7 @@
 
 </html>
 <script>
-  function analisartextos() {
+  function cadastrar() {
     var cnpj = input_cnpj.value;
     var nomeEmpresa = input_nomeEmpresa.value;
     var nomeRepresentante = input_nomeRepresentante.value;
@@ -83,12 +83,28 @@
       alert("A senha deve conter pelo menos 6 caracteres.");
     } else if (senha !== confirmarSenha) {
       alert("As senhas não coincidem.");
-    }else {
-  alert("Cadastro efetuado com sucesso!");
-  window.location.href = "../Site_institucional Mush Track/login.html";
-}
+    } else {
+      fetch("/empresa/cadastrar", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", },
+        body: JSON.stringify({
+          nomeEmpresaServer: nomeEmpresa,
+          emailServer: email,
+          senhaServer: senha,
+          cnpjServer: cnpj,
+          nomeRepresentanteServer: nomeRepresentante
+        }),
+      }).then(function (resposta) {
+        if (resposta.ok){
+          window.location.href = "login.html";
+          alert("Cadastro efetuado com sucesso!");
+        }
+          
+      }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+    }
 
 
   }
 </script>
-
