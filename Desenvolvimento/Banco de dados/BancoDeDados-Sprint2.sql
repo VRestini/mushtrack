@@ -7,7 +7,7 @@ use MushTrack;
  create table Empresa (
  id_empresa int primary key auto_increment,
  nome_empresa varchar (45),
- cnpj_empresa char (14),
+ cnpj char (14),
  email_empresa varchar (70),
  senha_empresa varchar(255),
  nome_representante varchar (45)
@@ -48,7 +48,7 @@ tipo_sensor varchar (45),
 nome_sensor varchar(45),
 status_sensor varchar (45),
 	constraint chkStatusSensor check (status_sensor in ('Ativo', 'Inativo')),
-numero_Serie int, 
+numero_serie int, 
 dt_instalacao datetime,
 dt_manutencao datetime, 
 posicao_sensor varchar(45),
@@ -65,7 +65,7 @@ fk_cogumelo int,
 );
 
 create table Parametro (
-idParametro int primary key auto_increment,
+id_parametro int primary key auto_increment,
 temp_minima decimal(4,2),
 temp_maxima decimal(4,2),
 umi_minima decimal(4,2),
