@@ -1,18 +1,18 @@
 var empresaModel = require("../models/empresaModel")
 function autenticar(req, res){
-    var email = req.body.emailServer
-    var password = req.body.passwordServer
+    var email= req.body.emailServer
+    var senha = req.body.senhaServer
     if (email == undefined) {
         res.status(400).send("Seu email está undefined!");
-    } else if (password== undefined) {
+    } else if (senha == undefined) {
         res.status(400).send("Sua senha está indefinida!");
     }else{
-        empresaModel.authenticate(email, password)
+        empresaModel.logar(email, senha)
             .then(function(response){
                 if (response.length == 1) {
                     res.json({
-                        email: response[0].emailUser,
-                        name: response[0].nameUser // opcional se quiser mostrar nome
+                        email: response[0].emailEmpresa,
+                        nome: response[0].nomeEmpresa 
                     });
                 } else if (response.length == 0) {
                     res.status(403).send("Email e/ou senha inválido(s)");
