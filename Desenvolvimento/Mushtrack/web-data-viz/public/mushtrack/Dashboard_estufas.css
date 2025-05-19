@@ -1,0 +1,250 @@
+@font-face {
+    font-family: 'gidole';
+    src: url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Gidole&family=Hedvig+Letters+Serif:opsz@12..24&display=swap') format('truetype');
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: gidole;
+    text-decoration: none;
+  }
+  
+  body {
+    background-color: #f9f9f9;
+    color: #4e3324;
+  
+  }
+  
+  .container {
+      display: flex;
+      height: 1000px;
+  }
+  
+  .container_menu {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    padding: 30px;
+    box-shadow: 2px 0 5px;
+  }
+  
+  .logo_container {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+  
+  }
+  
+  .logo_icone {
+    width: 40px;
+    margin-right: 10px;
+  }
+  
+  .texto_logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4e3324;
+  }
+  
+  .menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 70px;
+  }
+  
+  .menu li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    padding: 10px 0;
+    margin-top: 20px;
+  }
+  
+  .icone {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  .main-content {
+      display: flex;
+      flex-direction: column;
+      width: 85%; 
+  }
+  .usuario_container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+  }
+  
+  .usuario h1 {
+      color: #4B2E2E;
+      font-size: 30px;
+  }
+  
+  .perfil_usuario {
+      font-size: 14px;
+      color: #4B2E2E;
+  }
+  
+  /* Alertas */
+  .alertas {
+      display: flex;
+      justify-content: center;
+      margin: 30px 0;
+      
+  }
+  .cards_alerta {
+      background-color: #B91C1C;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 220px;
+      height: 100px;
+      margin-left: 40px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cards_alerta p {
+      margin: 0 0 10px;
+      font-weight: bold;
+  }
+  
+  .conferir {
+      background-color: white;
+      color: #B91C1C;
+      border: none;
+      border-radius: 4px;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-weight: bold;
+  }
+  
+  .cogumelos {
+      display: flex;
+      flex-direction: row; 
+      justify-content: flex-start;
+      padding: 20px;
+      box-sizing: border-box;
+      padding-left: 20px; 
+      width: 1500px;
+      align-items: start;
+      height: fit-content;
+      align-self: self-start;
+  }
+  
+  .cards h1 {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      margin-bottom: 8%;
+      width: max-content;
+  
+      
+  }
+  
+  .cards {
+      display: flex; 
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin-right: 10%;
+  }
+  
+  .shimeji_card, .champignon_card, .shiitake_card {
+      background-color: #4e3324;
+      color: white;
+      border-radius: 5px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+      justify-content: center; 
+      padding: 15px;
+      width: 250px;
+      margin-left: 30px;
+      margin-top: 30px;
+  }
+  
+  .shimeji_card a, .champignon_card a, .shiitake_card a {
+      text-decoration: none;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+      justify-content: flex-start; 
+      width: 40%;
+      height: 150px;
+      margin-bottom: 10px;
+      font-size: 20px;
+  }
+  
+  
+  .shimeji_card a img, .champignon_card a img, .shiitake_card a img {
+      width: 90%;
+     margin-top: 20px;
+  }
+  
+  .shimeji_card{
+   width: 300px;
+   height: 200px;
+   
+  }
+  .card1{
+    border-radius: 9px;
+    margin-top: 8%;
+    margin-top: 8%;
+    margin-right: 8%;
+    margin-left: 8%;
+    background-color: #FFF4DE ;
+    height: 130px;
+  
+  }
+  .cards-container{
+  display: flex;
+      flex-direction: row;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: content-box;
+      margin-top: 5%;
+      padding-left: 20px;
+      width: fit-content;
+      height: 723.39px;
+      align-items: start;
+      align-self: self-end;
+  }
+  
+  .legenda{
+    flex-direction: row;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-bottom: 8%;
+    margin-left: 100px;
+  
+  }
+  
+  .legenda h3{
+    margin-right: 15px;
+    margin-left: 5px;
+  
+  }
+  
+  .main-content h1{
+   height: fit-content;
+   width: 930px;
+   font-size: medium;
+  }
+  
+  .main-content h1 p{
+    font-size: large;
+    margin-left: 130px;
+    
+  }
+  
+  
