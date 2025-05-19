@@ -2,13 +2,11 @@ const mysql = require("mysql2");
 
 // Pool de conexões com o banco de dados
 const pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: '@4976Loren',
-    database: 'MushTrack',
-    waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0
+    host: process.env.DB_HOST,
+    database: process.env.DB_DATABASE,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    port: process.env.DB_PORT
 });
 
 // Função para executar instruções SQL com parâmetros (evita SQL Injection)

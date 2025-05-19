@@ -65,7 +65,7 @@
                 tentativas = 0;
                 button_home.innerHTML = `<a>Entrar</a>`;
             }, 60000);
-            return; // impedi a execução do restante da função
+            return; // impede a execução do restante da função
         }
 
         var emailVar = email_input.value;
@@ -86,7 +86,7 @@
                 senhaServer: senhaVar
             });
 
-            fetch("/usuarios/autenticar", {
+            fetch("/empresa/autenticar", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

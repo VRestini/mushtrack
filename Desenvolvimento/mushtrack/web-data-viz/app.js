@@ -26,7 +26,7 @@ app.use(cors());
 
 app.use("/", indexRouter);
 app.use("/empresa", empresaRouter)
-app.use("/usuarios", usuarioRouter);
+app.use("/usuario", usuarioRouter);
 
 
 

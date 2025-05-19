@@ -9,7 +9,7 @@ router.post("/cadastrar", function (req, res) {
 })
 
 router.post("/autenticar", function (req, res) {
-    usuarioController.autenticar(req, res);
+    empresaController.autenticar(req, res);
 });
 
 module.exports = router;
