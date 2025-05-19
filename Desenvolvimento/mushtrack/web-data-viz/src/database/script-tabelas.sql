@@ -1,4 +1,5 @@
-CREATE DATABASE MushTrack
+CREATE DATABASE MushTrack;
+
 use MushTrack;
 
  create table empresa (
@@ -48,7 +49,7 @@ create table sensor (
 );
 create table estagio (
 	id int primary key auto_increment,
-	tipo varchar (45),
+	tipo varchar (45)
 );
 
 create table parametro (

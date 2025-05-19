@@ -7,7 +7,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="./institucionalXTech/css/style-login.css">
     <link rel="shortcut icon" type="imagex/png" href="./assets/img/xTechWhite.png">
-    
+
 
 </head>
 
@@ -52,37 +52,41 @@
 
 </html>
 
-
 <script>
+    var tentativas = 0;
 
-    var tentativas = 0
     function entrar() {
-        tentativas++
+        tentativas++;
+
         if (tentativas >= 5) {
-            alert("5 tentativas! Aguarde 60 segundos.")
-            button_home.innerHTML = `<a >Aguarde 60 segundos</a>`
+            alert("5 tentativas! Aguarde 60 segundos.");
+            button_home.innerHTML = `<a>Aguarde 60 segundos</a>`;
             setTimeout(function () {
-                tentativas = 0
-                button_home.innerHTML =
-                    ` <a >Entrar</a>`
-            }
-                , 60000)
+                tentativas = 0;
+                button_home.innerHTML = `<a>Entrar</a>`;
+            }, 60000);
+            return; // impedi a execução do restante da função
         }
-        else {
-            var emailVar = email_input.value;
-            var senhaVar = senha_input.value
-            var emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVar);
-            if (emailVar == "" || senhaVar == "") {
-                alert("Por favor, preencha todos os campos.");
-            } else if (!emailValido) {
-                alert("Por favor, insira um e-mail válido.");
-            } else if (senhaVar.length < 6) {
-                alert("A senha deve conter pelo menos 6 caracteres.");
-            } else {
-                console.log("FORM LOGIN: ", emailVar);
-                console.log("FORM SENHA: ", senhaVar);
-            }
-            fetch("/empresa/autenticar", {
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVar);
+
+        if (emailVar === "" || senhaVar === "") {
+            alert("Por favor, preencha todos os campos.");
+        } else if (!emailValido) {
+            alert("Por favor, insira um e-mail válido.");
+        } else if (senhaVar.length < 6) {
+            alert("A senha deve conter pelo menos 6 caracteres.");
+        } else {
+            console.log("FORM LOGIN: ", emailVar);
+            console.log("FORM SENHA: ", senhaVar);
+            console.log("Enviando para o servidor:", {
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            });
+
+            fetch("/usuarios/autenticar", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -91,29 +95,21 @@
                     emailServer: emailVar,
                     senhaServer: senhaVar
                 })
-            }).then(function (resposta) {                
+            }).then(function (resposta) {
                 if (resposta.ok) {
-                    console.log(resposta);
                     resposta.json().then(json => {
-                        console.log(json);
-                        console.log(JSON.stringify(json));
                         sessionStorage.EMAIL_EMPRESA = json.email;
-                        sessionStorage.NOME_EMPRESA = json.nome;                            
+                        sessionStorage.NOME_EMPRESA = json.nome;
                         setTimeout(function () {
-                            window.location = "./mushtrack/Dashtrack.html";
-                        }, 1000); 
-    
+                            window.location = "./mushtrack/Inicio_dashboard.html";
+                        }, 1000);
                     });
                 } else {
-                    console.log("Houve um erro ao tentar realizar o login!");                    
+                    alert("Email e/ou senha inválido(s) ou usuário inativo.");
                 }
             }).catch(function (erro) {
-                console.log(erro);
-            })
-            return false;
+                console.log("Erro na requisição:", erro);
+            });
         }
-
     }
-
-
 </script>
