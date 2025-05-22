@@ -68,22 +68,22 @@
             return; // impede a execução do restante da função
         }
 
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
-        var emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVar);
+        var email= email_input.value;
+        var senha = senha_input.value;
+        var emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-        if (emailVar === "" || senhaVar === "") {
+        if (email=== "" || senha === "") {
             alert("Por favor, preencha todos os campos.");
         } else if (!emailValido) {
             alert("Por favor, insira um e-mail válido.");
-        } else if (senhaVar.length < 6) {
+        } else if (senha.length < 6) {
             alert("A senha deve conter pelo menos 6 caracteres.");
         } else {
-            console.log("FORM LOGIN: ", emailVar);
-            console.log("FORM SENHA: ", senhaVar);
+            console.log("FORM LOGIN: ", email);
+            console.log("FORM SENHA: ", senha);
             console.log("Enviando para o servidor:", {
-                emailServer: emailVar,
-                senhaServer: senhaVar
+                emailServer: email,
+                senhaServer: senha
             });
 
             fetch("/empresa/autenticar", {
@@ -92,8 +92,8 @@
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    emailServer: emailVar,
-                    senhaServer: senhaVar
+                    emailServer: email,
+                    senhaServer: senha
                 })
             }).then(function (resposta) {
                 if (resposta.ok) {
