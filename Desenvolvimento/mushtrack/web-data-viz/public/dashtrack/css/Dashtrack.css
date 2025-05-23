@@ -20,7 +20,7 @@ body{
 /* Lateral */
 .lateral {
     background-color: #ffff;
-    width: 270px;
+    /* width: 270px; */
     height: 700px;
     flex-shrink: 0;
 }
@@ -36,7 +36,7 @@ body{
 .card-logo {
     width: 40px;
     height: 40px;
-    background-color: #4E3324;
+    /* background-color: #4E3324; */
     display: flex;
     justify-content: center;
     align-items: center;

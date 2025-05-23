@@ -51,7 +51,7 @@ body {
 
 .lateral {
   background-color: #ffff;
-  width: 270px;
+  /* width: 270px; */
   height: 700px;
   flex-shrink: 0;
 }
