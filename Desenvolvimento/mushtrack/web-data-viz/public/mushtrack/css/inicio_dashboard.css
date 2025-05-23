@@ -4,7 +4,7 @@
 }
 
 * {
-  margin: 0;
+
   padding: 0;
   box-sizing: border-box;
   font-family: gidole;
@@ -17,9 +17,14 @@ body {
 
 }
 
+.header {
+  display: flex;
+  flex-direction: row;
+}
+
 .container {
-    display: flex;
-    height: 1000px;
+  display: flex;
+  height: 1000px;
 }
 
 .container_menu {
@@ -37,10 +42,39 @@ body {
 
 }
 
+.titulo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+}
+
+.lateral {
+  background-color: #ffff;
+  width: 270px;
+  height: 700px;
+  flex-shrink: 0;
+}
+
+.card_logo {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.card_logo img {
+  width: 15px;
+}
+
 .logo_icone {
   width: 40px;
   margin-right: 10px;
 }
+
 
 .texto_logo {
   font-size: 20px;
@@ -50,18 +84,39 @@ body {
 
 .menu {
   list-style: none;
-  padding: 0;
-  margin-top: 70px;
+  margin-top: 20px;
+  padding-left: 0;
+}
+
+.menu li {
+  display: flex;
+  align-items: center;
+  margin: 20px;
 }
 
 .menu li a {
-  display: flex;
-  align-items: center;
   text-decoration: none;
-  color: #333;
-  padding: 10px 0;
-  margin-top: 20px;
+  color: #4e3324;
+  font-size: 16px;
 }
+
+.menu .ativo {
+  background-color: #4E3324;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.menu .ativo a {
+  color: #ffff;
+}
+
+.menu li img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+
+}
+
 
 .icone {
   width: 20px;
@@ -70,114 +125,135 @@ body {
 }
 
 .main-content {
-    display: flex;
-    flex-direction: column;
-    width: 85%; /* Exemplo, ajuste conforme necessário */
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  /* Exemplo, ajuste conforme necessário */
 }
+
 .usuario_container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
 }
 
 .usuario h1 {
-    color: #4B2E2E;
-    font-size: 30px;
+  color: #4B2E2E;
+  font-size: 30px;
 }
 
 .perfil_usuario {
-    font-size: 14px;
-    color: #4B2E2E;
+  font-size: 14px;
+  color: #4B2E2E;
 }
 
 /* Alertas */
 .alertas {
-    display: flex;
-    justify-content: center;
-    margin: 30px 0;
-    
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+
 }
-.cards_alerta {
-    background-color: #B91C1C;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 220px;
-    height: 100px;
-    margin-left: 40px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+.card_alertas {
+  background-color: rgb(255, 244, 222);
+  color: black;
+  width: 250px;
+  height: 400px;
+  margin-left: 40px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
+  position: absolute;
+  right: 18%;
+  top: 250px;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .cards_alerta p {
-    margin: 0 0 10px;
-    font-weight: bold;
+  margin: 0 0 10px;
+  font-weight: bold;
 }
 
 .conferir {
-    background-color: white;
-    color: #B91C1C;
-    border: none;
-    border-radius: 4px;
-    padding: 6px 12px;
-    cursor: pointer;
-    font-weight: bold;
+  background-color: white;
+  color: #B91C1C;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 .cogumelos {
-    display: flex;
-    flex-direction: column; /* Para organizar o título e os cards verticalmente */
-    justify-content: flex-start;
-    padding: 20px;
-    box-sizing: border-box;
-    margin-top: 5%;
-    padding-left: 20px; /* Alinhar com o conteúdo principal */
+  display: flex;
+  flex-direction: column;
+  /* Para organizar o título e os cards verticalmente */
+  justify-content: flex-start;
+  box-sizing: border-box;
+  margin-top: 5%;
+  box-sizing: border-box;
+  padding: 20px 20px 20px 90px;
 }
 
 .cogumelos h1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 5%;
-    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5%;
+  padding: 20px 20px 20px 90px;
+
+
 }
 
 .cards {
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-  
-}
-.shimeji_card, .champignon_card, .shiitake_card {
-    background-color: #4e3324;
-    color: white;
-    border-radius: 5px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
-    padding: 15px;
-    width: 250px;
-    margin-left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  position: absolute;
+  /* left: 20%; */
+  top:100px;
 }
 
-.shimeji_card a, .champignon_card a, .shiitake_card a {
-    text-decoration: none;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: flex-start; 
-    width: 40%;
-    height: 150px;
-    margin-bottom: 10px;
-    font-size: 20px;
+.shimeji_card,
+.champignon_card,
+.shiitake_card {
+  background-color: #4e3324;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  width: 200px;
+  height: 150px;
+  margin-left: 30px;
+}
+
+.shimeji_card a,
+.champignon_card a,
+.shiitake_card a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 40%;
+  height: 150px;
+  margin-bottom: 10px;
+  font-size: 20px;
 }
 
 
-.shimeji_card a img, .champignon_card a img, .shiitake_card a img {
-    width: 90%;
-   margin-top: 20px;
+.shimeji_card a img,
+.champignon_card a img,
+.shiitake_card a img {
+  width: 90%;
+  margin-top: 20px;
 }

@@ -1,7 +1,5 @@
-<!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mushtrack Dashboard</title>
@@ -11,22 +9,38 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="container_menu">
-            <div class="logo_continaer">
-                <img src="img/logo_mush.png" class="logo_icone" alt="Logo Mushtrack">
-                <strong class="texto_logo"> Mushtrack</strong>
-                <nav>
-                    <ul class="menu">
-                        <li><a href=""><img src="img/icone_menu_mush.png" class="icone">MushTrack</a></li>
-                        <li><a href=""><img src="img/icone_menu_graficos.png" class="icone">Consultar gráficos</a></li>
-                        <li><a href=""><img src="img/icone_menu_estufas.png" class="icone">Estufas</a></li>
-                        <li><a href=""><img src="img/icone_menu_config.png" class="icone">Configurações</a></li>
-                        <li><a href=""><img src="img/icone_menu_sair.png" class="icone">Sair</a></li>
-                    </ul>
-                </nav>
-            </div>
+    <div class="header">
+        <div class="lateral">
+      <div class="titulo">
+        <div class="card_logo">
+          <img src="../assets/img/xtechBrown.png" alt="Logo MushTrack">
         </div>
+        <h2>MushTrack</h2>
+      </div>
+
+      <ul class="menu">
+        <li class="ativo">
+          <img src="img/icone_dashboard.png" alt="Dashboard">
+          <a href="#">Dashboard</a>
+        </li>
+        <li>
+          <img src="img/Group.png" alt="MushTrack">
+          <a href="#">MushTrack</a>
+        </li>
+        <li>
+          <img src="img/Chart_Line.png" alt="Consultar">
+          <a href="#">Consultar</a>
+        </li>
+        <li>
+          <img src="img/config.png" alt="Configurações">
+          <a href="#">Settings</a>
+        </li>
+        <li>
+          <img src="img/sair.png" alt="Sair">
+          <a href="#">Sair</a>
+        </li>
+      </ul>
+    </div>
  <div class="main-content">
         <section class="usuario">
             <div class="usuario_container">
@@ -37,20 +51,9 @@
             </div>
         </section>
 
-        <section class="alertas">
-            <div class="cards_alerta">
-                <p> <strong> 1 estufa shiitake em alerta</strong></p>
-                <button class="conferir"> Conferir</button>
-            </div>
-            <div class="cards_alerta">
-                <p> <strong> 1 estufa shimeji em alerta</strong></p>
-                <button class="conferir"> Conferir</button>
-            </div>
-        </section>
-
-        <section class="cogumelos">
-            <h1> SEUS COGUMELOS</h1>
+        <section class="cogumelos"> 
             <div class="cards">
+              <h1> SEUS COGUMELOS</h1>
                 <div class="shimeji_card">
                     <a href=""> SHIMEJI
                     <img src="img/imagem_shimeji.png">
@@ -68,9 +71,23 @@
             </div>
             </div>
         </section>
+        <section class="card_alertas">
+            <div class="log_alerta">
+              <h1>Estufas em alerta</h1><br><br>
+                <h4>Estufa - 3</h4>
+            </div> <br>
+             <div class="log_alerta">
+             
+                <h4>Estufa - 9</h4>
+            </div> <br>
+             <div class="log_alerta">
+            
+                <h4>Estufa - 11</h4>
+            </div> <br>
+            
+        </section>
     </div>
 </div>
 
-</body>
 
-</html>
+</body></html>
