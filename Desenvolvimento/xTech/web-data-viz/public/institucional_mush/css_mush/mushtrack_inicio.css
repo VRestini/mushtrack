@@ -51,7 +51,7 @@ header {
 /* Banner / Inicio */
 
 .banner {
-    background-image: url(assets/imagemInicio.png);
+    background-image: url();
     background-size: cover;
     background-position: center;
     height: 660px;
