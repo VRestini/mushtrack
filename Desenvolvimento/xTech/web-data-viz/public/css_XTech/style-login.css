@@ -1,0 +1,174 @@
+@font-face {
+  font-family: 'gidole';
+  src: url('../../assets/font/Gidole-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'dune-rise';
+  src: url('../../assets/font/Dune_Rise.ttf') format('truetype');
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: gidole;
+}
+/* Header */
+header {
+    padding: 3% 4%;
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.header_nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header_nav ul {
+    width: 60%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header_nav a {
+    color: #4E3324;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#login_a {
+    color: #FFFFFF;
+}
+
+/* Login */
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 87.4vh;
+    background-image: url(../../assets/img/imagemInicio.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login {
+    display: block;
+    justify-content: space-between;
+    background-color: #4a2d1f;
+    border-radius: 16px;
+    padding: 60px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 700px;
+}
+
+#imgLogo {
+    width: 80px;
+    margin-bottom: 20px;
+  }
+
+.campo input {
+    display: block;
+    flex-direction: column;
+    width: 400px;
+    margin: 10px;
+    padding: 12px 12px 12px 60px;
+    border: none;
+    border-radius: 20px;
+    background-color: #f2f2f2 !important;
+    font-size: 14px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-size: 25px;
+    margin-top: 20px;
+}
+
+#email_input {
+    background-image: url(../../assets/img/iconemail.png);
+}
+
+#senha_input {
+    background-image: url(../../assets/img/iconsenha.png);
+}
+
+/* Botão Login */
+
+.button:hover {
+    transform: scale(1.05);
+
+    
+  }
+  .button {
+    text-decoration: none;
+    background-color: #625140;
+    display: block;
+    flex-direction: column;
+    width: 400px;
+    margin: 10px;
+    padding: 12px 12px 12px 60px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    text-align: center;
+    transition: transform 0.2s;
+    margin-top: 20px;
+    cursor: pointer;
+    
+
+  }
+  
+
+#button_home a{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 35px;
+    
+}
+.button_4 {
+  background: linear-gradient(to right, #1a0f07, #9d5b26);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  color: white;
+}
+
+.button_5 {
+    background: linear-gradient(to right, #1a0f07, #9d5b26);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    color: white;
+  }
+
+/* Registro */
+.Registrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    transition: transform 0.2s;
+}
+
+.Registrar a {
+    color: #ffffff;
+    font-weight: 300;
+}
