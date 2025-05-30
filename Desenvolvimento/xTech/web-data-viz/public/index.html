@@ -271,24 +271,39 @@
         var temp = Number(input_temp.value)
         var umid = Number(input_umid.value)
         var mensagem = ""
-        if(cogumelo == "#")
+        if(cogumelo == "#"){
             mensagem = "Erro! Escolha um cogumelo para prosseguir."
-        else if(estagio == "#")
+            alert(mensagem)
+        }else if(estagio == "#"){
             mensagem = "Erro! Escolha um estágio para prosseguir."
-        else if (kgProducao <= 0){
-            mensagem = "Erro! Insira uma produção da estufa válida (maior que 0)  para prosseguir."    
+            alert(mensagem)
+        }else if (kgProducao <= 0){
+            mensagem = "Erro! Insira uma produção da estufa válida (maior que 0)  para prosseguir."
+            alert(mensagem)  
         }
         else if(temp < 0){
             mensagem = "Erro! A temperatura média está abaixo de zero. "
+            alert(mensagem)
         }
         else if(umid < 0){
             mensagem = "Erro! A umidade do ar média está abaixo de zero. "
+            alert(mensagem)
         }
         else if(umid > 100){
             mensagem = "Erro! A umidade do ar média está acima de 100%. "
+            alert(mensagem)
+        }
+        else if(temp == ""){
+          mensagem = "Erro! Insira um valor de temperatura para prosseguir"
+          alert(mensagem)
+        }
+        else if(umid == ""){
+          mensagem = "Erro! Insira um valor de umidade para prosseguir"
+          alert(mensagem)
         }
         else if(precoKg == 0){
             mensagem = "Erro! Insira um preço do quilo válido (maior que 0) para prosseguir."
+            alert(mensagem)
         }
         else{
             var flush = 0
@@ -363,13 +378,13 @@
               mensagem += `
               <div id="simulator_container_text_result">
                 <h3>Estufa de ${cogumelo}:</h3>
-                <p class="simulator_text_result">STATUS: ${status} </p>
-                <p class="simulator_text_result">TEMPERATURA: ${tempMin}°C A ${tempMax}°C</p>
-                <p class="simulator_text_result">UMIDADE: ${umiMin}% A ${umiMax}% </p>
-                <p class="simulator_text_result">FLUSHS: Até ${flush}</p> 
-                <p class="simulator_text_result">PRODUÇÃO: R$:${rendiemnto.toFixed(2)} </p>
-                <p class="simulator_text_result">PRODUÇÃO TOTAL: R$:${(rendiemnto * flush).toFixed(2)}</p>
-                <p class="simulator_text_result_Total">ESTIMATIVA DA PRODUÇÃO TOTAL COM CONTROLE DE CLIMA: R$${(rendiemntoControlado * flush).toFixed(2)}</p>
+                <p class="simulator_text_result_prejuízo">STATUS: ${status} </p>
+                <p class="simulator_text_result">TEMPERATURA IDEAL: ${tempMin}°C A ${tempMax}°C</p>
+                <p class="simulator_text_result">UMIDADE IDEAL: ${umiMin}% A ${umiMax}% </p>
+                <p class="simulator_text_result">FLUSHS (Ciclos de produção): Até ${flush}</p> 
+                <p class="simulator_text_result">PRODUÇÃO (Valor de 1 flush): R$:${rendiemnto.toFixed(2)} </p>
+                <p class="simulator_text_result">PRODUÇÃO TOTAL (${flush} flushs): R$:${(rendiemnto * flush).toFixed(2)}</p>
+                <p class="simulator_text_result_Total">ESTIMATIVA DA PRODUÇÃO TOTAL COM MUSHTRACK: R$${(rendiemntoControlado * flush).toFixed(2)}</p>
               </div>`
               
             }       

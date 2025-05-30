@@ -189,6 +189,13 @@ h1{
   justify-content: center;
 }
 
+.simulator_text_result_prejuízo{
+  align-self: self-start;
+  color: #ccc;
+  justify-content: center;
+  color: #cf2121;}
+
+
 .simulator_text_result_Total{
   display: flex;
   padding-top: 15px;
