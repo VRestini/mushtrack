@@ -1,16 +1,17 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mushtrack Dashboard</title>
-    <link rel="shortcut icon" type="imagex/png" href="img/logo_mush.png">
-    <link rel="stylesheet" href="./css_dashtrack/dashtrack_inicio.css">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mushtrack Dashboard</title>
+  <link rel="shortcut icon" type="imagex/png" href="img/logo_mush.png">
+  <link rel="stylesheet" href="./css_dashtrack/dashtrack_inicio.css">
 
 </head>
 
 <body>
-    <div class="header">
-        <div class="lateral">
+  <div class="header">
+    <div class="lateral">
       <div class="titulo">
         <div class="card_logo">
           <img src="../assets/img/xtechBrown.png" alt="Logo MushTrack">
@@ -21,19 +22,11 @@
       <ul class="menu">
         <li class="ativo">
           <img src="img/icone_dashboard.png" alt="Dashboard">
-          <a href="#">Dashboard</a>
+          <a href="home.html">Home</a>
         </li>
         <li>
           <img src="img/Group.png" alt="MushTrack">
-          <a href="#">MushTrack</a>
-        </li>
-        <li>
-          <img src="img/Chart_Line.png" alt="Consultar">
-          <a href="#">Consultar</a>
-        </li>
-        <li>
-          <img src="img/config.png" alt="Configurações">
-          <a href="#">Settings</a>
+          <a href="sensorHome.html">Sensores</a>
         </li>
         <li>
           <img src="img/sair.png" alt="Sair">
@@ -41,53 +34,57 @@
         </li>
       </ul>
     </div>
- <div class="main-content">
-        <section class="usuario">
-            <div class="usuario_container">
-                <h1>Dashboard</h1>
-                <div class="perfil_usuario">
-                    <strong>Usuário NOME </strong><br>
-                </div>
-            </div>
-        </section>
+    <div class="main-content">
+      <section class="usuario">
+        <div class="usuario_container">
+          <h1>Dashboard</h1>
+          <div class="perfil_usuario">
+            <strong id="user_name"></strong><br>
+          </div>
+        </div>
+      </section>
 
-        <section class="cogumelos"> 
-            <div class="cards">
-              <h1> SEUS COGUMELOS</h1>
-                <div class="shimeji_card">
-                    <a href=""> SHIMEJI
-                    <img src="img/imagem_shimeji.png">
-                </a>
-            </div>
-                <div class="champignon_card">
-                    <a href=""> CHAMPIGNON DE PARIS
-                    <img src="img/imagem_champignon.png">
-                </a>
-            </div>
-                <div class="shiitake_card">
-                     <a href=""> SHIITAKE
-                    <img src="img/imagem_shiitake.png">
-                </a>
-            </div>
-            </div>
-        </section>
-        <section class="card_alertas">
-            <div class="log_alerta">
-              <h1>Estufas em alerta</h1><br><br>
-                <h4>Estufa - 3</h4>
-            </div> <br>
-             <div class="log_alerta">
-             
-                <h4>Estufa - 9</h4>
-            </div> <br>
-             <div class="log_alerta">
-            
-                <h4>Estufa - 11</h4>
-            </div> <br>
-            
-        </section>
+      <section class="cogumelos">
+        <div class="cards">
+          <h1> SEUS COGUMELOS</h1>
+          <div class="shimeji_card">
+            <a href="dashboard.html"> SHIMEJI
+              <img src="img/imagem_shimeji.png">
+            </a>
+          </div>
+          <div class="champignon_card">
+            <a href="dashboard.html"> CHAMPIGNON DE PARIS
+              <img src="img/imagem_champignon.png">
+            </a>
+          </div>
+          <div class="shiitake_card">
+            <a href="dashboard.html"> SHIITAKE
+              <img src="img/imagem_shiitake.png">
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="card_alertas">
+        <div class="log_alerta">
+          <h1>Estufas em alerta</h1><br><br>
+          <h4>Estufa - 3</h4>
+        </div> <br>
+        <div class="log_alerta">
+
+          <h4>Estufa - 9</h4>
+        </div> <br>
+        <div class="log_alerta">
+
+          <h4>Estufa - 11</h4>
+        </div> <br>
+
+      </section>
     </div>
-</div>
+  </div>
 
 
-</body></html>
+</body>
+</html>
+<script>
+  
+</script>

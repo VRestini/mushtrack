@@ -1,0 +1,69 @@
+@font-face {
+    font-family: "gidole";
+    src: url("../../assets/font/Gidole-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "dune-rise";
+    src: url("../../assets/font/Dune_Rise.ttf") format("truetype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: gidole;
+}
+
+body {
+    height: 100vh;
+    background-color: #f1eeee;
+    color: #4e3324;
+}
+
+section {
+    padding: 1%;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+}
+
+#sensor_top_filter {
+    width: 70%;
+    height: 4%;
+    display: flex;
+    justify-content: space-between;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+button {
+    text-decoration: none;
+    background: linear-gradient(to right, #1a0f07, #9d5b26);
+    width: 15%;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s;
+    border: transparent;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+#search_bar {
+    background-color:whitesmoke;
+    color: white;
+    
+    width: 50%;
+    font-family: 'gidole';
+    border-radius: 5px;
+    padding: 6px 10px;
+}
