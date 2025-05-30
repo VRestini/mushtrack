@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css_dashtrack/cadastroSensor.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <!-- Menu lateral -->
+        <div class="lateral">
+            <div class="titulo">
+                <div class="card-logo">
+                    <img src="img/logo_mush.png" alt="Logo MushTrack" style="width: 40px;" />
+                </div>
+                <h2>MushTrack</h2>
+            </div>
+
+            <ul class="menu">
+                <li class="ativo">
+                    <img src="img/icone_dashboard.png" alt="Dashboard" />
+                    <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <img src="img/Group.png" alt="MushTrack" />
+                    <a href="#">MushTrack</a>
+                </li>
+                <li>
+                    <img src="img/Chart_Line.png" alt="Consultar" />
+                    <a href="#">Consultar</a>
+                </li>
+                <li>
+                    <img src="img/config.png" alt="Configurações" />
+                    <a href="#">Settings</a>
+                </li>
+                <li>
+                    <img src="img/sair.png" alt="Sair" />
+                    <a href="#">Sair</a>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="container-cadastrar">
+            <div class="card-cadastrar">
+                <h1>Cadastrar sensor</h1>
+                <input type="text" id="input_tipo" placeholder="tipo"><br>
+                <input type="text" id="input_nome" placeholder="nome"><br>
+                <select name="" id="select_status">
+                    <option value="">Selecione uma opção</option>
+                    <option value="ativo">Ativo</option>
+                    <option value="inativo">Inativo</option>
+                </select>
+                <input type="text" id="input_numero_series" placeholder="series"><br>
+                <input type="text" id="input_dt_manutencao" placeholder="manutenção"> <br>
+                <input type="text" id="input_dt_instalacao" placeholder="instalação"><br>
+                <input type="text" id="input_posicao" placeholder="posição"><br>
+                <button onclick="cadastrar()">Cadastrar sensor</button>
+                <button onclick="verificar()">Verificar sensores</button>
+            </div>
+        </div>
+
+        <div class="cards-sensor">
+            <div id="div_mensagem_card"></div>
+        </div>
+        <div id="div_mensagem_sensor"></div>
+</body>
+
+</html>
+
+<script>
+    var listaTipo = []
+    var listaNome = []
+    var listaStatus = []
+    var listaSeries = []
+    var listaManutencao = []
+    var listaInstalacao = []
+    var listaPosicao = []
+
+    function cadastrar() {
+        var tipo = input_tipo.value
+        var nome = input_nome.value
+        var status = select_status.value
+        var numeroSeries = input_numero_series.value
+        var dtManutencao = input_dt_manutencao.value
+        var dtInstalacao = input_dt_instalacao.value
+        var posicao = input_posicao.value
+
+        if (tipo == "" || nome == "" || status == "" || numeroSeries == "" || dtManutencao == "" || dtInstalacao == "" || posicao == "") {
+            alert('Preencha todos os campos!')
+        } else if (listaNome.includes(nome)) {
+            alert('Este sensor já existe! Tente outro.')
+        } else {
+            listaTipo.push(tipo)
+            listaNome.push(nome)
+            listaStatus.push(status)
+            listaSeries.push(numeroSeries)
+            listaManutencao.push(dtManutencao)
+            listaInstalacao.push(dtInstalacao)
+            listaPosicao.push(posicao)
+            alert('Sensor cadastrado com sucesso!')
+
+        }
+    }
+    function verificar() {
+        div_mensagem_sensor.innerHTML = ""
+        div_mensagem_card.innerHTML = ""
+
+        if (listaNome.length == 0) {
+            div_mensagem_sensor.innerHTML = "Nenhum sensor cadastrado."
+        } else {
+            div_mensagem_sensor.innerHTML = `<h3>Você tem ${listaNome.length} sensores cadastrados:</h3>`
+
+            for (var i = 0; i < listaNome.length; i++) {
+                div_mensagem_card.innerHTML += `
+                 <p>Sensor ${i + 1}<br>
+                Tipo: ${listaTipo[i]}<br>
+                Nome: ${listaNome[i]}<br>
+                Status: ${listaStatus[i]}<br>
+                Número de Série: ${listaSeries[i]}<br>
+                Data de Manutenção: ${listaManutencao[i]}<br>
+                Data de Instalação: ${listaInstalacao[i]}<br>
+                Posição: ${listaPosicao[i]}</p><br>`
+            }
+        }
+
+    }
+</script>
