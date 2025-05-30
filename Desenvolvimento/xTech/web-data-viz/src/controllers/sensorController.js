@@ -21,5 +21,5 @@ function buscarTodosSensoresPorEmpresa(req, res) {
 }
 
 module.exports = {
-    buscarTodosSensores,
+    buscarTodosSensoresPorEmpresa,
 };
