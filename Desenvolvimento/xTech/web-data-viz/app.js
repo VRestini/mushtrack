@@ -18,6 +18,7 @@ var indexRouter = require("./src/routes/index");
 var empresaRouter = require("./src/routes/empresas")
 var sensorRouter = require("./src/routes/sensor")
 var estufaRouter = require("./src/routes/estufa")
+var cogumeloRouter = require("./src/routes/cogumelo")
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -29,7 +30,7 @@ app.use("/", indexRouter);
 app.use("/empresa", empresaRouter)
 app.use("/sensor", sensorRouter)
 app.use("/estufa", estufaRouter)
-
+app.use("/cogumelo", cogumeloRouter)
 
 app.listen(PORTA_APP, function () {
     console.log(`
