@@ -1,15 +1,15 @@
 var database = require("../database/config");
 
 
-function buscar(idEstufa, idEmpresa) {
+function buscarEstufas(idEmpresa) {
     
   var instrucaoSql = `
-      SELECT * FROM sensor JOIN estufa ON estufa.id = sensor.estufa_id JOIN empresa ON empresa.id = '${idEmpresa}';
+      SELECT id, nome FROM estufa JOIN empresa ON estufa.empresa_id = '${idEmpresa}' ;
   `;
   console.log("Executando a instrução SQL: \n" + instrucaoSql);
   return database.executar(instrucaoSql);
 }
 
 module.exports = { 
-  buscar
+  buscarEstufas
  };
