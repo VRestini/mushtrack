@@ -1,8 +1,8 @@
 var express = require("express");
 var router = express.Router();
 
-var sensorController = require("../controllers/sensorController");
+var estufaController = require("../controllers/estufaController");
 router.post("/buscar", function (req, res) {
-    empresaController.entrar(req, res);
+    estufaController.buscarEstufas(req, res);
 });
 module.exports = router;
