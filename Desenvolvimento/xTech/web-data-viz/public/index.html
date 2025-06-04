@@ -22,23 +22,29 @@
             <li><a href="#route_simulator">Simulador</a></li>
             <li><a href="#route_about">Sobre Nós</a></li>
             <li><a class="button_4" id="login_a" href="loginEmpresa.html">Login</a></li>
-            <li><a class="button_5" id="login_a" href="cadastroEmpresa.html">Cadastrar</a></li>
+            <!-- <li><a class="button_5" id="login_a" href="cadastroEmpresa.html">Cadastrar</a></li> -->
         </ul>
     </nav>
   </header>
 
-  <section class="container_box">
-    <div class="home_text">
-      <h1 class="title_1">X TECHNOLOGY</h1><br>
-      <p>Da agricultura à indústria, inovação para quem busca mais controle e produtividade!</p>
-      <div></div>
-      <div class="button" id="button_home">
-        <a href="./cadastroEmpresa.html" >Registre-se</a>
+  <section id="inicio">
+    <div class="banner">
+      <div class="container">
+        <h2>X TECCHNOLOGY</h2>
+        <h3>Controle total, produção saudável.</h3>
       </div>
     </div>
-    <div class="home_image">
-      <img src="../assets/img/homem_computador.jpg" alt="cogumelo" >
+  </section>
+
+  <section id="#about_us">
+    <div class="conteudo">
+      <h3>Conheca o nosso produto</h3>
+      <p>Nós trabalhamos com diversos cogumelos para atender o seu <br>
+        negócio. Venha conhecer mais sobre a MushTrack, nosso sistema de <br>
+         monitoramento de temperatura e umidade do ar de estufas de 
+         cogumelos </p>
     </div>
+
   </section>
 
  <section class="container_box mush" id="route_mushtrack">
@@ -76,15 +82,17 @@
         </ul>
       </div>
     </div>
-  </div>
+  <!-- </div>
   <div class="button" id="button_mush">
     <a href="./institucionalXTech/index.html">CONHECER MUSHTRACK</a>
-  </div>
+  </div> -->
 </section>
 
 <section id="route_simulator" class="container_box mush">
   <h2 class="titulo">SIMULADOR</h2>
   <div id="simulator">
+          <p>Simule valores com nosso produto</p>
+
     <div id="simulator_input">
 
       <select id="select_cogumelo" class="select_result">
@@ -105,7 +113,7 @@
       <input id="input_temp" class="input_result" placeholder="Temperatura média da estufa">       
       <input id="input_umid" class="input_result" placeholder="Umidade média do ar da estufa">       
       <input id="input_preco" class="input_result" placeholder="Preço/kg do cogumelo">
-      <button onclick="analisar()" class="button" >Analisar Produção</button>
+      <button onclick="analisar()" class="button" >Simular</button>
     </div>
     <div id="simulator_result">
 

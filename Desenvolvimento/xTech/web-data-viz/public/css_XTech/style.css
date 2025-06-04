@@ -14,12 +14,12 @@
 }
 body {
   height: 100vh;
-  background-color: #f1eeee;
+  background-color: #ffff;
   color: #4E3324;
 }
-section{
+/* section{
   padding: 5% 6% 4% 6%;
-}
+} */
 
 a{
   text-decoration: none;
@@ -56,39 +56,77 @@ header{
 
 #login_a{
   color: #FFFFFF;
+  background-color: #432C1C;
 }
 
 /* HOME */
-.container_box{
+
+.banner {
+    background-image: url(../assets/img/banner.png);
+    background-size: cover;
+    background-position: center;
+    height: 690px;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.716);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    text-align: center;
+    margin-top: 12px;
+}
+
+/* .banner .container h2, h3{
+  margin-left: 39px;
+  position: relative;
+} */
+.banner .container h2 {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'dune-rise';
+    margin-top: 400px;
+
+
+ 
+}
+
+.banner .container h3 {
+    font-size: 30px;
+    font-weight: 300;
+    font-family: Arial, Helvetica, sans-serif;
+ 
+}
+
+
+/* .container_box{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   height: 84%;
 }
-
-.home_text{
-  max-width: 50%;
-  height: 300px;
+.home {
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-}
-.home_text p{
-  font-size: 130%;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../assets/img/banner.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
 }
 
-.home_image{
-  display: flex;
-  align-self: self-end;
+.home p {
+  font-size: 1.5rem;
+  color: white;
 }
 
-.home_image img{
-  border-radius: 30px;
-  width: 550px;
-}
-  .title_1{
-    font-family: 'dune-rise';
-    font-size: 270%;
-  }
+.title_1 {
+  font-family: 'dune-rise';
+  font-size: 3rem;
+  color: #ccc;
+} */
 
 
 /************************** Mushtrack ******************************/
@@ -96,7 +134,7 @@ header{
   text-align: center;
   display: flex;
   flex-direction: column;
-  padding-top: 4%;
+  padding-top: 10%;
 }
 .cards-container{
   display: block;
@@ -108,10 +146,36 @@ h1{
 }
 
 
+/* sobre nos */
+
+.conteudo{
+  display: flex;
+  flex-direction: column;
+  margin-top: 11%;
+}
+
+.conteudo h3{
+  color: #000;
+  display: flex;
+  justify-content: center;
+    font-family: 'dune-rise';
+    font-size: 32px;
+    font-weight: 100;
+}
+
+.conteudo p{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+  color: #000;
+  margin-top: 30px;
+}
+
 /******************************* Simulador *****************************/
 
 #route_simulator{
-  margin-top: 10%;
+  margin-top: 3%;
   justify-content: flex-start;
 }
 
@@ -124,16 +188,23 @@ h1{
   display: flex;
   flex-direction: row;
 }
+
+#simulator p{
+    font-family: 'dune-rise';
+    font-weight: 500;
+}
 #simulator_input{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items:center;
-  height: 115%;
-  width: 60%;
-  background-color: #4E3324;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
+  height: 400px;
+  border-radius: 14px;
+  width: 40%;
+  margin: 20px;
+  background-color: none;
+  border: #000 solid 1px;
+  
 }
 .simulador_resul_ideal{
   display: flex;
@@ -338,6 +409,7 @@ h1{
   margin-bottom: 40px;
   letter-spacing: 2px;
   align-self: center;
+  font-weight: 100;
 }
 
 /* Container de cards */
@@ -381,14 +453,23 @@ h1{
   align-self: center;
 }
 .button_4{
-  background: linear-gradient(to right, #1a0f07, #9d5b26);
+  /* background: linear-gradient(to right, #1a0f07, #9d5b26); */
+  background-color: #432C1C;
   border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
+  padding: 10px 40px;
+  border-radius: 16px;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
 }
+.button_4:hover{
+  background-color: #615852;
+  color: #000;
+    transform: scale(1.05);
+
+}
+
 .button_5 {
-  background: linear-gradient(to right, #1a0f07, #9d5b26);
+  /* background: linear-gradient(to right, #1a0f07, #9d5b26); */
   border: none;
   padding: 10px 20px;
   border-radius: 20px;
@@ -403,8 +484,8 @@ h1{
 
 .card {
   background-color: white;
-  border-radius: 12px;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  box-shadow: 3px 8px 20px rgba(0, 0, 0, 0.1);
   width: 300px;
   overflow: hidden;
   text-align: left;
