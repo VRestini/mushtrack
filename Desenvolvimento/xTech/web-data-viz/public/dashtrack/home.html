@@ -5,16 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mushtrack Dashboard</title>
   <link rel="shortcut icon" type="imagex/png" href="img/logo_mush.png">
+  <link rel="stylesheet" href="css_dashtrack/menu.css">
   <link rel="stylesheet" href="./css_dashtrack/dashtrack_inicio.css">
 
 </head>
 
 <body>
   <div class="header">
+    <!-- menu -->
     <div class="lateral">
       <div class="titulo">
-        <div class="card_logo">
-          <img src="../assets/img/xtechBrown.png" alt="Logo MushTrack">
+        <div class="card-logo">
+          <img src="./img/logo_mush.png" alt="Logo MushTrack" />
         </div>
         <h2>MushTrack</h2>
       </div>
@@ -22,11 +24,11 @@
       <ul class="menu">
         <li class="ativo">
           <img src="img/icone_dashboard.png" alt="Dashboard">
-          <a href="home.html">Home</a>
+          <a href="#">Estufas</a>
         </li>
         <li>
-          <img src="img/Group.png" alt="MushTrack">
-          <a href="sensorHome.html">Sensores</a>
+          <img src="img/Group.png" alt="Sensores">
+          <a href="#">Sensores</a>
         </li>
         <li>
           <img src="img/sair.png" alt="Sair">
@@ -34,57 +36,85 @@
         </li>
       </ul>
     </div>
+
     <div class="main-content">
-      <section class="usuario">
-        <div class="usuario_container">
-          <h1>Dashboard</h1>
-          <div class="perfil_usuario">
-            <strong id="user_name"></strong><br>
-          </div>
+
+      <div class="estufa">
+        <h2>Dashboard</h2>
+        <div class="user">
+          <span class="username">Admin</span>
+          <img src="img/user.png" alt="Usuário">
         </div>
-      </section>
+      </div>
+
 
       <section class="cogumelos">
-        <div class="cards">
-          <h1> SEUS COGUMELOS</h1>
-          <div class="shimeji_card">
-            <a href="dashboard.html"> SHIMEJI
-              <img src="img/imagem_shimeji.png">
-            </a>
+        <div class="geral">
+        <h1 class="tile">Seus cogumelos</h1>
+        <div class="container-cogumelos">
+          <div class="Cogumelo">
+            <div class="conteudo">
+              <h1>Shimeji</h1>
+              <img src="img/shimeji_card.png" alt="">
+            </div>
           </div>
-          <div class="champignon_card">
-            <a href="dashboard.html"> CHAMPIGNON DE PARIS
-              <img src="img/imagem_champignon.png">
-            </a>
+          <div class="Cogumelo">
+            <div class="conteudo">
+              <h1>Shiitake</h1>
+              <img src="img/shiitake_card.png" alt="">
+            </div>
           </div>
-          <div class="shiitake_card">
-            <a href="dashboard.html"> SHIITAKE
-              <img src="img/imagem_shiitake.png">
-            </a>
+          <div class="Cogumelo">
+            <div class="conteudo">
+              <h1>Champignon de Paris</h1>
+              <img src="img/champignon_card.png" alt="">
+            </div>
           </div>
         </div>
       </section>
-      <section class="card_alertas">
-        <div class="log_alerta">
-          <h1>Estufas em alerta</h1><br><br>
-          <h4>Estufa - 3</h4>
-        </div> <br>
-        <div class="log_alerta">
 
-          <h4>Estufa - 9</h4>
-        </div> <br>
-        <div class="log_alerta">
 
-          <h4>Estufa - 11</h4>
-        </div> <br>
+      <section class="alertas">
+        <div class="container-alerta">
+          <div class="alerta">
+            <div class="img">
+              <img src="img/red.png" alt="">
+              <h1>Estufa 3</h1>
+              <p>Shimeji</p>
+            </div>
+          </div>
+          <div class="alerta">
+            <div class="img">
+              <img src="img/verde.png" alt="">
+              <h1>Estufa 5</h1>
+              <p>Shiitake</p>
+            </div>
+            <div class="alerta">
+              <div class="img">
+                <img src="img/red.png" alt="">
+                <h1>Estufa 3</h1>
+                <p>Shimeji</p>
+              </div>
+              <div class="alerta">
+                <div class="img">
+                  <img src="img/amarelo.png" alt="">
+                  <h1>Estufa 1</h1>
+                  <p>Champignon de Paris</p>
+                </div>
+
+              </div>
 
       </section>
+
+
+
     </div>
   </div>
 
 
 </body>
+
 </html>
 <script>
-  
+
 </script>

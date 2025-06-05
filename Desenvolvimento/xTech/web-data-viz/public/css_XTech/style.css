@@ -12,7 +12,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: gidole;
 }
 
 body {
@@ -21,17 +20,13 @@ body {
   color: #4E3324;
 }
 
-/* section{
-  padding: 5% 6% 4% 6%;
-} */
-
 a {
   text-decoration: none;
   color: white;
   white-space: nowrap;
 }
 
-/***************************  HEADER  ************/
+/*  HEADER */
 header {
   padding: 3% 4% 3% 4%;
   display: flex;
@@ -59,6 +54,8 @@ header {
   color: #4E3324;
   text-decoration: none;
   font-weight: bold;
+    font-family: 'gidole';
+
 }
 
 #login_a {
@@ -136,7 +133,7 @@ header {
 } */
 
 
-/************************** Mushtrack ******************************/
+/************************** Mushtrack ****/
 .mush {
   text-align: center;
   display: flex;
@@ -181,7 +178,7 @@ h1 {
   margin-top: 30px;
 }
 
-/******************************* Simulador *****************************/
+/***** Simulador ***/
 
 
 #simulador {
@@ -428,7 +425,7 @@ h1 {
 }
 
 
-/******************************** Botão ********************************/
+/****** Botão ******/
 
 .button:hover {
   transform: scale(1.05);
@@ -493,7 +490,7 @@ h1 {
 }
 
 
-/******************************** CARDS *************************/
+/****** CARDS**************/
 
 
 
