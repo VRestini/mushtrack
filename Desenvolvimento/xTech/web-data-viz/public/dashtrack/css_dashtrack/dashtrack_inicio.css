@@ -23,6 +23,11 @@ body {
     height: 10%;
 }
 
+.geral{
+  display: flex;
+  flex-direction: row;
+}
+
 .estufa h2 {
     color: #4E3324;
     font-size: 24px;
@@ -72,13 +77,35 @@ body {
 /* alerta */
 .container-alerta{
   background-color: #fff4de3b;
-  width: 400px;
+  width: 330px;
+  height: 400px;
+  margin-left: 180px;
+  border-radius: 20px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 
 }
 
-.alerta .img{
+.container-alerta h1{
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+.alerta .imagem{
   display: flex;
   flex-direction: row;
+  gap: 10px;
+  margin-top: 10px;
+  margin-left: 20px;
+
+}
+
+.alerta .imagem img{
+  width: 30px;
+}
+
+.imagem p{
+  color: #425166;
 }
 
 
@@ -117,6 +144,12 @@ body {
   align-items: center;
   gap: 10px;
   font-weight: 400;
+}
+
+.conteudo h2{
+  color: #f9f9f9;
+  font-size: 19px;
+  text-align: center;
 }
 
 .Cogumelo h1 {
