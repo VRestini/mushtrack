@@ -163,7 +163,7 @@ header {
     display: flex;
     justify-content: center;
     text-align: center;
-    font-size: 20px;
+    font-size: 27px;
 }
 
 .serviços-text h2 {
@@ -178,13 +178,13 @@ header {
     gap: 20px;
 }
 
-.serviços-text h2::before,
+/* .serviços-text h2::before,
 .serviços-text h2::after {
     content: "";
     flex: 1;
     height: 3px;
     background-color: #4E3324;
-}
+} */
 
 
 .container-img {
@@ -224,6 +224,35 @@ header {
     font-size: 19px;
 }
 /* Estilos da Seção Agendar */
+
+
+#agendar_reuniao .reuniao-card .agendar-text h2 {
+    margin-top: 8%;
+    font-family: dune-rise;
+    text-align: center;
+    color: #4E3324;
+    font-size: 40px;
+}
+
+#agendar_reuniao .reuniao-card .agendar-text p {
+     margin-bottom: 2%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 27px;
+}
+
+.reuniao-text h2 {
+    display: flex;
+    font-family:dune-rise ;
+    align-items: center;
+    justify-content: center;
+    color: #4E3324;
+    font-size: 36px;
+    font-weight: 700;
+    margin: 40px 0;
+    gap: 20px;
+}
 
 #agendar .container-agendar {
     background-image: url('../../dashtrack/img/agendar.png');
@@ -279,7 +308,14 @@ header {
 
 }
 
-
+#dash-titulo .dash-card .dash-text h2 {
+    margin-top: 5%;
+    margin-bottom: 3%;
+    font-family: dune-rise;
+    text-align: center;
+    color: #4E3324;
+    font-size: 40px;
+}
 .conteudo-dashboard h1 {
     color: white;
     font-size: 50px;
