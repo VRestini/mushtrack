@@ -75,26 +75,57 @@ header {
     font-weight: 300;
 }
 /* Sobre Nós */
-
-#sobreNos .content-section h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #471e08b1;
-    font-size: 39px;
-    font-weight: bold;
-    margin-top: 90px;
-
+#servicos {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: center;
 }
 
-#sobreNos .content-section p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 20px;
-    color: #000000d5;
+.servicos-text h2 {
+  font-family: dune-rise; 
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.servicos-text p {
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+
+#dash-graficos {
+  padding: 40px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.content-graficos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 20px;
+}
+
+.dash_grafico, .dash_alertas {
+  max-width: 400px;
+}
+
+.dash_grafico img,
+.dash_alertas img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.dash_grafico h3,
+.dash_alertas h3 {
+  margin-top: 10px;
+  font-size: 23px;
+  color: #333;
+  font-weight: bold;
 }
 
 /* Tipos de cogumelos */
@@ -140,7 +171,7 @@ header {
     align-items: center;
     text-align: center;
     position: relative;
-    font-size: 30px;
+    font-size: 28px;
     top: -90px;
 }
 
@@ -151,12 +182,11 @@ header {
     flex-direction: column;
 }
 
-
 #serviços .serviços-card .serviços-text h2 {
     font-family: dune-rise;
     text-align: center;
     color: #4E3324;
-    font-size: 40px;
+    font-size: 28px;
 }
 
 #serviços .serviços-card .serviços-text p {
@@ -178,60 +208,14 @@ header {
     gap: 20px;
 }
 
-/* .serviços-text h2::before,
-.serviços-text h2::after {
-    content: "";
-    flex: 1;
-    height: 3px;
-    background-color: #4E3324;
-} */
-
-
-.container-img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 160px;
-    margin: 60px;
-
-}
-
-.card-dados img,
-.card-dashboard img,
-.card-alerta img {
-    width: 250px;
-    transition: transform 0.2s;
-
-}
-/* Dando movimento para as imagens */
-.card-dados img:hover,
-.card-dashboard img:hover,
-.card-alerta img:hover
- {
-    transform: scale(1.05);
-}
-
-.card-dados p,
-.card-dashboard p,
-.card-alerta p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-    font-weight: 600;
-    color: rgba(0, 0, 0, 0.666);
-    font-size: 19px;
-}
-/* Estilos da Seção Agendar */
-
+/* agendar */
 
 #agendar_reuniao .reuniao-card .agendar-text h2 {
     margin-top: 8%;
     font-family: dune-rise;
     text-align: center;
     color: #4E3324;
-    font-size: 40px;
+    font-size: 32px;
 }
 
 #agendar_reuniao .reuniao-card .agendar-text p {
@@ -239,7 +223,7 @@ header {
     display: flex;
     justify-content: center;
     text-align: center;
-    font-size: 27px;
+    font-size: 25px;
 }
 
 .reuniao-text h2 {
@@ -273,7 +257,7 @@ header {
     background-color: #D9D9D9;
     color: black;
     border: none;
-    padding: 10px 20px;
+    padding: 20px 30px;
     border-radius: 20px;
     font-size: 1rem;
     cursor: pointer;
@@ -314,7 +298,7 @@ header {
     font-family: dune-rise;
     text-align: center;
     color: #4E3324;
-    font-size: 40px;
+    font-size: 32px;
 }
 .conteudo-dashboard h1 {
     color: white;
@@ -326,7 +310,7 @@ header {
     background-color: #D9D9D9;
     color: black;
     border: none;
-    padding: 10px 20px;
+    padding: 20px 30px;
     border-radius: 20px;
     font-size: 1rem;
     cursor: pointer;
