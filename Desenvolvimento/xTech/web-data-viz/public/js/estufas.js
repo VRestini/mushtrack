@@ -17,14 +17,13 @@ function buscarTodasEstufas() {
             response.json().then(function (response) {
                 for (var i = 0; i < response.length; i++) {
                     listaEstufas.push(response[i])
-                    /*conteudo_cogumelos_container.innerHTML += `<div class="Cogumelo">
-              <a href="estufas.html">
-                <div class="conteudo">
-                  <h2>Shimeji</h2>
-                  <img src="img/shimeji_card.png" alt="Shimeji">
-                </div>
-              </a>
-            </div>`*/
+                    bloco_cards.innerHTML += `<a href="dashboard.html">
+              <div class="card1">
+                <img src="img/verde.png" alt="Alerta">
+                <h3>Estufa ${i+1}</h3>
+                <p>Shimeji</p>
+              </div>
+            </a>`
                 }
             })
         }
