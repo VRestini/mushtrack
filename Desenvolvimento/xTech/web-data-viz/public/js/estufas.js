@@ -1,16 +1,16 @@
-window.onload = function () {
-    buscarTodasEstufas()
-}
+
 var listaEstufas = []
-function buscarTodasEstufas() {
+function buscarTodasEstufas(cogumelo) {
     id_empresa = sessionStorage.ID_EMPRESA
+    let teste = cogumelo
     fetch("/estufa/buscar", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            IdEmpresaServer: id_empresa
+            IdEmpresaServer: id_empresa,
+            CogumeloServer: teste
         })
     }).then(function (response) {
         if (response.ok) {
