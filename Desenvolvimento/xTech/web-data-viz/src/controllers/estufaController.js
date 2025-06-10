@@ -1,5 +1,5 @@
 var estufaModel = require("../models/estufaModel")
-function buscarEstufas(){
+function buscarEstufas(req,res){
     let id_empresa = req.body.IdEmpresaServer
     if(id_empresa == undefined)
         res.status(400).send("IdEmpresaServer undefined!");
