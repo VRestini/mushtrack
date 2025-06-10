@@ -7,28 +7,30 @@
     <title>Login</title>
     <link rel="stylesheet" href="./css_XTech/style-login.css">
     <link rel="shortcut icon" type="imagex/png" href="./assets/img/xTechWhite.png">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script src="./js/loginEmpresa.js"></script>
 
 </head>
 
 <body>
     <header>
-        <img src="../assets/img/xtechBrown.png" alt="" height="40px">
+        <img src="assets/img/xtechBrown.png" alt="" height="40px">
         <nav class="header_nav">
             <ul>
-                <li><a href="Index.html">Home</a></li>
-                <li><a href="Index.html">MushTrack</a></li>
-                <li><a href="Index.html">Simulador</a></li>
-                <li><a href="Index.html">Sobre Nós</a></li>
+                <li><a href="#home">Home</a></li>
+
+                <li><a href="#route_mushtrack">MushTrack</a></li>
+                <li><a href="#route_simulator">Simulador</a></li>
+                <li><a href="#route_about">Sobre Nós</a></li>
                 <li><a class="button_4" id="login_a" href="loginEmpresa.html">Login</a></li>
-                <li><a class="button_5" id="login_a" href="cadastroEmpresa.html">Cadastrar</a></li>
             </ul>
         </nav>
     </header>
     <div class="login">
         <div class="container">
             <div class="card-login">
-                <img id="imgLogo" src="../assets/img/logobranca.png" alt="Logo MushTrack">
+                <img id="imgLogo" src="./dashtrack/img/logo_mush_marrom.png" alt="Logo MushTrack">
                 <div class="formulario">
                     <div class="campo">
                         <input id="email_input" type="text" placeholder="Email">

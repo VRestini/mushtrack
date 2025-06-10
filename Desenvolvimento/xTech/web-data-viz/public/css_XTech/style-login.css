@@ -49,7 +49,6 @@ header {
     justify-content: center;
     align-items: center;
     height: 87.4vh;
-    background-image: url(../../assets/img/imagemInicio.png);
     background-size: cover;
     background-position: center;
 }
@@ -63,7 +62,7 @@ header {
 .card-login {
     display: block;
     justify-content: space-between;
-    background-color: #4a2d1f;
+    background-color: none;
     border-radius: 16px;
     padding: 60px;
     display: flex;
@@ -71,6 +70,7 @@ header {
     flex-direction: column;
     align-items: center;
     width: 700px;
+
 }
 
 #imgLogo {
@@ -112,7 +112,7 @@ header {
   }
   .button {
     text-decoration: none;
-    background-color: #625140;
+    background-color: #4E3324;
     display: block;
     flex-direction: column;
     width: 400px;
@@ -142,12 +142,20 @@ header {
     
 }
 .button_4 {
-  background: linear-gradient(to right, #1a0f07, #9d5b26);
+  /* background: linear-gradient(to right, #1a0f07, #9d5b26); */
+  background-color: #432C1C;
   border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-  color: white;
+  padding: 10px 40px;
+  border-radius: 16px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.button_4:hover {
+  background-color: #615852;
+  color: #000;
+  transform: scale(1.05);
+
 }
 
 .button_5 {
@@ -169,6 +177,6 @@ header {
 }
 
 .Registrar a {
-    color: #ffffff;
+    color: #4E3324;
     font-weight: 300;
 }

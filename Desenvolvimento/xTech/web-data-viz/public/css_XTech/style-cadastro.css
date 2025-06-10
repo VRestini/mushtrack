@@ -2,45 +2,65 @@
   font-family: 'gidole';
   src: url('../../assets/font/Gidole-Regular.ttf') format('truetype');
 }
+
 @font-face {
   font-family: 'dune-rise';
   src: url('../../assets/font/Dune_Rise.ttf') format('truetype');
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: gidole;
 }
+
 /* Header */
 header {
-    padding: 3% 4%;
-    display: flex;
-    align-items: center;
-    height: 50px;
+  padding: 3% 4%;
+  display: flex;
+  align-items: center;
+  height: 50px;
 }
 
 .header_nav {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .header_nav ul {
-    width: 60%;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
+  width: 60%;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
 }
 
 .header_nav a {
-    color: #4E3324;
-    text-decoration: none;
-    font-weight: bold;
+  color: #4E3324;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 #login_a {
-    color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+.button_4 {
+  /* background: linear-gradient(to right, #1a0f07, #9d5b26); */
+  background-color: #432C1C;
+  border: none;
+  padding: 10px 40px;
+  border-radius: 16px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.button_4:hover {
+  background-color: #615852;
+  color: #000;
+  transform: scale(1.05);
+
 }
 
 /* Cadastro */
@@ -48,168 +68,170 @@ header {
 .banner {
   background-image: url(../../assets/img/imagemInicio.png);
   height: 867px;
-    width: 100%;
+  width: 100%;
 }
-.container{
-    display: flex;
-    justify-content: center;
+
+.container {
+  display: flex;
+  justify-content: center;
 }
-.campo input{
-    display: block;
-    flex-direction: column;
-    width: 400px;
-    margin: 10px;
-    padding: 12px 12px 12px 60px;
-    border: none;
-    border-radius: 20px;
-    background-color: #f2f2f2 !important;
-    font-size: 14px;
-  } 
-  .campo {
-    margin-bottom: 16px;
-  }
- 
-.card-cadastro{
-    display: block;
-    justify-content: space-between;
-    background-color: #4a2d1f;
-    border-radius: 16px;
-    padding: 60px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 1000px;
-    margin-top: 140px;
-    
-} .formulario {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 20px;
-  }
-.coluna-esquerda, .coluna-direita, .coluna-central {
-    display: flex;
-    flex-direction: column;
-    margin: 0 10px; 
-  }
 
-  #input_cnpj{
-    background: url(../../assets/img/icone-empresa.png);
-    background-repeat: no-repeat;
-    background-position: 20px center;
-    background-size: 24px 24px;
+.campo input {
+  display: block;
+  flex-direction: column;
+  width: 400px;
+  margin: 10px;
+  padding: 12px 12px 12px 60px;
+  border: none;
+  border-radius: 20px;
+  background-color: #f2f2f2 !important;
+  font-size: 14px;
+}
 
-  }
-  #input_nomeEmpresa{
-    background: url(../../assets/img/icone-empresa.png);
-    background-repeat: no-repeat;
-    background-position: 20px center;
-    background-size: 24px 24px;
+.campo {
+  margin-bottom: 16px;
+}
+
+.card-cadastro {
+  display: block;
+  justify-content: space-between;
+  background-color: none;
+  border-radius: 16px;
+  padding: 60px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 1000px;
+  margin-top: 60px;
+
+}
+
+.formulario {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.coluna-esquerda,
+.coluna-direita,
+.coluna-central {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+}
+
+#input_cnpj {
+  background: url(../../assets/img/icone-empresa.png);
+  background-repeat: no-repeat;
+  background-position: 20px center;
+  background-size: 24px 24px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 
 
-  }
-  #input_nomeRepresentante, #input_nomeUsuario{
-    background: url(../../assets/img/icone-usuario.png);
-    background-repeat: no-repeat;
-    background-position: 20px center;
-    background-size: 24px 24px;
-    
-  } 
-  #input_email{
-    background: url(../../assets/img/icone-email.png);
-    background-repeat: no-repeat;
-    background-position: 20px center;
-    background-size: 24px 24px;
-  }
-  #input_senha{
-    background: url(../../assets/img/senha-icone.png);
-    background-repeat: no-repeat;
-    background-position: 20px center;
-    background-size: 24px 24px;
-  }
-  #input_confirmeSenha{
-    background: url(../../assets/img/senha-icone.png);
-    background-repeat: no-repeat;
-    background-position: 20px center;
-    background-size: 24px 24px;
-  }
+}
+
+#input_nomeEmpresa {
+  background: url(../../assets/img/icone-empresa.png);
+  background-repeat: no-repeat;
+  background-position: 20px center;
+  background-size: 24px 24px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+
+
+
+}
+
+#input_nomeRepresentante,
+#input_nomeUsuario {
+  background: url(../../assets/img/icone-usuario.png);
+  background-repeat: no-repeat;
+  background-position: 20px center;
+  background-size: 24px 24px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+
+
+}
+
+#input_email {
+  background: url(../../assets/img/icone-email.png);
+  background-repeat: no-repeat;
+  background-position: 20px center;
+  background-size: 24px 24px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+#input_senha {
+  background: url(../../assets/img/senha-icone.png);
+  background-repeat: no-repeat;
+  background-position: 20px center;
+  background-size: 24px 24px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+#input_confirmeSenha {
+  background: url(../../assets/img/senha-icone.png);
+  background-repeat: no-repeat;
+  background-position: 20px center;
+  background-size: 24px 24px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+
+}
 
 #imgLogo {
-    width: 80px;
-    margin-bottom: 20px;
-  }
+  width: 80px;
+  margin-bottom: 20px;
+}
 
- /* Botão do cadastro */
+/* Botão do cadastro */
 
 .button:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 
-    
-  }
-  .button {
-    text-decoration: none;
-    background-color: #625140;
-    width: 340px;
-    height: 40px ;
-    border-radius: 20px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    text-align: center;
-    transition: transform 0.2s;
 
-  }
-  
-
-#button_home a{
-    text-decoration: none;
-    color: white;
 }
-.button_4 {
-  background: linear-gradient(to right, #1a0f07, #9d5b26);
-  border: none;
-  padding: 10px 20px;
+
+.button {
+  text-decoration: none;
+  background-color: #4E3324;
+  width: 340px;
+  height: 40px;
   border-radius: 20px;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+
+
+}
+
+
+#button_home a {
+  text-decoration: none;
   color: white;
 }
+
+
+
 .button_5 {
   background: linear-gradient(to right, #1a0f07, #9d5b26);
   border: none;
   padding: 10px 20px;
   border-radius: 20px;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   color: white;
 }
 
-.Cadastrar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
+.Cadastrar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
