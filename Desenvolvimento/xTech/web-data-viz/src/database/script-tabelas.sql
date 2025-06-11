@@ -83,3 +83,10 @@ create table alerta (
 	constraint fkAlertaSensor foreign key (sensor_id) references sensor(id)
 );
 
+SELECT s.id, s.nome, est.nome AS estufa, c.nome AS cogumelo
+FROM sensor s
+JOIN estufa est ON s.estufa_id = est.id
+JOIN cogumelo c ON est.cogumelo_id = c.id;
+
+SELECT * FROM parametro;
+

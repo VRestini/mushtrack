@@ -19,28 +19,26 @@ async function verificarAlertasPorSensor(sensor_id, temperatura, umidade) {
   const [linhas] = await database.execute(query, [sensor_id]);
 
   if (linhas.length === 0) {
-    return null;
+    return null; // Sensor não encontrado ou sem parâmetros
   }
 
-  const param = linhas[0];
-  let descricao = [];
+  const parametros = linhas[0];
 
-  if (temperatura < param.temp_minima) {
-    descricao.push(`Temperatura abaixo do ideal (${param.temp_minima}°C). Risco de lentidão no crescimento.`);
-  } else if (temperatura > param.temp_maxima) {
-    descricao.push(`Temperatura acima do ideal (${param.temp_maxima}°C). Aumenta risco de contaminação.`);
+  let descricao = null;
+
+  if (temperatura < parametros.temp_minima) {
+    descricao = `Temperatura baixa para ${parametros.cogumelo} no estágio ${parametros.estagio}`;
+  } else if (temperatura > parametros.temp_maxima) {
+    descricao = `Temperatura alta para ${parametros.cogumelo} no estágio ${parametros.estagio}`;
+  } else if (umidade < parametros.umi_minima) {
+    descricao = `Umidade baixa para ${parametros.cogumelo} no estágio ${parametros.estagio}`;
+  } else if (umidade > parametros.umi_maxima) {
+    descricao = `Umidade alta para ${parametros.cogumelo} no estágio ${parametros.estagio}`;
   }
 
-  if (umidade < param.umi_minima) {
-    descricao.push(`Umidade muito baixa (${param.umi_minima}%). Pode causar crescimento interrompido.`);
-  } else if (umidade > param.umi_maxima) {
-    descricao.push(`Umidade muito alta (${param.umi_maxima}%). Substrato propenso a mofos e apodrecimento.`);
-  }
-
-  return {
-    descricao: descricao.length > 0 ? descricao.join(" ") : null
-  };
+  return { descricao };
 }
+
 
 // 2. Salvar alerta
 function salvarAlerta(dados_id, sensor_id, descricao) {
