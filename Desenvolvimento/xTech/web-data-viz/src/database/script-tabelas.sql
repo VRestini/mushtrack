@@ -85,3 +85,4 @@ create table alerta (
 	constraint fkAlertaSensor foreign key (sensor_id) references sensor(id)
 );
 
+select * from empresa;
