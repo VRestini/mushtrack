@@ -158,6 +158,10 @@
 <script src="../js/dash.js"></script>
 <script>
   window.onload = function(){
-    setTimeout(buscarParametro, 100);
+    setTimeout(carregarFuncoes, 100);
+  }
+  function carregarFuncoes(){
+    buscarParametro()
+    buscarSensores()
   }
 </script>

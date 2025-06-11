@@ -3,8 +3,8 @@ var router = express.Router();
 
 var sensorController = require("../controllers/sensorController");
 
-router.get("/carregar", function (req, res) {
-    sensorController.buscarTodosSensoresPorEmpresa(req, res);
+router.post("/carregar", function (req, res) {
+    sensorController.buscarTodosSensoresPorEstufa(req, res);
 })
 
 

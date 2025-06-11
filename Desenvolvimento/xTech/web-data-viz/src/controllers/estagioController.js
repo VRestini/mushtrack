@@ -5,8 +5,7 @@ function buscarEstagio(req,res){
         res.status(400).send("IdEstufaServer undefined!");
     else{
         estagioModel.buscarParametro(id_estufa).then(function(response){
-            console.log(`\nResultados encontrados: ${response.length}`)
-            console.log(`Resultados: ${JSON.stringify(response)}`)
+          
             if(response.length>=1)
                 res.json(response)
             else{
