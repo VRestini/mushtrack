@@ -17,15 +17,20 @@ function buscarTodasEstufas(cogumelo) {
             response.json().then(function (response) {
                 for (var i = 0; i < response.length; i++) {
                     listaEstufas.push(response[i])
-                    bloco_cards.innerHTML += `<a href="dashboard.html">
-              <div class="card1">
+                    bloco_cards.innerHTML += `<a href="dashboard.html" onclick = "loadDashPage(${response[i].id}, ${response[i].idCogumelo})">
+              <div class="card1" id="${response[i].id}">
                 <img src="img/verde.png" alt="Alerta">
                 <h3>Estufa ${i+1}</h3>
-                <p>Shimeji</p>
+                <p>${response[i].nome}</p>
               </div>
             </a>`
                 }
             })
         }
     })
+}
+function loadDashPage(idEstufa, idCogumelo){
+    sessionStorage.ID_ESTUFA = idEstufa
+    sessionStorage.ID_COGUMELO = idCogumelo
+    window.location = ("./estufasParis.html")
 }

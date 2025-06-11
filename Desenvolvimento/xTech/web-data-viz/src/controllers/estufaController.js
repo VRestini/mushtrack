@@ -17,6 +17,7 @@ function buscarEstufas(req,res){
             }
         })
     }
-}module.exports = {
+}
+module.exports = {
     buscarEstufas
 };
