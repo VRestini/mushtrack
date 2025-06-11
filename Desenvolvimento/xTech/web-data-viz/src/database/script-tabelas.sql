@@ -31,6 +31,8 @@ create table estufa (
 	nome varchar (45) NOT NULL,
 	cogumelo_id int NOT NULL,
 	empresa_id int NOT NULL,
+	estagio_id int NOT NULL,
+	constraint fkEstufaEstagio foreign key (estagio_id) references estagio(id),
 	constraint fkEstufaCogumelo foreign key (cogumelo_id) references cogumelo(id),
     constraint fkEstufaEmpresa foreign key (empresa_id) references empresa(id)
 );
