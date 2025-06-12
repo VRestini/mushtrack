@@ -2,7 +2,7 @@ const alertaModel = require('../models/alertaModel');
 
 async function listar(req, res) {
   try {
-    const [resultado] = await alertaModel.listarAlertas();
+    const resultado = await alertaModel.listarAlertas();
 
     if (resultado.length === 0) {
       return res.status(204).send(); 

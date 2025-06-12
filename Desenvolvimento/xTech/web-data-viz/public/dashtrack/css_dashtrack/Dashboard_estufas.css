@@ -220,3 +220,34 @@ body {
 .main-content h1 {
   font-size: medium;
 }
+
+.cards_alerta {
+    background-color: #ffeb3b; /* amarelo */
+    border-left: 5px solid #fbc02d;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.cards_alerta_critico {
+    background-color: #f44336; /* vermelho */
+    border-left: 5px solid #c62828;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    color: white;
+}
+
+.conferir {
+    background-color: #4e3324;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.conferir:hover {
+    background-color: #3b251a;
+}
+
