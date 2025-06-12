@@ -11,20 +11,24 @@
 </head>
 
 <body>
+
+  <!-- header -->
   <header>
-    <img src="assets/img/xtechBrown.png" alt="" height="40px">
+    <img src="assets/img/xtechBrown.png" alt="" height="65px">
     <nav class="header_nav">
       <ul>
-        <li><a href="#home">Home</a></li>
-
+        <li><a href="/../institucionalXTech/Index.html">Início</a></li>
         <li><a href="#route_mushtrack">MushTrack</a></li>
-        <li><a href="#route_simulator">Simulador</a></li>
-        <li><a href="#route_about">Sobre Nós</a></li>
-        <li><a class="button_4" id="login_a" href="loginEmpresa.html">Login</a></li>
+        <a href="#simulador">Simulador</a>
+        <li><a href="#sobreNos-grupo">Sobre Nós</a></li>
+        <li><a href="#stakeholders">Stakeholders</a></li>
+
+        <li><a class="button_4" id="login_a" href="../login.html">Cadastro/Login</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- banner de inicio -->
   <section id="inicio">
     <div class="banner">
       <div class="container">
@@ -34,6 +38,7 @@
     </div>
   </section>
 
+  <!-- sobre a xtech -->
   <section id="#about_us">
     <div class="conteudo">
       <h3>Conheca o nosso produto</h3>
@@ -42,61 +47,71 @@
         monitoramento de temperatura e umidade do ar de estufas de
         cogumelos </p>
     </div>
-
   </section>
 
+  <!-- explicando a mushtrack -->
   <section class="container_box mush" id="route_mushtrack">
     <h2 class="titulo">MUSHTRACK</h2>
     <div class="cards-container">
-      <div class="card">
-        <img src="assets/img/card1_cogumelo.png" alt="Cogumelos">
-        <div class="card-text">
-          <h3>O que é o Mushtrack?</h3>
-          <ul>
-            <li>Software de monitoramento de temperatura e umidade do ar em estufas de cogumelos Shimeji, Shiitake e
-              Champignon</li>
 
-          </ul>
+      <a href="institucional_mush/index_mush.html">
+        <div class="card">
+          <img src="assets/img/card1_cogumelo.png" alt="Cogumelos">
+          <div class="card-text">
+            <h3>O que é o Mushtrack?</h3>
+            <ul>
+              <li>Software de monitoramento de temperatura e <br> umidade do ar em estufas de cogumelos Shimeji, <br>
+                Shiitake e
+                Champignon</li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <img src="assets/img/card2_cogumelo.png" alt="Logo Mushtrack">
-        <div class="card-text">
-          <h3>Como funciona?</h3>
-          <ul>
-            <li>Sensores instalados nas estufas</li>
-            <li>Sensores captam temperatura e umidade do ar</li>
-            <li>Dados exibidos via Dashboard</li>
-          </ul>
+      </a>
+
+
+      <a href="institucional_mush/index_mush.html">
+        <div class="card">
+          <img src="assets/img/card2_cogumelo.png" alt="Logo Mushtrack">
+          <div class="card-text">
+            <h3>Como funciona?</h3>
+            <ul>
+              <li>Sensores instalados nas estufas</li>
+              <li>Sensores captam temperatura e umidade do ar</li>
+              <li>Dados exibidos via Dashboard</li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <img src="assets/img/carr3_cogumelo.png" alt="Pessoa analisando dados">
-        <div class="card-text">
-          <h3>Por que usar o Mushtrack?</h3>
-          <ul>
-            <li>Monitoramento em tempo real</li>
-            <li>Precisão na captação dos dados</li>
-            <li>Auxílio na tomada de decisões</li>
-          </ul>
+      </a>
+
+      <a href="institucional_mush/index_mush.html">
+
+        <div class="card">
+          <img src="assets/img/carr3_cogumelo.png" alt="Pessoa analisando dados">
+          <div class="card-text">
+            <h3>Por que usar o Mushtrack?</h3>
+            <ul>
+              <li>Monitoramento em tempo real</li>
+              <li>Precisão na captação dos dados</li>
+              <li>Auxílio na tomada de decisões</li>
+            </ul>
+          </div>
         </div>
-      </div>
-  
+      </a>
   </section>
 
 
 
 
+  <!-- Seção do simulador -->
   <section id="simulador">
     <h1>SIMULADOR</h1>
     <p>Simule valores com o nosso produto</p>
-    <div class="container-simulador">
-      <div class="title">
 
-        <div class="image-simulador">
-          <img src="assets/img/img-simulador.png" alt="">
-        </div>
+    <div class="container-simulador">
+      <div class="image-simulador">
+        <img src="assets/img/img-simulador.png" alt="Imagem do simulador">
       </div>
+
       <div class="card-simulador">
         <select id="select_cogumelo" class="select_result">
           <option value="#">Escolha a espécie :</option>
@@ -116,39 +131,42 @@
         <input id="input_temp" class="input_result" placeholder="Temperatura média da estufa">
         <input id="input_umid" class="input_result" placeholder="Umidade média do ar da estufa">
         <input id="input_preco" class="input_result" placeholder="Preço/kg do cogumelo">
+
         <button onclick="analisar()" class="button">Simular</button>
-
-
-
       </div>
-      <div id="simulator_result">
-
-
-      </div>
-
+    </div>
   </section>
 
+  <div id="simulator_result">
+  </div>
+
+
+
+  <!-- sobre nós -->
   <section id="sobreNos-grupo">
     <h1>SOBRE NÓS</h1>
     <div class="container-sobreNos">
       <div class="conteudo">
-        <p>X Technology é uma startup apaixonada por unir tecnologia e agricultura. <br>Desse amor surgiu o MushTrack,
-          software responsável pelo monitoramento de temperatura <br> e umidade do ar em estufas de cogumelos Shimeji,
-          Shiitake e Champignon.</p>
-
+        <p>A X Technology é uma startup inovadora e apaixonada por unir<br>
+          tecnologia de ponta ao setor agrícola.<br>
+          Nascemos com o propósito de transformar a maneira como a<br>
+          agricultura é conduzida, especialmente em ambientes controlados.<br>
+          Foi desse compromisso com a inovação e a sustentabilidade que<br>
+          surgiu o MushTrack, um software inteligente e intuitivo,<br>
+          desenvolvido especialmente para o monitoramento preciso da<br>
+          temperatura e umidade do ar em estufas de cogumelos como<br>
+          Shimeji, Shiitake e Champignon.<br>
+          Com o MushTrack, produtores têm em mãos uma ferramenta<br>
+          confiável que garante condições ideais para o cultivo, promovendo<br>
+          maior produtividade, qualidade e redução de perdas. Estamos aqui<br>
+          para impulsionar o agronegócio com soluções tecnológicas<br>
+          acessíveis, eficientes e pensadas para o futuro.</p>
       </div>
       <div class="img-group">
         <img src="assets/img/sobreNos.png" alt="">
-
       </div>
-
-
     </div>
 
-  </section>
-
-
-  <section id="missao-visao-valores">
     <div class="container-mvv">
 
       <div class="box">
@@ -170,46 +188,121 @@
           <li>Foco e priorização no cliente</li>
         </ul>
       </div>
-
     </div>
   </section>
 
+
+
+  <!-- stakeholders -->
   <section id="stakeholders">
     <h1>STAKEHOLDERS</h1>
+
     <div class="container-stake">
-      <div class="box">
-        <img src="" alt="">
-        <p>LAYS ABREU </p>
-      </div>
-
-            <div class="box">
-        <img src="" alt="">
-        <p>Nome</p>
-      </div>
 
 
-            <div class="box">
-        <img src="" alt="">
-        <p>Nome</p>
+      <div class="card-box">
+        <div class="box">
+          <img src="assets/img/jp.jpg" alt="Foto de Nome 1">
+        </div>
+        <div class="nome">
+          <p>João Pedro de Paula</p>
+        </div>
       </div>
 
-            <div class="box">
-        <img src="" alt="">
-        <p>Nome</p>
+
+
+      <div class="card-box">
+        <div class="box">
+          <img src="assets/img/julia.jpg" alt="Foto de Nome 1">
+        </div>
+        <div class="nome">
+          <p>Julia Lima</p>
+        </div>
       </div>
 
-            <div class="box">
-        <img src="" alt="">
-        <p>Nome</p>
+      <div class="card-box">
+        <div class="box">
+          <img src="assets/img/frizza.jpg" alt="Foto de Nome 1">
+        </div>
+        <div class="nome">
+          <p>Claudio Frizzarini</p>
+        </div>
       </div>
+
+      <div class="card-box">
+        <div class="box">
+          <img src="assets/img/vivian.jpg" alt="Foto de Nome 1">
+        </div>
+        <div class="nome">
+          <p>Vivian Silva</p>
+        </div>
+      </div>
+
+      <div class="card-box">
+        <div class="box">
+          <img src="assets/img/matheus.jpg" alt="Foto de Nome 1">
+        </div>
+        <div class="nome">
+          <p>Matheus Matos</p>
+        </div>
+      </div>
+
+
+      <div class="card-box">
+        <div class="box">
+          <img src="assets/img/marcio.jpg" alt="Foto de Nome 1">
+        </div>
+        <div class="nome">
+          <p>Marcio Santana</p>
+        </div>
+      </div>
+
+
+      <div class="card-box">
+        <div class="box">
+          <img src="assets/img/kaori.jpg" alt="Foto de Nome 1">
+        </div>
+        <div class="nome">
+          <p>Michelly Kaori</p>
+        </div>
+      </div>
+
+      <div class="card-box">
+        <div class="box">
+          <img src="assets/img/paula.jpg" alt="Foto de Nome 1">
+        </div>
+        <div class="nome">
+          <p>Paula Pinheiro</p>
+        </div>
+      </div>
+
+      <div class="card-box">
+        <div class="box">
+          <img src="assets/img/kaline.jpg" alt="Foto de Nome 1">
+        </div>
+        <div class="nome">
+          <p>Kaline Barreira</p>
+        </div>
+      </div>
+
+
+      <div class="card-box">
+        <div class="box">
+          <img src="assets/img/davi.jpg" alt="Foto de Nome 1">
+        </div>
+        <div class="nome">
+          <p>Davi da Silva</p>
+        </div>
+      </div>
+
 
     </div>
-
   </section>
 
 
 
 
+  <!-- footer -->
   <section class="footer">
     <div class="footer-container">
       <div class="footer-informacoes">

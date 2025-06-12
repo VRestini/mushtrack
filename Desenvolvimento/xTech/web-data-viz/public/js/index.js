@@ -114,7 +114,7 @@ var estufa = 0;
             }else{                            
               mensagem += `
               <div id="simulator_container_text_result">
-                <h3>Estufa de ${cogumelo}:</h3>
+                <h1>Estufa de ${cogumelo}:</h1>
                 <p class="simulator_text_result_prejuízo">STATUS: ${status} </p>
                 <p class="simulator_text_result">TEMPERATURA IDEAL: ${tempMin}°C A ${tempMax}°C</p>
                 <p class="simulator_text_result">UMIDADE IDEAL: ${umiMin}% A ${umiMax}% </p>
