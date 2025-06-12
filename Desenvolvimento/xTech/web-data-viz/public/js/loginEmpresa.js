@@ -48,6 +48,7 @@ function entrar() {
                 resposta.json().then(json => {
                     sessionStorage.EMAIL_EMPRESA = json.email;
                     sessionStorage.NOME_EMPRESA = json.nome;
+                    sessionStorage.ID_EMPRESA = json.id;
                     setTimeout(function () {
                         window.location = "./dashtrack/home.html";
                     }, 1000);

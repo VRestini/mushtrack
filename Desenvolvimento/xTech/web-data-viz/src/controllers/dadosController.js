@@ -1,6 +1,69 @@
 const dadosModel = require('../models/dadosModel');
 const alertaModel = require('../models/alertaModel');
-
+function buscarUmidade(req, res) {
+  let id_sensor = req.body.IdSensorServer
+  if (id_empresa == undefined)
+    res.status(400).send("IdEmpresaServer undefined!");
+  else {
+    dadosModel.buscarUmidade(id_sensor).then(function (response) {
+      console.log(`\nResultados encontrados: ${response.length}`)
+      console.log(`Resultados: ${JSON.stringify(response)}`)
+      if (response.length >= 1)
+        res.json(response)
+      else {
+        res.status(204).send("Nenhum resultado encontrado")
+      }
+    })
+  }
+}
+function buscarTemperatura(req, res) {
+  let id_sensor = req.body.IdSensorServer
+  if (id_empresa == undefined)
+    res.status(400).send("IdEmpresaServer undefined!");
+  else {
+    dadosModel.buscarTemperatura(id_sensor).then(function (response) {
+      console.log(`\nResultados encontrados: ${response.length}`)
+      console.log(`Resultados: ${JSON.stringify(response)}`)
+      if (response.length >= 1)
+        res.json(response)
+      else {
+        res.status(204).send("Nenhum resultado encontrado")
+      }
+    })
+  }
+}
+function buscarUmidadeHistorico(req, res) {
+  let id_sensor = req.body.IdSensorServer
+  if (id_empresa == undefined)
+    res.status(400).send("IdEmpresaServer undefined!");
+  else {
+    dadosModel.buscarUmidade(id_sensor).then(function (response) {
+      console.log(`\nResultados encontrados: ${response.length}`)
+      console.log(`Resultados: ${JSON.stringify(response)}`)
+      if (response.length >= 1)
+        res.json(response)
+      else {
+        res.status(204).send("Nenhum resultado encontrado")
+      }
+    })
+  }
+}
+function buscarTemperaturaHistorico(req, res) {
+  let id_sensor = req.body.IdSensorServer
+  if (id_empresa == undefined)
+    res.status(400).send("IdEmpresaServer undefined!");
+  else {
+    dadosModel.buscarTemperatura(id_sensor).then(function (response) {
+      console.log(`\nResultados encontrados: ${response.length}`)
+      console.log(`Resultados: ${JSON.stringify(response)}`)
+      if (response.length >= 1)
+        res.json(response)
+      else {
+        res.status(204).send("Nenhum resultado encontrado")
+      }
+    })
+  }
+}
 async function inserir(req, res) {
   try {
     const { sensor_id, temperatura, umidade } = req.body;
@@ -33,6 +96,10 @@ async function inserir(req, res) {
   }
 }
 
-module.exports = { 
-    inserir 
+module.exports = {
+  inserir,
+  buscarUmidade,
+  buscarTemperatura,
+  buscarUmidadeHistorico,
+  buscarTemperaturaHistorico
 };

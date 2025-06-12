@@ -31,6 +31,8 @@ create table estufa (
 	nome varchar (45) NOT NULL,
 	cogumelo_id int NOT NULL,
 	empresa_id int NOT NULL,
+	estagio_id int NOT NULL,
+	constraint fkEstufaEstagio foreign key (estagio_id) references estagio(id),
 	constraint fkEstufaCogumelo foreign key (cogumelo_id) references cogumelo(id),
     constraint fkEstufaEmpresa foreign key (empresa_id) references empresa(id)
 );
@@ -83,6 +85,7 @@ create table alerta (
 	constraint fkAlertaSensor foreign key (sensor_id) references sensor(id)
 );
 
+<<<<<<< HEAD
 SELECT s.id, s.nome, est.nome AS estufa, c.nome AS cogumelo
 FROM sensor s
 JOIN estufa est ON s.estufa_id = est.id
@@ -90,3 +93,6 @@ JOIN cogumelo c ON est.cogumelo_id = c.id;
 
 SELECT * FROM parametro;
 
+=======
+select * from empresa;
+>>>>>>> 115df73cf2943d3f16c021eb133f75bf5d959c1c
