@@ -26,6 +26,10 @@ create table cogumelo (
 	id int primary key auto_increment,
 	nome varchar (65) NOT NULL
 );
+create table estagio (
+	id int primary key auto_increment,
+	tipo varchar (45)
+);
 create table estufa (
 	id int primary key auto_increment,
 	nome varchar (45) NOT NULL,
@@ -48,10 +52,6 @@ create table sensor (
 	posicao varchar(45) NOT NULL,
 	estufa_id int NOT NULL ,
 	constraint fkSensorEstufa foreign key (estufa_id) references estufa (id)
-);
-create table estagio (
-	id int primary key auto_increment,
-	tipo varchar (45)
 );
 
 create table parametro (
