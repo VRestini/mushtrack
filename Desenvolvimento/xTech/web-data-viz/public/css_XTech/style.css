@@ -161,6 +161,10 @@ h1 {
 
 }
 
+.botao-mushtrack {
+  margin-top: 90px;
+  font-family: 'poppins';
+}
 
 /* sobre nos */
 
@@ -586,7 +590,7 @@ h1 {
   background-color: white;
   border-radius: 6px;
   box-shadow: 3px 8px 20px rgba(0, 0, 0, 0.1);
-  width: 400px;
+  width: 300px;
   overflow: hidden;
   text-align: left;
   transition: transform 0.3s;

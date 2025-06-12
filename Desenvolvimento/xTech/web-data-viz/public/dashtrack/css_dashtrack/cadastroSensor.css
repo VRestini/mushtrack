@@ -88,96 +88,103 @@ body {
     color: #ffff;
 }
 
-/* cadastrar */
+.header {
+    display: flex;
+}
 
+/* Conteúdo de cadastro */
 .container-cadastrar {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-left: 50px;
+    align-items: flex-start;
+    margin: 50px auto;
+    width: 100%;
 }
 
 .card-cadastrar {
-    background-color: #4e33241b;
+    background-color: #ffffff;
     color: #4E3324;
-    width: 500px;
-    border-radius: 30px;
-    padding: 30px;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
-
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .card-cadastrar h1 {
     text-align: center;
-    margin-bottom: 20px;
+    font-size: 26px;
+    margin-bottom: 30px;
+    color: #4E3324;
 }
 
-.card-cadastrar input, select, option {
-    width: 90%;
-    height: 30px;
-    border-radius: 8px;
-    border: none;
-    padding: 5px 10px;
-    margin: 5px 0;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-
+/* Inputs e selects */
+.card-cadastrar input,
+.card-cadastrar select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    font-size: 14px;
+    transition: 0.2s;
 }
 
+.card-cadastrar input:focus,
+.card-cadastrar select:focus {
+    outline: none;
+    border-color: #4E3324;
+    background-color: #fff;
+}
+
+/* Botões */
 .card-cadastrar button {
-    width: 190px;
-    height: 35px;
+    width: 48%;
+    padding: 12px;
+    margin: 15px 1%;
     border-radius: 8px;
     border: none;
     background-color: #4E3324;
-    color: #F9FAFB;
+    color: #fff;
     font-weight: bold;
+    font-size: 14px;
     cursor: pointer;
-    transition: 0.3s;
-    margin-top: 10px;
+    transition: background-color 0.3s ease;
 }
 
 .card-cadastrar button:hover {
-    background-color: #4e332445;
+    background-color: #6c4a36;
 }
 
-#mensagem {
-    margin: 20px;
-    text-align: center;
-    color: #4e3324;
-    font-weight: bold;
-}
-
-/* #div_mensagem_card{
-    background-color: #4E3324;
-    color: #F9FAFB;
-    width: 200px;
-    height: 300px;
-    border-radius: 20px;
-    margin: 20px;
-
-} */
-
-
+/* Mensagem */
 #div_mensagem_sensor {
-    margin-top: 100px;
+    margin: 40px 20px 0;
     color: #4E3324;
+    font-size: 18px;
     font-weight: bold;
 }
 
-
-
-
+/* Cartões de sensor */
+.cards-sensor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px auto;
+    width: 90%;
+}
 
 #div_mensagem_card p {
     background-color: #4e3324;
-    width: 250px;
-    height: 200px;
-    border-radius: 20px;
     color: white;
-    margin-left: 20px;
-    margin-top: 80px;
+    width: 250px;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 15px;
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    
+    justify-content: center;
+    line-height: 1.6;
+    font-size: 14px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
