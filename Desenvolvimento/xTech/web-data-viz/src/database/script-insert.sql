@@ -41,3 +41,13 @@ INSERT INTO parametro (temp_minima,temp_maxima, umi_minima, umi_maxima,cogumelo_
 (24,27,60,70,2,1),
 (18,22,85,95,2,2),
 (15,20,80,90,2,3);
+
+select * from sensor;
+INSERT INTO sensor (tipo, nome, status, numero_serie, dt_instalacao, dt_manutencao, posicao, estufa_id) VALUES
+('Temperatura', 'Sensor T-100', 'Ativo', 'SNTMP001', '2023-01-15 09:00:00', '2023-06-20 14:30:00', 'Superior Esquerdo', 1),
+('Umidade', 'Sensor U-200', 'Ativo', 'SNUMD002', '2023-01-15 09:00:00', '2023-06-20 14:30:00', 'Superior Direito', 1),
+('CO2', 'Sensor C-300', 'Ativo', 'SNCO2003', '2023-01-15 09:00:00', '2023-07-10 10:15:00', 'Central', 1),
+('Luminosidade', 'Sensor L-400', 'Ativo', 'SNLUM004', '2023-01-15 09:00:00', '2023-07-10 10:15:00', 'Frontal', 1),
+('Vazão de Água', 'Sensor V-500', 'Ativo', 'SNVAZ005', '2023-02-10 11:30:00', '2023-08-05 09:45:00', 'Inferior', 1),
+('Temperatura', 'Sensor T-101', 'Inativo', 'SNTMP006', '2022-12-05 14:00:00', '2023-05-15 16:20:00', 'Traseiro', 1),
+('Umidade do Solo', 'Sensor US-600', 'Ativo', 'SNUSO007', '2023-03-20 10:45:00', '2023-09-01 11:00:00', 'Base', 1);

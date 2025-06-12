@@ -8,7 +8,7 @@ function buscarTodosSensoresPorEstufa(req, res) {
     else if (idEmpresa == undefined)
         res.status(400).send("IdEmpresa = Undefined");
     else {
-        sensorModel.buscar(idEstufa, idEmpresa).then(function (result) {
+        sensorModel.buscar(idEstufa, idEmpresa).then(function (response) {
             console.log(`\nResultados encontrados: ${response.length}`)
             console.log(`Resultados: ${JSON.stringify(response)}`)
             if (res.length >= 1)

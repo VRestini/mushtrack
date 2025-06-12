@@ -19,6 +19,7 @@ function buscarParametro() {
     })
 }
     function buscarSensores(){
+        
         id_estufa  = sessionStorage.ID_ESTUFA
         id_empresa = sessionStorage.ID_EMPRESA
         fetch("/sensor/carregar",{
@@ -32,14 +33,15 @@ function buscarParametro() {
             })
         }).then(function(response){
             if(response.ok){
-                var listaSensores=[]
-                response.json().then(function (response) {
-                    for (let i = 0; i < response.length; i++) {
-                        listaSensores.push(response[i].id)
-                    }        
-                })
-                sessionStorage.ID_SENSORES = listaSensores
                 
+                response.json().then(function (response) {
+                    var listaSensores = []
+                    for (let i = 0; i < response.length; i++) {
+                        listaSensores.push(response[i])
+                        sessionStorage.ID_SENSORES += response[i] 
+                        console.log(response[i])
+                    }        
+                })                
             }
         })
 
