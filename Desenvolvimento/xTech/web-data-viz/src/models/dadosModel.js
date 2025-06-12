@@ -7,39 +7,45 @@ function inserir(sensor_id, temperatura, umidade) {
   `;
   return database.execute(instrucao, [sensor_id, temperatura, umidade]);
 }
-function buscarUmidade(sensor_id) {
+function buscarUmidadeTemperatura(id_estufa) {
   var instrucaoSql = `
-        SELECT umidade from dados JOIN sensor ON dados.sensor_id = '${sensor_id}' LIMIT 5 ORDER BY data_captura DESC;
+       SELECT 
+      s.id as sensor_id,
+      s.nome as sensor_nome,
+      d.temperatura,
+      d.umidade,
+      d.data_captura
+    FROM dados d
+    JOIN sensor s ON d.sensor_id = s.id
+    WHERE s.estufa_id = '${id_estufa}'
+    ORDER BY d.data_captura DESC LIMIT 7; 
     `;
   console.log("Executando a instrução SQL: \n" + instrucaoSql);
   return database.executar(instrucaoSql);
 }
-function buscarTemperatura(sensor_id) {
-  var instrucaoSql = `
-       SELECT temperatura from dados JOIN sensor ON dados.sensor_id = '${sensor_id}' LIMIT 5 ORDER BY data_captura DESC;
-   `;
-  console.log("Executando a instrução SQL: \n" + instrucaoSql);
-  return database.executar(instrucaoSql);
-}
 
-function buscarUmidadeHistorico(sensor_id) {
+
+
+function buscarUmidadeTemperaturaHistorico(sensor_id) {
   var instrucaoSql = `
-       SELECT umidade from dados JOIN sensor ON dados.sensor_id = '${sensor_id}';
-   `;
-  console.log("Executando a instrução SQL: \n" + instrucaoSql);
-  return database.executar(instrucaoSql);
-}
-function buscarTemperaturaHistorico(sensor_id) {
-  var instrucaoSql = `
-      SELECT temperatura from dados JOIN sensor ON dados.sensor_id = '${sensor_id}';
+      
+SELECT 
+      s.id as sensor_id,
+      s.nome as sensor_nome,
+      d.temperatura,
+      d.umidade,
+      d.data_captura
+    FROM dados d
+    JOIN sensor s ON d.sensor_id = s.id
+    WHERE s.estufa_id = '${id_estufa}'
+    ORDER BY d.data_captura DESC; 
+  
   `;
   console.log("Executando a instrução SQL: \n" + instrucaoSql);
   return database.executar(instrucaoSql);
 }
 module.exports = {
   inserir,
-  buscarUmidade,
-  buscarTemperatura,
-  buscarUmidadeHistorico,
-  buscarTemperaturaHistorico
+  buscarUmidadeTemperatura,
+  buscarUmidadeTemperaturaHistorico
 };

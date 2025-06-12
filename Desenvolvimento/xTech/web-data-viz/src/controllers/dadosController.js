@@ -1,11 +1,11 @@
 const dadosModel = require('../models/dadosModel');
 const alertaModel = require('../models/alertaModel');
-function buscarUmidade(req, res) {
-  let id_sensor = req.body.IdSensorServer
-  if (id_empresa == undefined)
+function buscarDados(req, res) {
+  let id_estufa = req.body.IdEstufaServer
+  if (id_estufa == undefined)
     res.status(400).send("IdEmpresaServer undefined!");
   else {
-    dadosModel.buscarUmidade(id_sensor).then(function (response) {
+    dadosModel.buscarUmidadeTemperatura(id_estufa).then(function (response) {
       console.log(`\nResultados encontrados: ${response.length}`)
       console.log(`Resultados: ${JSON.stringify(response)}`)
       if (response.length >= 1)
@@ -16,44 +16,14 @@ function buscarUmidade(req, res) {
     })
   }
 }
-function buscarTemperatura(req, res) {
+
+
+function buscarDadosHistorico(req, res) {
   let id_sensor = req.body.IdSensorServer
   if (id_empresa == undefined)
     res.status(400).send("IdEmpresaServer undefined!");
   else {
-    dadosModel.buscarTemperatura(id_sensor).then(function (response) {
-      console.log(`\nResultados encontrados: ${response.length}`)
-      console.log(`Resultados: ${JSON.stringify(response)}`)
-      if (response.length >= 1)
-        res.json(response)
-      else {
-        res.status(204).send("Nenhum resultado encontrado")
-      }
-    })
-  }
-}
-function buscarUmidadeHistorico(req, res) {
-  let id_sensor = req.body.IdSensorServer
-  if (id_empresa == undefined)
-    res.status(400).send("IdEmpresaServer undefined!");
-  else {
-    dadosModel.buscarUmidade(id_sensor).then(function (response) {
-      console.log(`\nResultados encontrados: ${response.length}`)
-      console.log(`Resultados: ${JSON.stringify(response)}`)
-      if (response.length >= 1)
-        res.json(response)
-      else {
-        res.status(204).send("Nenhum resultado encontrado")
-      }
-    })
-  }
-}
-function buscarTemperaturaHistorico(req, res) {
-  let id_sensor = req.body.IdSensorServer
-  if (id_empresa == undefined)
-    res.status(400).send("IdEmpresaServer undefined!");
-  else {
-    dadosModel.buscarTemperatura(id_sensor).then(function (response) {
+    dadosModel.buscarUmidadeTemperaturaHistorico(id_sensor).then(function (response) {
       console.log(`\nResultados encontrados: ${response.length}`)
       console.log(`Resultados: ${JSON.stringify(response)}`)
       if (response.length >= 1)
@@ -98,8 +68,6 @@ async function inserir(req, res) {
 
 module.exports = {
   inserir,
-  buscarUmidade,
-  buscarTemperatura,
-  buscarUmidadeHistorico,
-  buscarTemperaturaHistorico
+  buscarDados,
+  buscarDadosHistorico
 };
