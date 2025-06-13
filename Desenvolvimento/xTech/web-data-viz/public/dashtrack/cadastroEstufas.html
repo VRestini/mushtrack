@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css_dashtrack/cadastroSensor.css">
+    <title>Cadastrar Estufa</title>
+</head>
+
+<body>
+    <div class="header">
+        <!-- Menu lateral -->
+        <div class="lateral">
+            <div class="titulo">
+                <div class="card-logo">
+                    <img src="./img/logo_mush.png" style="width: 40px; height: 40px;" alt="Logo MushTrack" />
+                </div>
+                <h2>MushTrack</h2>
+            </div>
+            <ul class="menu">
+                <li class="ativo">
+                    <img src="img/icone_dashboard.png" alt="Dashboard" />
+                    <a href="#">Estufas</a>
+                </li>
+                <li>
+                    <img src="img/Group.png" alt="MushTrack" />
+                    <a href="#">Sensores</a>
+                </li>
+                <li>
+                    <img src="img/sair.png" alt="Sair" />
+                    <a href="#">Sair</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="container-cadastrar">
+            <div class="card-cadastrar">
+                <h1>Cadastrar Estufa</h1>
+                <input type="text" id="input_nome" placeholder="Nome da Estufa"><br>
+
+                <input type="number" id="input_cogumelo" placeholder="ID do Cogumelo"><br>
+                <input type="number" id="input_empresa" placeholder="ID da Empresa"><br>
+                <input type="number" id="input_estagio" placeholder="ID do Estágio"><br>
+
+                <button onclick="cadastrar()">Cadastrar Estufa</button>
+                <button onclick="verificar()">Verificar Estufas</button>
+            </div>
+        </div>
+
+        <div class="cards-sensor">
+            <div id="div_mensagem_card"></div>
+        </div>
+        <div id="div_mensagem_sensor"></div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    var listaNome = []
+    var listaCogumelo = []
+    var listaEmpresa = []
+    var listaEstagio = []
+
+    function cadastrar() {
+
+        var nome = input_nome.value
+        var cogumeloId = input_cogumelo.value
+        var empresaId = input_empresa.value
+        var estagioId = input_estagio.value
+
+        if (nome == "" || cogumeloId == "" || empresaId == "" || estagioId == "") {
+            alert('Preencha todos os campos!')
+        } else if (listaNome.includes(nome)) {
+            alert('Esta estufa já existe! Tente outro nome.')
+        } else {
+            fetch("/estufa/cadastrarEstufas", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    nomeServer: nome,
+                    cogumeloServer: cogumeloId,
+                    empresaServer: empresaId,
+                    estagioServer: estagioId
+                })
+            })
+                .then(function (resposta) {
+                    if (resposta.ok) {
+                        alert("Estufa cadastrada com sucesso!");
+                        window.location.href = "./loginEmpresa.html";
+                    } else {
+                        alert("Erro ao cadastrar estufa.");
+                    }
+                })
+                .catch(function (erro) {
+                    console.log(`#ERRO: ${erro}`);
+                });
+
+            listaNome.push(nome)
+            listaCogumelo.push(cogumeloId)
+            listaEmpresa.push(empresaId)
+            listaEstagio.push(estagioId)
+        }
+    }
+
+    function verificar() {
+        div_mensagem_sensor.innerHTML = ""
+        div_mensagem_card.innerHTML = ""
+
+        if (listaNome.length == 0) {
+            div_mensagem_sensor.innerHTML = "Nenhuma estufa cadastrada."
+        } else {
+            div_mensagem_sensor.innerHTML = `<h3>Você tem ${listaNome.length} estufas cadastradas:</h3>`
+
+            for (var i = 0; i < listaNome.length; i++) {
+                div_mensagem_card.innerHTML += `
+                 <p>Estufa ${i + 1}<br>
+                Nome: ${listaNome[i]}<br>
+                ID do Cogumelo: ${listaCogumelo[i]}<br>
+                ID da Empresa: ${listaEmpresa[i]}<br>
+                ID do Estágio: ${listaEstagio[i]}</p><br>`
+            }
+        }
+    }
+</script>
