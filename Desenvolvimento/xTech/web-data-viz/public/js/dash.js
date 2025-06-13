@@ -126,9 +126,22 @@ function criarGraficos(dados) {
         }
     });
 }
-
+function exibirMetricas(){
+    const maxima = document.getElementById('id_maxima');
+    const minima = document.getElementById('id_minima');
+    const maximaUmidade = document.getElementById('id_minima_umidade')
+    const minimaUmidade = document.getElementById('id_maxima_umidade')
+    var tempMINIMA = parseFloat(sessionStorage.TEMP_MINIMA).toFixed(1); 
+    var tempMAXIMA = parseFloat(sessionStorage.TEMP_MAXIMA).toFixed(1);
+    var umiMAXIMA = parseFloat(sessionStorage.UMI_MAXIMA).toFixed(1);
+    var umiMINIMA = parseFloat(sessionStorage.UMI_MINIMA).toFixed(1);
+    
+    minima.innerHTML = `Mínima: ${tempMINIMA}°C`; 
+    maxima.innerHTML = `Máxima: ${tempMAXIMA}°C`;
+    maximaUmidade.innerHTML = `Máxima: ${umiMAXIMA}%`;
+    minimaUmidade.innerHTML = `Mínima: ${umiMINIMA}%`;
+}
 function processarDatas(dados) {
-
     return dados.map(item => {
         const date = new Date(item.data_captura);
         return date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
@@ -149,7 +162,6 @@ function verificarStatusEstufa(dados) {
 
     const statusElement = document.getElementById('status_estufa');
     const imgStatus = document.querySelector('.card1 img');
-    const tempoElement = document.querySelector('.card1:nth-child(3) h3')
     const margemTemp = 1.5;
     const margemUmi = 5;
     
@@ -159,20 +171,17 @@ function verificarStatusEstufa(dados) {
         statusElement.textContent = 'Crítico';
         statusElement.style.color = '#FF0000';
         imgStatus.src = "img/red.png";
-        const tempoAtual = parseInt(sessionStorage.tempoCritico || 0);
-        sessionStorage.tempoCritico = tempoAtual + 1;
-        tempoElement.textContent = `${sessionStorage.tempoCritico}m`;
+   
     } else if (tempAtual < tempMin || tempAtual > tempMax ||
                umiAtual < umiMin || umiAtual > umiMax) {
   
         statusElement.textContent = 'Alerta';
         statusElement.style.color = '#FFA500';
         imgStatus.src = "img/yellow.png";
-        const tempoAtual = parseInt(sessionStorage.tempoCritico || 0);
-        sessionStorage.tempoCritico = tempoAtual + 1;
-        tempoElement.textContent = `${sessionStorage.tempoCritico}m`;
+
+
     } else {
-        // Estado OK
+     
         statusElement.textContent = 'OK';
         statusElement.style.color = '#00FF00';
         imgStatus.src = "img/green.png"; 
@@ -228,11 +237,3 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
 });
-if (!sessionStorage.tempoCritico) {
-    sessionStorage.tempoCritico = 0;
-}
-
-setInterval(() => {
-    const tempoElement = document.querySelector('.card1:nth-child(3) h3');
-    tempoElement.textContent = `${sessionStorage.tempoCritico}m`;
-}, 600);

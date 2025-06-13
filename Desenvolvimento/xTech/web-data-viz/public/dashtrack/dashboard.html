@@ -77,8 +77,15 @@
          
           <div class="card1">
             <img src="img/ampulheta.png" alt="" />
-            <h3>2h</h3>
-            <p>Tempo em estado crítico</p>
+            <h3>Temperatura</h3>
+            <p id="id_minima">Mínima:</p>
+            <p id="id_maxima">Máxima:</p>
+          </div>
+          <div class="card1">
+            <img src="img/ampulheta.png" alt="" />
+            <h3>Umidade</h3>
+            <p id="id_minima_umidade">Mínima:</p>
+            <p id="id_maxima_umidade">Máxima:</p>
           </div>
           <div class="card1">
             <img src="img/consulta.png" alt="" />
@@ -129,5 +136,6 @@
       buscarEstagio();
       buscarDadosEstufa();
       buscarParametrosEstufa()
+      exibirMetricas()
     });
 </script>
