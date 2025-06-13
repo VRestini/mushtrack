@@ -1,190 +1,86 @@
-/*  fontes */
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100..900&family=Poppins:wght@100..900&family=Roboto:wght@100..900&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-body {
-    background-color: #F9FAFB;
-}
-
-.header {
-    display: flex;
-    flex-direction: row;
-}
-
-/* Lateral */
-.lateral {
-    background-color: #ffff;
-    /* width: 270px; */
-    height: 700px;
-    flex-shrink: 0;
-}
-
-.lateral .titulo {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 20px;
-}
-
-
-.card-logo {
-    width: 40px;
-    height: 40px;
-    /* background-color: #4E3324; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    margin-right: 10px;
-}
-
-.card-logo img {
-    width: 15px;
-}
-
-.titulo h2 {
-    color: #4E3324;
-    font-size: 20px;
-}
-
-/* Menu */
-.menu {
-    list-style: none;
-    margin-top: 20px;
-    padding-left: 0;
-}
-
-.menu li {
-    display: flex;
-    align-items: center;
-    margin: 20px;
-}
-
-.menu li img {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-}
-
-.menu li a {
-    text-decoration: none;
-    color: #737791;
-    font-size: 16px;
-}
-
-.menu .ativo {
-    background-color: #4E3324;
-    border-radius: 10px;
-    padding: 10px;
-}
-
-.menu .ativo a {
-    color: #ffff;
-}
-
-.header {
-    display: flex;
-}
-
-/* Conteúdo de cadastro */
 .container-cadastrar {
+    width: 100%;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    margin: 50px auto;
-    width: 100%;
+    margin-top: 20px;
 }
 
 .card-cadastrar {
-    background-color: #ffffff;
-    color: #4E3324;
-    width: 100%;
-    max-width: 500px;
-    border-radius: 20px;
-    padding: 40px 30px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 400px;
+    text-align: center;
 }
 
 .card-cadastrar h1 {
-    text-align: center;
-    font-size: 26px;
-    margin-bottom: 30px;
     color: #4E3324;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
 }
 
-/* Inputs e selects */
 .card-cadastrar input,
 .card-cadastrar select {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
-    border-radius: 10px;
     border: 1px solid #ddd;
-    background-color: #f9f9f9;
-    font-size: 14px;
-    transition: 0.2s;
+    border-radius: 5px;
+    font-size: 1rem;
 }
 
-.card-cadastrar input:focus,
-.card-cadastrar select:focus {
-    outline: none;
-    border-color: #4E3324;
-    background-color: #fff;
-}
-
-/* Botões */
 .card-cadastrar button {
-    width: 48%;
-    padding: 12px;
-    margin: 15px 1%;
-    border-radius: 8px;
-    border: none;
     background-color: #4E3324;
-    color: #fff;
-    font-weight: bold;
-    font-size: 14px;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 10px 5px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    transition: background-color 0.3s;
 }
 
 .card-cadastrar button:hover {
-    background-color: #6c4a36;
+    background-color: #3a251a;
 }
 
-/* Mensagem */
+.cards-sensor {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 #div_mensagem_sensor {
-    margin: 40px 20px 0;
-    color: #4E3324;
-    font-size: 18px;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+#tabela-sensores {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#tabela-sensores th, #tabela-sensores td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#tabela-sensores th {
+    background-color: #f8f9fa;
     font-weight: bold;
 }
 
-/* Cartões de sensor */
-.cards-sensor {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 30px auto;
-    width: 90%;
-}
-
-#div_mensagem_card p {
-    background-color: #4e3324;
-    color: white;
-    width: 250px;
-    padding: 20px;
-    border-radius: 20px;
-    margin: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    line-height: 1.6;
-    font-size: 14px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+#tabela-sensores tr:hover {
+    background-color: #f5f5f5;
 }

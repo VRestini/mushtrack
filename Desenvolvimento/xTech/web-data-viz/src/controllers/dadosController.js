@@ -19,11 +19,11 @@ function buscarDados(req, res) {
 
 
 function buscarDadosHistorico(req, res) {
-  let id_sensor = req.body.IdSensorServer
-  if (id_empresa == undefined)
+  let id_estufa = req.body.IdEstufaServer
+  if (id_estufa == undefined)
     res.status(400).send("IdEmpresaServer undefined!");
   else {
-    dadosModel.buscarUmidadeTemperaturaHistorico(id_sensor).then(function (response) {
+    dadosModel.buscarUmidadeTemperaturaHistorico(id_estufa).then(function (response) {
       console.log(`\nResultados encontrados: ${response.length}`)
       console.log(`Resultados: ${JSON.stringify(response)}`)
       if (response.length >= 1)

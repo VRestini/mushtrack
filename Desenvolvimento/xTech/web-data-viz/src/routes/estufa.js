@@ -8,4 +8,5 @@ router.post("/buscar", function (req, res) {
 router.post("/cadastrar", function (req, res) {
     estufaController.cadastrarEstufas(req, res);
 });
+
 module.exports = router;

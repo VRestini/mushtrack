@@ -16,53 +16,63 @@ body{
     flex-direction: row;
 }
 
-/* Lateral */
+/* Menu Lateral - Versão Corrigida */
 .lateral {
-    background-color: #ffff;
-    /* width: 270px; */
-    height: 700px;
-    flex-shrink: 0;
+    background-color: #fff;
+    width: 250px; /* Largura fixa */
+    height: 100vh; /* Ocupa toda a altura da viewport */
+    position: fixed; /* Fixo na tela */
+    left: 0;
+    top: 0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
 }
 
-.lateral .titulo {
+.titulo {
     display: flex;
-    flex-direction: row;
     align-items: center;
     padding: 20px;
+    border-bottom: 1px solid #eee;
 }
-
 
 .card-logo {
-    width: 50px;
-    height: 40px;
-    /* background-color: #4E3324; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    margin-right: 10px;
-}
-
-.card-logo img {
     width: 40px;
+    height: 40px;
+    margin-right: 10px;
 }
 
 .titulo h2 {
     color: #4E3324;
-    font-size: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
-/* Menu */
 .menu {
     list-style: none;
-    margin-top: 20px;
-    padding-left: 0;
+    padding: 15px 0;
+    flex-grow: 1; /* Ocupa o espaço restante */
+    overflow-y: auto; /* Permite scroll se necessário */
 }
 
 .menu li {
+    margin: 5px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.menu li:hover:not(.ativo) {
+    background-color: #f5f5f5;
+}
+
+.menu li a {
     display: flex;
     align-items: center;
-    margin: 20px;
+    text-decoration: none;
+    color: #737791;
+    font-size: 0.9rem;
+    padding: 10px 15px;
+    width: 100%;
 }
 
 .menu li img {
@@ -71,18 +81,23 @@ body{
     margin-right: 10px;
 }
 
-.menu li a {
-    text-decoration: none;
-    color: #737791;
-    font-size: 16px;
-}
-
 .menu .ativo {
     background-color: #4E3324;
-    border-radius: 10px;
-    padding: 10px;
 }
 
 .menu .ativo a {
-    color: #ffff;
+    color: #fff;
+}
+
+.main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    padding: 20px;
+}
+.menu .ativo {
+    background-color: #4E3324;
+}
+
+.menu .ativo a {
+    color: #fff;
 }

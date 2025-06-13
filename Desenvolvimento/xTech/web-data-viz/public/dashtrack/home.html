@@ -16,30 +16,39 @@
     <div class="lateral">
       <div class="titulo">
         <div class="card-logo">
-          <a href="home.html">
-            <img src="./img/logo_mush.png" alt="Logo MushTrack" /></a>
+         
+            <img src="./img/logo_mush.png" style="width: 40px; height: 40px;" alt="Logo MushTrack" />
+        
         </div>
         <h2>MushTrack</h2>
       </div>
 
       <ul class="menu">
-        <li id="menuEstufas" class="ativo" onclick="ativarMenu('menuEstufas')">
-          <img src="img/icone_dashboard.png" alt="Dashboard" />
-          <a href="#">Estufas</a>
+        <li id="menuEstufas" class="ativo">
+            <a href="home.html">
+                <img src="img/icone_dashboard.png" alt="Dashboard" />
+                Estufas
+            </a>
         </li>
-        <li id="menuSensores" onclick="ativarMenu('menuSensores')">
-          <img src="img/Group.png" alt="MushTrack" />
-          <a href="../dashtrack/cadastroSensor.html">Sensores</a>
+        <li id="menuSensores">
+            <a href="cadastroSensor.html">
+                <img src="img/Group.png" alt="Sensores" />
+                Sensores
+            </a>
         </li>
-        <li>
-          <img src="img/Group.png" alt="Estufas">
-          <a href="../dashtrack/cadastroEstufas.html">Cadastro estufas</a>
+        <li id="menuCadastroEstufas">
+            <a href="cadastroEstufas.html">
+                <img src="img/Group.png" alt="Cadastro" />
+                Cadastro estufas
+            </a>
         </li>
-        <li id="menuSair" onclick="ativarMenu('menuSair')">
-          <img src="img/sair.png" alt="Sair" />
-          <a href="#">Sair</a>
+        <li id="menuSair">
+            <a href="#">
+                <img src="img/sair.png" alt="Sair" />
+                Sair
+            </a>
         </li>
-      </ul>
+    </ul>
     </div>
 
     <div class="main-content">
@@ -126,13 +135,5 @@
 
 </html>
 <script>
-  function ativarMenu(menuSelecionado) {
-
-    var itensMenu = document.querySelectorAll('.menu li');
-
-    itensMenu.forEach(function (item) {
-      item.classList.remove('ativo');
-    });
-    document.getElementById(menuSelecionado).classList.add('ativo');
-  }
+  
 </script>

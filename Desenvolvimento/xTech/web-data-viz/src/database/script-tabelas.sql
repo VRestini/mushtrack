@@ -84,6 +84,7 @@ create table alerta (
 	constraint fkAlertaDados foreign key (dados_id) references dados(id),
 	constraint fkAlertaSensor foreign key (sensor_id) references sensor(id)
 );
+SELECT * FROM estagio;
 
 <<<<<<< HEAD
 SELECT s.id, s.nome, est.nome AS estufa, c.nome AS cogumelo

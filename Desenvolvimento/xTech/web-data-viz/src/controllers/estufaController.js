@@ -19,18 +19,19 @@ function buscarEstufas(req,res){
     }
 }
 function cadastrarEstufas(req,res){
-    let id_empresa = req.body.IdEmpresaServer
-    let nome_estufa = req.body.EstufaNomeServer
-    let id_estagio = req.body.IdEstagioServer
-    let id_cogumelo = req.body.IdCogumeloServer
+    let id_empresa = req.body.empresaServer; 
+    let nome_estufa = req.body.nomeServer;   
+    let id_estagio = req.body.estagioServer; 
+    let id_cogumelo = req.body.cogumeloServer;
+    
     if(id_empresa == undefined)
-        res.status(400).send("IdEmpresaServer undefined!");
+        res.status(400).send("empresaServer undefined!");
     else if(nome_estufa == undefined)
-        res.status(400).send("EstufaNomeServer undefined!");
+        res.status(400).send("nomeServer undefined!");
     else if(id_estagio == undefined)
-        res.status(400).send("IdEstagioServer undefined!");
+        res.status(400).send("estagioServer undefined!");
     else if(id_cogumelo == undefined)
-        res.status(400).send("IdCogumeloServer undefined!");
+        res.status(400).send("cogumeloServer undefined!");
     else{
         estufaModel.cadastrarEstufas(nome_estufa, id_cogumelo, id_empresa, id_estagio).then(function(response){
             console.log(`\nResultados encontrados: ${response.length}`)
@@ -46,5 +47,6 @@ function cadastrarEstufas(req,res){
 
 module.exports = {
     buscarEstufas,
-    cadastrarEstufas
+    cadastrarEstufas,
+
 };

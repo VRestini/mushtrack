@@ -26,7 +26,7 @@ function buscarUmidadeTemperatura(id_estufa) {
 
 
 
-function buscarUmidadeTemperaturaHistorico(sensor_id) {
+function buscarUmidadeTemperaturaHistorico(id_estufa) {
   var instrucaoSql = `
       
 SELECT 

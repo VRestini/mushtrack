@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Sensor</title>
+    <link rel="stylesheet" href="css_dashtrack/menu.css">
     <link rel="stylesheet" href="css_dashtrack/cadastroSensor.css">
-    <title>Document</title>
 </head>
 
 <body>
@@ -14,56 +15,85 @@
         <div class="lateral">
             <div class="titulo">
                 <div class="card-logo">
-                    <img src="./img/logo_mush.png" style="width: 40px; height: 40px;" alt="Logo MushTrack" />
+                    <a href="home.html">
+                        <img src="./img/logo_mush.png" style="width: 40px; height: 40px;" alt="Logo MushTrack" />
+                    </a>
                 </div>
                 <h2>MushTrack</h2>
             </div>
+
             <ul class="menu">
-                <li id="menuEstufas" class="ativo" onclick="ativarMenu('menuEstufas')">
-                    <img src="img/icone_dashboard.png" alt="Dashboard" />
-                    <a href="../dashtrack/home.html">Estufas</a>
+                <li id="menuEstufas">
+                    <a href="home.html">
+                        <img src="img/icone_dashboard.png" alt="Dashboard" />
+                        Estufas
+                    </a>
                 </li>
-                <li id="menuSensores" onclick="ativarMenu('menuSensores')">
-                    <img src="img/Group.png" alt="MushTrack" />
-                    <a href="../dashtrack/cadastroSensor.html">Sensores</a>
+                <li id="menuSensores" class="ativo">
+                    <a href="cadastroSensor.html">
+                        <img src="img/Group.png" alt="Sensores" />
+                        Sensores
+                    </a>
                 </li>
-                <li>
-                    <img src="img/Group.png" alt="Sensores">
-                    <a href="../dashtrack/cadastroEstufas.html">Cadastro estufas</a>
+                <li id="menuCadastroEstufas">
+                    <a href="cadastroEstufas.html">
+                        <img src="img/Group.png" alt="Cadastro" />
+                        Cadastro estufas
+                    </a>
                 </li>
-                <li id="menuSair" onclick="ativarMenu('menuSair')">
-                    <img src="img/sair.png" alt="Sair" />
-                    <a href="#">Sair</a>
+                <li id="menuSair">
+                    <a href="#">
+                        <img src="img/sair.png" alt="Sair" />
+                        Sair
+                    </a>
                 </li>
             </ul>
         </div>
 
+        <div class="main-content">
+            <div class="container-cadastrar">
+                <div class="card-cadastrar">
+                    <h1>Cadastrar sensor</h1>
+                    <input type="text" id="input_tipo" placeholder="Tipo"><br>
+                    <input type="text" id="input_nome" placeholder="Nome"><br>
+                    <select id="select_status">
+                        <option value="">Selecione uma opção</option>
+                        <option value="ativo">Ativo</option>
+                        <option value="inativo">Inativo</option>
+                    </select><br>
+                    <input type="text" id="input_numero_series" placeholder="Número de série"><br>
+                    <input type="date" id="input_dt_manutencao" placeholder="Data de manutenção"><br>
+                    <input type="date" id="input_dt_instalacao" placeholder="Data de instalação"><br>
+                    <input type="text" id="input_posicao" placeholder="Posição"><br>
 
-        <div class="container-cadastrar">
-            <div class="card-cadastrar">
-                <h1>Cadastrar sensor</h1>
-                <input type="text" id="input_tipo" placeholder="tipo"><br>
-                <input type="text" id="input_nome" placeholder="nome"><br>
-                <select name="" id="select_status">
-                    <option value="">Selecione uma opção</option>
-                    <option value="ativo">Ativo</option>
-                    <option value="inativo">Inativo</option>
-                </select>
-                <input type="text" id="input_numero_series" placeholder="series"><br>
-                <input type="date" id="input_dt_manutencao" placeholder="manutenção">
-                <input type="date" id="input_dt_instalacao" placeholder="instalação">
-
-                <input type="text" id="input_posicao" placeholder="posição"><br>
-
-                <button onclick="cadastrar()">Cadastrar sensor</button>
-                <button onclick="verificar()">Verificar sensores</button>
+                    <button onclick="cadastrar()">Cadastrar sensor</button>
+                    <button onclick="buscar()">Verificar sensores</button>
+                </div>
             </div>
+            <div id="div_mensagem_sensor"></div>
+            <div class="cards-sensor">
+                <div class="cards-sensor">
+                    <div id="div_mensagem_card"></div>
+                    <table id="tabela-sensores" style="width:100%; display: none;">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Tipo</th>
+                                <th>Status</th>
+                                <th>Nº Série</th>
+                                <th>Posição</th>
+                                <th>Instalação</th>
+                                <th>Manutenção</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div id="div_mensagem_card"></div>
+            </div>
+            
         </div>
-
-        <div class="cards-sensor">
-            <div id="div_mensagem_card"></div>
-        </div>
-        <div id="div_mensagem_sensor"></div>
+    </div>
 </body>
 
 </html>
@@ -76,62 +106,123 @@
     var listaManutencao = []
     var listaInstalacao = []
     var listaPosicao = []
-
-    function cadastrar() {
-
-        var id_estufa = sessionStorage.ID_ESTUFA
-
-
-        var tipo = input_tipo.value
-        var nome = input_nome.value
-        var status = select_status.value
-        var numeroSeries = input_numero_series.value
-        var dtManutencao = input_dt_manutencao.value
-        var dtInstalacao = input_dt_instalacao.value
-        var posicao = input_posicao.value
-
-
-
-        if (tipo == "" || nome == "" || status == "" || numeroSeries == "" || dtManutencao == "" || dtInstalacao == "" || posicao == "") {
-            alert('Preencha todos os campos!')
-        }
-        if (listaNome.includes(nome)) {
-            alert('Este sensor já existe! Tente outro.')
-        } else {
-            fetch("/sensor/cadastrar", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    tipoServer: tipo,
-                    nomeServer: nome,
-                    statusServer: status,
-                    numeroSeriesServer: numeroSeries,
-                    dtManutencaoServer: dtManutencao,
-                    dtInstalacaoServer: dtInstalacao,
-                    posicaoServer: posicao,
-                    IdEstufaServer: id_estufa
-                })
+    function buscar() {
+        var idEmpresa = sessionStorage.ID_EMPRESA;
+        fetch("/sensor/buscar", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                idEmpresaServer: idEmpresa
             })
-                .then(function (resposta) {
-                    if (resposta.ok) {
-                        alert("Cadastro efetuado com sucesso!");
-                        window.location.href = "./loginEmpresa.html";
-                    } else {
-                        alert("Erro ao cadastrar sensor.");
-                    }
-                })
-                .catch(function (erro) {
-                    console.log(`#ERRO: ${erro}`);
-                });
-
-            listaTipo.push(tipo)
-            listaNome.push(nome)
-            listaStatus.push(status)
-            listaSeries.push(numeroSeries)
-            listaManutencao.push(dtManutencao)
-            listaInstalacao.push(dtInstalacao)
-            listaPosicao.push(posicao)
+        }).then(function (resposta) {
+                if (resposta.ok) {
+                    return resposta.json().then(function (sensores) {
+                        console.log("Sensores recebidos:", sensores);
+                        atualizarTabelaSensores(sensores);
+                    });
+                } else {
+                    throw new Error("Erro na resposta do servidor");
+                }
+            })
+            .catch(function (erro) {
+                console.log(`Erro: ${erro}`);
+                alert("Erro ao buscar sensores. Consulte o console para detalhes.");
+            });
+    }
+    function atualizarTabelaSensores(sensores) {
+        var tabela = document.getElementById("tabela-sensores");
+        var tbody = tabela.querySelector('tbody');
+        tbody.innerHTML = "";
+        if (sensores.length > 0) {
+            tabela.style.display = "table";
+            div_mensagem_sensor.innerHTML = `<h3>Você tem ${sensores.length} sensores cadastrados:</h3>`;
+        } else {
+            tabela.style.display = "none";
+            div_mensagem_sensor.innerHTML = "Nenhum sensor cadastrado.";
+            return;
         }
+        sensores.forEach(function (sensor) {
+            var row = tbody.insertRow();
+            var dtInstalacao = formatarDataExibicao(sensor.dt_instalacao);
+            var dtManutencao = formatarDataExibicao(sensor.dt_manutencao);
+            row.insertCell(0).textContent = sensor.nome || '-';
+            row.insertCell(1).textContent = sensor.tipo || '-';
+            row.insertCell(2).textContent = sensor.status || '-';
+            row.insertCell(3).textContent = sensor.numero_serie || '-';
+            row.insertCell(4).textContent = sensor.posicao || '-';
+            row.insertCell(5).textContent = dtInstalacao;
+            row.insertCell(6).textContent = dtManutencao;
+        });
+    }
+    function cadastrar() {
+        var id_estufa = sessionStorage.ID_ESTUFA;
+
+        var tipo = input_tipo.value;
+        var nome = input_nome.value;
+        var status = select_status.value;
+        var numeroSeries = input_numero_series.value;
+        var dtManutencao = input_dt_manutencao.value;
+        var dtInstalacao = input_dt_instalacao.value;
+        var posicao = input_posicao.value;
+
+        if (tipo == "" || nome == "" || status == "" || numeroSeries == "" ||
+            dtManutencao == "" || dtInstalacao == "" || posicao == "") {
+            alert('Preencha todos os campos!');
+            return;
+        }
+
+        if (listaNome.includes(nome)) {
+            alert('Este sensor já existe! Tente outro.');
+            return;
+        }
+
+        // Formatando datas para o padrão MySQL (YYYY-MM-DD)
+        dtManutencao = formatarData(dtManutencao);
+        dtInstalacao = formatarData(dtInstalacao);
+
+        fetch("/sensor/cadastrar", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                tipoServer: tipo,
+                nomeServer: nome,
+                statusServer: status,
+                numeroSeriesServer: numeroSeries,
+                dtManutencaoServer: dtManutencao,
+                dtInstalacaoServer: dtInstalacao,
+                posicaoServer: posicao,
+                IdEstufaServer: id_estufa
+            })
+        })
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    alert("Cadastro efetuado com sucesso!");
+                    window.location.href = "home.html";
+                } else {
+                    alert("Erro ao cadastrar sensor.");
+                }
+            })
+            .catch(function (erro) {
+                console.log(`Erro: ${erro}`);
+            });
+
+        listaTipo.push(tipo);
+        listaNome.push(nome);
+        listaStatus.push(status);
+        listaSeries.push(numeroSeries);
+        listaManutencao.push(dtManutencao);
+        listaInstalacao.push(dtInstalacao);
+        listaPosicao.push(posicao);
+    }
+
+
+    function formatarDataExibicao(data) {
+        if (!data) return '-';
+        var partes = data.split('-');
+        if (partes.length === 3) {
+            return `${partes[2]}/${partes[1]}/${partes[0]}`;
+        }
+        return data;
     }
     function verificar() {
         div_mensagem_sensor.innerHTML = ""
@@ -157,14 +248,6 @@
 
     }
 
-    function ativarMenu(menuSelecionado) {
 
-        var itensMenu = document.querySelectorAll('.menu li');
-
-        itensMenu.forEach(function (item) {
-            item.classList.remove('ativo');
-        });
-        document.getElementById(menuSelecionado).classList.add('ativo');
-    }
 
 </script>
