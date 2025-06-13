@@ -14,27 +14,18 @@
         <div class="lateral">
             <div class="titulo">
                 <div class="card-logo">
-                    <img src="img/logo_mush.png" alt="Logo MushTrack" style="width: 40px;" />
+                    <img src="./img/logo_mush.png" style="width: 40px; height: 40px;" alt="Logo MushTrack" />
                 </div>
                 <h2>MushTrack</h2>
             </div>
-
             <ul class="menu">
                 <li class="ativo">
                     <img src="img/icone_dashboard.png" alt="Dashboard" />
-                    <a href="#">Dashboard</a>
+                    <a href="#">Estufas</a>
                 </li>
                 <li>
                     <img src="img/Group.png" alt="MushTrack" />
-                    <a href="#">MushTrack</a>
-                </li>
-                <li>
-                    <img src="img/Chart_Line.png" alt="Consultar" />
-                    <a href="#">Consultar</a>
-                </li>
-                <li>
-                    <img src="img/config.png" alt="Configurações" />
-                    <a href="#">Settings</a>
+                    <a href="#">Sensores</a>
                 </li>
                 <li>
                     <img src="img/sair.png" alt="Sair" />
@@ -55,9 +46,11 @@
                     <option value="inativo">Inativo</option>
                 </select>
                 <input type="text" id="input_numero_series" placeholder="series"><br>
-                <input type="text" id="input_dt_manutencao" placeholder="manutenção"> <br>
-                <input type="text" id="input_dt_instalacao" placeholder="instalação"><br>
+                <input type="date" id="input_dt_manutencao" placeholder="manutenção">
+                <input type="date" id="input_dt_instalacao" placeholder="instalação">
+
                 <input type="text" id="input_posicao" placeholder="posição"><br>
+
                 <button onclick="cadastrar()">Cadastrar sensor</button>
                 <button onclick="verificar()">Verificar sensores</button>
             </div>
@@ -81,6 +74,10 @@
     var listaPosicao = []
 
     function cadastrar() {
+
+    var id_estufa = sessionStorage.ID_ESTUFA
+
+
         var tipo = input_tipo.value
         var nome = input_nome.value
         var status = select_status.value
@@ -89,32 +86,40 @@
         var dtInstalacao = input_dt_instalacao.value
         var posicao = input_posicao.value
 
+
+
         if (tipo == "" || nome == "" || status == "" || numeroSeries == "" || dtManutencao == "" || dtInstalacao == "" || posicao == "") {
             alert('Preencha todos os campos!')
-        } else if (listaNome.includes(nome)) {
+        }
+         if (listaNome.includes(nome)) {
             alert('Este sensor já existe! Tente outro.')
         } else {
-            fetch("/sensor/cadastrar", {
-                method: "POST",
-                headers: { "Content-Type": "application/json", },
-                body: JSON.stringify({
-                    tipoServer: tipo,
-                    nomeServer: nome,
-                    statusServer: status,
-                    numeroSeriesServer: numeroSeries,
-                    dtManutencaoServer: dtManutencao,
-                    dtInstalacaoServer: dtInstalacao,
-                    posicaoServer: posicao
-                }),
-            }).then(function (resposta) {
-                if (resposta.ok) {
-                    alert("Cadastro efetuado com sucesso!");
-                    window.location.href = "./loginEmpresa.html";
-                }
+   fetch("/sensor/cadastrar", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+        tipoServer: tipo,
+        nomeServer: nome,
+        statusServer: status,
+        numeroSeriesServer: numeroSeries,
+        dtManutencaoServer: dtManutencao,
+        dtInstalacaoServer: dtInstalacao,
+        posicaoServer: posicao,
+        IdEstufaServer: id_estufa
+    })
+})
+.then(function (resposta) {
+    if (resposta.ok) {
+        alert("Cadastro efetuado com sucesso!");
+        window.location.href = "./loginEmpresa.html";
+    } else {
+        alert("Erro ao cadastrar sensor.");
+    }
+})
+.catch(function (erro) {
+    console.log(`#ERRO: ${erro}`);
+});
 
-            }).catch(function (resposta) {
-                console.log(`#ERRO: ${resposta}`);
-            });
             listaTipo.push(tipo)
             listaNome.push(nome)
             listaStatus.push(status)

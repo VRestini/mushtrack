@@ -1,8 +1,10 @@
 // Arquivo: routes/dados.js
 const express = require('express');
 const router = express.Router();
-const conexao = require('../database/conexao');
 
+var dadosController = require("../controllers/dadosController");
+/*
+const conexao = require('../database/conexao');
 // Exemplo de limites
 const temperaturaLimite = { min: 10, max: 30 }; // exemplo
 const umidadeLimite = { min: 60, max: 85 }; // exemplo
@@ -53,5 +55,13 @@ function gerarAlerta(tipo_alerta, mensagem, nivel_alerta) {
         }
     });
 }
+    */
+router.post("/buscar-dados", function (req, res) {
+    dadosController.buscarDados(req, res);
+});
+
+router.post("/buscar-dados-historico", function (req, res) {
+    dadosController.buscarDadosHistorico(req, res);
+});
 
 module.exports = router;
