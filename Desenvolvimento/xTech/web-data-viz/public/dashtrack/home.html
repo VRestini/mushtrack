@@ -7,7 +7,7 @@
   <link rel="shortcut icon" type="imagex/png" href="img/logo_mush.png">
   <link rel="stylesheet" href="css_dashtrack/menu.css">
   <link rel="stylesheet" href="./css_dashtrack/dashtrack_inicio.css">
-  
+
 </head>
 
 <body>
@@ -23,19 +23,23 @@
       </div>
 
       <ul class="menu">
-                <li id="menuEstufas" class="ativo" onclick="ativarMenu('menuEstufas')">
-                    <img src="img/icone_dashboard.png" alt="Dashboard" />
-                    <a href="#">Estufas</a>
-                </li>
-                <li id="menuSensores" onclick="ativarMenu('menuSensores')">
-                    <img src="img/Group.png" alt="MushTrack" />
-                    <a href="../dashtrack/cadastroSensor.html">Sensores</a>
-                </li>
-                <li id="menuSair" onclick="ativarMenu('menuSair')">
-                    <img src="img/sair.png" alt="Sair" />
-                    <a href="#">Sair</a>
-                </li>
-            </ul>
+        <li id="menuEstufas" class="ativo" onclick="ativarMenu('menuEstufas')">
+          <img src="img/icone_dashboard.png" alt="Dashboard" />
+          <a href="#">Estufas</a>
+        </li>
+        <li id="menuSensores" onclick="ativarMenu('menuSensores')">
+          <img src="img/Group.png" alt="MushTrack" />
+          <a href="../dashtrack/cadastroSensor.html">Sensores</a>
+        </li>
+        <li>
+          <img src="img/Group.png" alt="Estufas">
+          <a href="../dashtrack/cadastroEstufas.html">Cadastro estufas</a>
+        </li>
+        <li id="menuSair" onclick="ativarMenu('menuSair')">
+          <img src="img/sair.png" alt="Sair" />
+          <a href="#">Sair</a>
+        </li>
+      </ul>
     </div>
 
     <div class="main-content">
@@ -70,14 +74,14 @@
             </div>
 
             <div class="Cogumelo">
-              <a href="estufasParis.html" >
+              <a href="estufasParis.html">
                 <div class="conteudo">
                   <h2>Champignon de <br> Paris</h2>
                   <img src="img/champignon_card.png" alt="Champignon de Paris">
                 </div>
               </a>
             </div>
-           
+
           </div>
 
           <div class="container-alerta">
@@ -123,12 +127,12 @@
 </html>
 <script>
   function ativarMenu(menuSelecionado) {
-   
+
     var itensMenu = document.querySelectorAll('.menu li');
 
     itensMenu.forEach(function (item) {
-        item.classList.remove('ativo');
+      item.classList.remove('ativo');
     });
     document.getElementById(menuSelecionado).classList.add('ativo');
-}
+  }
 </script>

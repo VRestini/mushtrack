@@ -18,14 +18,18 @@
                 </div>
                 <h2>MushTrack</h2>
             </div>
-             <ul class="menu">
+            <ul class="menu">
                 <li id="menuEstufas" class="ativo" onclick="ativarMenu('menuEstufas')">
                     <img src="img/icone_dashboard.png" alt="Dashboard" />
-                    <a href="../dashtrack/dashboard.html">Estufas</a>
+                    <a href="../dashtrack/home.html">Estufas</a>
                 </li>
                 <li id="menuSensores" onclick="ativarMenu('menuSensores')">
                     <img src="img/Group.png" alt="MushTrack" />
                     <a href="../dashtrack/cadastroSensor.html">Sensores</a>
+                </li>
+                <li>
+                    <img src="img/Group.png" alt="Sensores">
+                    <a href="../dashtrack/cadastroEstufas.html">Cadastro estufas</a>
                 </li>
                 <li id="menuSair" onclick="ativarMenu('menuSair')">
                     <img src="img/sair.png" alt="Sair" />
@@ -75,7 +79,7 @@
 
     function cadastrar() {
 
-    var id_estufa = sessionStorage.ID_ESTUFA
+        var id_estufa = sessionStorage.ID_ESTUFA
 
 
         var tipo = input_tipo.value
@@ -91,34 +95,34 @@
         if (tipo == "" || nome == "" || status == "" || numeroSeries == "" || dtManutencao == "" || dtInstalacao == "" || posicao == "") {
             alert('Preencha todos os campos!')
         }
-         if (listaNome.includes(nome)) {
+        if (listaNome.includes(nome)) {
             alert('Este sensor já existe! Tente outro.')
         } else {
-   fetch("/sensor/cadastrar", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-        tipoServer: tipo,
-        nomeServer: nome,
-        statusServer: status,
-        numeroSeriesServer: numeroSeries,
-        dtManutencaoServer: dtManutencao,
-        dtInstalacaoServer: dtInstalacao,
-        posicaoServer: posicao,
-        IdEstufaServer: id_estufa
-    })
-})
-.then(function (resposta) {
-    if (resposta.ok) {
-        alert("Cadastro efetuado com sucesso!");
-        window.location.href = "./loginEmpresa.html";
-    } else {
-        alert("Erro ao cadastrar sensor.");
-    }
-})
-.catch(function (erro) {
-    console.log(`#ERRO: ${erro}`);
-});
+            fetch("/sensor/cadastrar", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    tipoServer: tipo,
+                    nomeServer: nome,
+                    statusServer: status,
+                    numeroSeriesServer: numeroSeries,
+                    dtManutencaoServer: dtManutencao,
+                    dtInstalacaoServer: dtInstalacao,
+                    posicaoServer: posicao,
+                    IdEstufaServer: id_estufa
+                })
+            })
+                .then(function (resposta) {
+                    if (resposta.ok) {
+                        alert("Cadastro efetuado com sucesso!");
+                        window.location.href = "./loginEmpresa.html";
+                    } else {
+                        alert("Erro ao cadastrar sensor.");
+                    }
+                })
+                .catch(function (erro) {
+                    console.log(`#ERRO: ${erro}`);
+                });
 
             listaTipo.push(tipo)
             listaNome.push(nome)
@@ -154,13 +158,13 @@
     }
 
     function ativarMenu(menuSelecionado) {
-   
-    var itensMenu = document.querySelectorAll('.menu li');
 
-    itensMenu.forEach(function (item) {
-        item.classList.remove('ativo');
-    });
-    document.getElementById(menuSelecionado).classList.add('ativo');
-}
+        var itensMenu = document.querySelectorAll('.menu li');
+
+        itensMenu.forEach(function (item) {
+            item.classList.remove('ativo');
+        });
+        document.getElementById(menuSelecionado).classList.add('ativo');
+    }
 
 </script>

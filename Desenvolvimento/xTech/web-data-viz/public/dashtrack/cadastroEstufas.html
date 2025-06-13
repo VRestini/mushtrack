@@ -27,6 +27,10 @@
                     <img src="img/Group.png" alt="MushTrack" />
                     <a href="../dashtrack/cadastroSensor.html">Sensores</a>
                 </li>
+                <li>
+                    <img src="img/Group.png" alt="Estufas">
+                    <a href="../dashtrack/cadastroEstufas.html">Cadastro estufas</a>
+                </li>
                 <li id="menuSair" onclick="ativarMenu('menuSair')">
                     <img src="img/sair.png" alt="Sair" />
                     <a href="#">Sair</a>
@@ -125,13 +129,13 @@
     }
 
     function ativarMenu(menuSelecionado) {
-   
-    var itensMenu = document.querySelectorAll('.menu li');
 
-    itensMenu.forEach(function (item) {
-        item.classList.remove('ativo');
-    });
-    document.getElementById(menuSelecionado).classList.add('ativo');
-}
+        var itensMenu = document.querySelectorAll('.menu li');
+
+        itensMenu.forEach(function (item) {
+            item.classList.remove('ativo');
+        });
+        document.getElementById(menuSelecionado).classList.add('ativo');
+    }
 
 </script>
