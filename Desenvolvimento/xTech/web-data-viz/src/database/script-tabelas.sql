@@ -84,7 +84,7 @@ create table alerta (
 	constraint fkAlertaDados foreign key (dados_id) references dados(id),
 	constraint fkAlertaSensor foreign key (sensor_id) references sensor(id)
 );
-SELECT * FROM estagio;
+SELECT * FROM alerta;
 
 <<<<<<< HEAD
 SELECT s.id, s.nome, est.nome AS estufa, c.nome AS cogumelo
@@ -93,6 +93,8 @@ JOIN estufa est ON s.estufa_id = est.id
 JOIN cogumelo c ON est.cogumelo_id = c.id;
 
 SELECT * FROM parametro;
+
+
 
 =======
 select * from empresa;

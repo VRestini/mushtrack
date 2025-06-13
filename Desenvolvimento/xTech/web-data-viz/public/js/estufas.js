@@ -1,4 +1,3 @@
-
 var listaEstufas = []
 function buscarTodasEstufas(cogumelo) {
     id_empresa = sessionStorage.ID_EMPRESA
