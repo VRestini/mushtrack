@@ -1,12 +1,12 @@
 var estufa = 0;
     function analisar() {
         
-        var kgProducao = Number(input_prod.value)
+        var kgProducao = Number(label_prod.value)
         var estagio = select_estagio.value
         var cogumelo = select_cogumelo.value
-        var precoKg = Number(input_preco.value)
-        var temp = Number(input_temp.value)
-        var umid = Number(input_umid.value)
+        var precoKg = Number(label_preco.value)
+        var temp = Number(label_temp.value)
+        var umid = Number(label_umid.value)
         var mensagem = ""
         if(cogumelo == "#"){
             mensagem = "Erro! Escolha um cogumelo para prosseguir."

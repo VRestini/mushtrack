@@ -49,50 +49,51 @@
   </section>
 
   <!-- explicando a mushtrack -->
-<section class="container_box mush" id="route_mushtrack">
-  <h2 class="titulo">MUSHTRACK</h2>
-  <div class="cards-container">
+  <section class="container_box mush" id="route_mushtrack">
+    <h2 class="titulo">MUSHTRACK</h2>
+    <div class="cards-container">
 
-    <div class="card">
-      <img src="assets/img/card1_cogumelo.png" alt="Cogumelos">
-      <div class="card-text">
-        <h3>O que é o Mushtrack?</h3>
-        <ul>
-          <li>Software de monitoramento de temperatura e umidade do ar em estufas de cogumelos Shimeji, Shiitake e Champignon</li>
-        </ul>
+      <div class="card">
+        <img src="assets/img/card1_cogumelo.png" alt="Cogumelos">
+        <div class="card-text">
+          <h3>O que é o Mushtrack?</h3>
+          <ul>
+            <li>Software de monitoramento de temperatura e umidade do ar em estufas de cogumelos Shimeji, Shiitake e
+              Champignon</li>
+          </ul>
+        </div>
       </div>
+
+      <div class="card">
+        <img src="assets/img/card2_cogumelo.png" alt="Logo Mushtrack">
+        <div class="card-text">
+          <h3>Como funciona?</h3>
+          <ul>
+            <li>Sensores instalados nas estufas</li>
+            <li>Sensores captam temperatura e umidade do ar</li>
+            <li>Dados exibidos via Dashboard</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/img/carr3_cogumelo.png" alt="Pessoa analisando dados">
+        <div class="card-text">
+          <h3>Por que usar o Mushtrack?</h3>
+          <ul>
+            <li>Monitoramento em tempo real</li>
+            <li>Precisão na captação dos dados</li>
+            <li>Auxílio na tomada de decisões</li>
+          </ul>
+        </div>
+      </div>
+
     </div>
 
-    <div class="card">
-      <img src="assets/img/card2_cogumelo.png" alt="Logo Mushtrack">
-      <div class="card-text">
-        <h3>Como funciona?</h3>
-        <ul>
-          <li>Sensores instalados nas estufas</li>
-          <li>Sensores captam temperatura e umidade do ar</li>
-          <li>Dados exibidos via Dashboard</li>
-        </ul>
-      </div>
+    <div class="botao-mushtrack">
+      <a href="institucional_mush/index_mush.html" id="login_a" class="button_4">Conheça a Mushtrack</a>
     </div>
-
-    <div class="card">
-      <img src="assets/img/carr3_cogumelo.png" alt="Pessoa analisando dados">
-      <div class="card-text">
-        <h3>Por que usar o Mushtrack?</h3>
-        <ul>
-          <li>Monitoramento em tempo real</li>
-          <li>Precisão na captação dos dados</li>
-          <li>Auxílio na tomada de decisões</li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="botao-mushtrack">
-    <a href="institucional_mush/index_mush.html" id="login_a" class="button_4">Conheça a Mushtrack</a>
-  </div>
-</section>
+  </section>
 
 
 
@@ -122,10 +123,11 @@
           <option>Frutificação</option>
         </select>
 
-        <input id="input_prod" class="input_result" placeholder="Produção em kg da estufa">
-        <input id="input_temp" class="input_result" placeholder="Temperatura média da estufa">
-        <input id="input_umid" class="input_result" placeholder="Umidade média do ar da estufa">
-        <input id="input_preco" class="input_result" placeholder="Preço/kg do cogumelo">
+        <input type="number" id="label_prod" placeholder="Produção em kg da estufa">
+        <input type="number" id="label_temp" placeholder="Temperatura média da estufa">
+        <input type="number" id="label_umid" placeholder="Umidade média do ar da estufa">
+        <input type="number" id="label_preco" placeholder="Preço/kg do cogumelo">
+
 
         <button onclick="analisar()" class="button">Simular</button>
       </div>

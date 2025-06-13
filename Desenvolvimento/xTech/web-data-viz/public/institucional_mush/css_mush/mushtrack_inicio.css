@@ -3,15 +3,17 @@
   font-family: 'gidole';
   src: url('../../assets/font/Gidole-Regular.ttf') format('truetype');
 }
+
 @font-face {
   font-family: 'dune-rise';
   src: url('../../assets/font/Dune_Rise.ttf') format('truetype');
 }
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 /*  HEADER */
@@ -42,7 +44,7 @@ header {
   color: #4E3324;
   text-decoration: none;
   font-weight: bold;
-    font-family: 'gidole';
+  font-family: 'gidole';
 
 }
 
@@ -54,27 +56,28 @@ header {
 
 /* Banner / Inicio */
 .banner {
-    background-image:url('../../dashtrack/img/imagemInicio.png');
-    background-size: cover;
-    background-position: center;
-    height: 800px;
-    width: 100%;
-    color: rgba(255, 255, 255, 0.716);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  background-image: url('../../dashtrack/img/imagemInicio.png');
+  background-size: cover;
+  background-position: center;
+  height: 800px;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.716);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .banner .container p {
-    font-size: 56px;
-    font-weight: bold;
+  font-size: 56px;
+  font-weight: bold;
 }
 
 .banner .container .subtitulo {
-    font-size: 25px;
-    font-weight: 300;
+  font-size: 25px;
+  font-weight: 300;
 }
+
 /* Sobre Nós */
 #servicos {
   padding: 60px 20px;
@@ -83,7 +86,7 @@ header {
 }
 
 .servicos-text h2 {
-  font-family: dune-rise; 
+  font-family: dune-rise;
   font-size: 32px;
   margin-bottom: 20px;
 }
@@ -109,7 +112,8 @@ header {
   margin-top: 20px;
 }
 
-.dash_grafico, .dash_alertas {
+.dash_grafico,
+.dash_alertas {
   max-width: 400px;
 }
 
@@ -118,7 +122,7 @@ header {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .dash_grafico h3,
@@ -131,209 +135,214 @@ header {
 
 /* Tipos de cogumelos */
 #cogumelos .content-section {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 90px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 90px;
 }
 
 .cogumeloShimeji,
 .cogumeloChampingnon,
 .cogumeloShitake {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #4E3324;
-    width: 320px;
-    margin: 60px;
-    height: 320px;
-    color: rgba(255, 255, 255, 0.734);
-    border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #4E3324;
+  width: 320px;
+  margin: 60px;
+  height: 320px;
+  color: rgba(255, 255, 255, 0.734);
+  border-radius: 20px;
 
 }
 
 .cogumeloShimeji img,
 .cogumeloChampingnon img,
 .cogumeloShitake img {
-    width: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    top: -120px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -120px;
 }
 
 .cogumeloShimeji h2,
 .cogumeloChampingnon h2,
 .cogumeloShitake h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    font-size: 28px;
-    top: -90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  font-size: 28px;
+  top: -90px;
 }
 
 /* serviços */
 #serviços {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 #serviços .serviços-card .serviços-text h2 {
-    font-family: dune-rise;
-    text-align: center;
-    color: #4E3324;
-    font-size: 28px;
+  font-family: dune-rise;
+  text-align: center;
+  color: #4E3324;
+  font-size: 28px;
 }
 
 #serviços .serviços-card .serviços-text p {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    font-size: 27px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 27px;
 }
 
 .serviços-text h2 {
-    display: flex;
-    font-family:dune-rise ;
-    align-items: center;
-    justify-content: center;
-    color: #4E3324;
-    font-size: 36px;
-    font-weight: 700;
-    margin: 40px 0;
-    gap: 20px;
+  display: flex;
+  font-family: dune-rise;
+  align-items: center;
+  justify-content: center;
+  color: #4E3324;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 40px 0;
+  gap: 20px;
 }
 
 /* agendar */
 
 #agendar_reuniao .reuniao-card .agendar-text h2 {
-    margin-top: 5%;
-    font-family: dune-rise;
-    text-align: center;
-    color: #4E3324;
-    font-size: 32px;
+  margin-top: 5%;
+  font-family: dune-rise;
+  text-align: center;
+  color: #4E3324;
+  font-size: 32px;
 }
 
 #agendar_reuniao .reuniao-card .agendar-text p {
-     margin-bottom: 2%;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-      margin-top: 2%;
-    font-size: 25px;
+  margin-bottom: 2%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 2%;
+  font-size: 25px;
 }
 
 .reuniao-text h2 {
-    display: flex;
-    font-family:dune-rise ;
-    align-items: center;
-    justify-content: center;
-    color: #4E3324;
-    font-size: 36px;
-    font-weight: 700;
-    margin: 40px 0;
-    gap: 20px;
+  display: flex;
+  font-family: dune-rise;
+  align-items: center;
+  justify-content: center;
+  color: #4E3324;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 40px 0;
+  gap: 20px;
 }
 
 #agendar .container-agendar {
-    background-image: url('../../dashtrack/img/cliente_feliz.png');
-    background-size: cover;
-    background-position: center;
-    height: 890px;
-    width: 100%;
-    color: rgba(255, 255, 255, 0.716);
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    padding: 40px;
-    box-sizing: border-box;
+  background-image: url('../../dashtrack/img/cliente_feliz.png');
+  background-size: cover;
+  background-position: center;
+  height: 890px;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.716);
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 40px;
+  box-sizing: border-box;
 
 }
+
 .conteudo-agendar h1 {
-    color: white;
-    font-size: 50px;
-    margin-bottom: 15px;
+  color: white;
+  font-size: 50px;
+  margin-bottom: 15px;
 }
 
 .conteudo-agendar button {
-    background-color: #D9D9D9;
-    color: black;
-    border: none;
-    padding: 30px 50px;
-    border-radius: 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    transition: transform 0.2s;
+  background-color: #D9D9D9;
+
+  border: none;
+  padding: 30px 50px;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  transition: transform 0.2s;
 
 }
 
-.conteudo-agendar button:hover
- {
-    transform: scale(1.05);
+.conteudo-agendar button a {
+  color: black;
+  text-decoration: none;
 }
 
 .conteudo-agendar button:hover {
-    background-color: #bcbcbc;
+  transform: scale(1.05);
+}
+
+.conteudo-agendar button:hover {
+  background-color: #bcbcbc;
 }
 
 /* Estilos da Seção Dashboard */
 
 #Dashboard .container-dashboard {
-    background-image: url('../../dashtrack/img/dashboard.png');
-    background-size: cover;
-    background-position: center;
-    height: 1000px;
-    width: 100%;
-    color: rgba(255, 255, 255, 0.716);
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    padding: 40px;
-    box-sizing: border-box;
+  background-image: url('../../dashtrack/img/dashboard.png');
+  background-size: cover;
+  background-position: center;
+  height: 1000px;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.716);
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 40px;
+  box-sizing: border-box;
 
 }
 
 #dash-titulo .dash-card .dash-text h2 {
-    margin-top: 9%;
-    margin-bottom: 3%;
-    font-family: dune-rise;
-    text-align: center;
-    color: #4E3324;
-    font-size: 32px;
+  margin-top: 9%;
+  margin-bottom: 3%;
+  font-family: dune-rise;
+  text-align: center;
+  color: #4E3324;
+  font-size: 32px;
 }
+
 .conteudo-dashboard h1 {
-    color: white;
-    font-size: 50px;
-    margin-bottom: 15px;
+  color: white;
+  font-size: 50px;
+  margin-bottom: 15px;
 }
 
 .conteudo-dashboard button {
-    background-color: #D9D9D9;
-    color: black;
-    border: none;
-    padding: 20px 30px;
-    border-radius: 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    transition: transform 0.2s;
+  background-color: #D9D9D9;
+  color: black;
+  border: none;
+  padding: 20px 30px;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  transition: transform 0.2s;
 
 }
 
-.conteudo-dashboard button:hover
- {
-    transform: scale(1.05);
+.conteudo-dashboard button:hover {
+  transform: scale(1.05);
 }
 
 
 .conteudo-dashboard button:hover {
-    background-color: #bcbcbc;
+  background-color: #bcbcbc;
 }
 
 /* preenchimento: 40px 20px 20px;
@@ -341,62 +350,65 @@ Preenchimento superior é de 40px
 Os preenchimentos direito e esquerdo são 20px
 O preenchimento inferior é de 20px */
 .footer {
-    background-color: #d5cecb;
-    padding: 40px;
+  background-color: #d5cecb;
+  padding: 40px;
 }
 
 .footer-container {
-    display: flex;
-    justify-content: space-around;
-    width: 1200px;
-    margin: auto;
-    color: #000;
+  display: flex;
+  justify-content: space-around;
+  width: 1200px;
+  margin: auto;
+  color: #000;
 }
 
 .footer-colunas ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-colunas ul li a {
-    text-decoration: none;
-    color: #000;
+  text-decoration: none;
+  color: #000;
 }
-.footer-copyright{
-    text-align: center;
-    margin-top: 30px;
-    border-top: 1px solid #4E3324;
-    padding-top: 10px;
+
+.footer-copyright {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #4E3324;
+  padding-top: 10px;
 }
 
 /* Botão do cadastro */
 
 .button:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 
-  }
-  .button {
-    text-decoration: none;
-    background-color: #625140;
-    width: 340px;
-    height: 40px ;
-    border-radius: 20px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    text-align: center;
-    transition: transform 0.2s;
-
-  }
-  
-#button_home a{
-    text-decoration: none;
-    color: white;
 }
+
+.button {
+  text-decoration: none;
+  background-color: #625140;
+  width: 340px;
+  height: 40px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s;
+
+}
+
+#button_home a {
+  text-decoration: none;
+  color: white;
+}
+
 .button_4 {
-    background-color: #432C1C;
+  background-color: #432C1C;
   border: none;
   padding: 10px 40px;
   border-radius: 16px;
