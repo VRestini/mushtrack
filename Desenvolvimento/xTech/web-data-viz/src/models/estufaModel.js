@@ -18,7 +18,9 @@ function cadastrarEstufas(nome, cogumelo_id, empresa_id,estagio_id) {
   return database.executar(instrucaoSql);
 }
 
+
 module.exports = {
   buscarEstufas,
-  cadastrarEstufas
+  cadastrarEstufas,
+
 };
