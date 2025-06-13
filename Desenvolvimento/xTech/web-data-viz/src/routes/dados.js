@@ -4,7 +4,7 @@ const router = express.Router();
 
 var dadosController = require("../controllers/dadosController");
 
-const conexao = require('../database/conexao');
+const conexao = require('../database/config');
 // Exemplo de limites
 const temperaturaLimite = { min: 10, max: 30 }; // exemplo
 const umidadeLimite = { min: 60, max: 85 }; // exemplo
