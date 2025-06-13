@@ -17,35 +17,31 @@
       <div class="titulo">
         <div class="card-logo">
           <a href="home.html">
-            <img src="../assets/img/xtechBrown.png" alt="Logo MushTrack" /></a>
+            <img src="./img/logo_mush.png" alt="Logo MushTrack" /></a>
         </div>
         <h2>MushTrack</h2>
       </div>
 
       <ul class="menu">
-        <li class="ativo">
-          <img src="img/icone_dashboard.png" alt="Dashboard">
-          <a href="#">Estufas</a>
-        </li>
-        <li>
-          <img src="img/Group.png" alt="Sensores">
-          <a href="#">Sensores</a>
-        </li>
-        <li>
-          <img src="img/sair.png" alt="Sair">
-          <a href="#">Sair</a>
-        </li>
-      </ul>
+                <li id="menuEstufas" class="ativo" onclick="ativarMenu('menuEstufas')">
+                    <img src="img/icone_dashboard.png" alt="Dashboard" />
+                    <a href="#">Estufas</a>
+                </li>
+                <li id="menuSensores" onclick="ativarMenu('menuSensores')">
+                    <img src="img/Group.png" alt="MushTrack" />
+                    <a href="../dashtrack/cadastroSensor.html">Sensores</a>
+                </li>
+                <li id="menuSair" onclick="ativarMenu('menuSair')">
+                    <img src="img/sair.png" alt="Sair" />
+                    <a href="#">Sair</a>
+                </li>
+            </ul>
     </div>
 
     <div class="main-content">
 
       <div class="estufa">
         <h2>Dashboard</h2>
-        <div class="user">
-          <span class="username">Usuário</span>
-          <img src="img/user.png" alt="Usuário">
-        </div>
       </div>
 
 
@@ -125,3 +121,14 @@
 </body>
 
 </html>
+<script>
+  function ativarMenu(menuSelecionado) {
+   
+    var itensMenu = document.querySelectorAll('.menu li');
+
+    itensMenu.forEach(function (item) {
+        item.classList.remove('ativo');
+    });
+    document.getElementById(menuSelecionado).classList.add('ativo');
+}
+</script>
