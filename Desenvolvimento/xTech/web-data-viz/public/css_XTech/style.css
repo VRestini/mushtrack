@@ -69,14 +69,14 @@ header {
   background-image: url(../assets/img/banner.png);
   background-size: cover;
   background-position: center;
-  height: 690px;
+  height: 800px;
   width: 100%;
   color: rgba(255, 255, 255, 0.716);
   display: flex;
   justify-content: end;
   align-items: center;
   text-align: center;
-  margin-top: 12px;
+  /* margin-top: 12px; */
 }
 
 /* .banner .container h2, h3{
