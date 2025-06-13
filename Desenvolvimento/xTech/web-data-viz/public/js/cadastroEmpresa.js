@@ -16,7 +16,7 @@ function cadastrar() {
   } else if (senha !== confirmarSenha) {
     Swal.fire("As senhas não coincidem.");
   } else {
-    fetch("/empresa/cadastrar", {
+    fetch("/empresa/registrar", {
       method: "POST",
       headers: { "Content-Type": "application/json", },
       body: JSON.stringify({

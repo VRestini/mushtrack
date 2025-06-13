@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 var dadosController = require("../controllers/dadosController");
-/*
+
 const conexao = require('../database/conexao');
 // Exemplo de limites
 const temperaturaLimite = { min: 10, max: 30 }; // exemplo
@@ -55,7 +55,7 @@ function gerarAlerta(tipo_alerta, mensagem, nivel_alerta) {
         }
     });
 }
-    */
+    
 router.post("/buscar-dados", function (req, res) {
     dadosController.buscarDados(req, res);
 });
