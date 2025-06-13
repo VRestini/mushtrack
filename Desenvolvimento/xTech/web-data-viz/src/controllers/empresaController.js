@@ -67,7 +67,7 @@ function autenticar(req, res){
     }
 }
 
-function registrar(req, res) {   
+function cadastrar(req, res) {   
     var nomeEmpresa = req.body.nomeEmpresaServer
     var email= req.body.emailServer
     var senha = req.body.senhaServer
@@ -99,7 +99,7 @@ function registrar(req, res) {
 }
 module.exports = {
     autenticar,
-    registrar,
+    cadastrar,
     entrar,
     testar
 }
