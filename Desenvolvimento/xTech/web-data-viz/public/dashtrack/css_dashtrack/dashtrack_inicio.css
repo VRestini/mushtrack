@@ -25,7 +25,7 @@ body {
 
 .geral{
   display: flex;
-  flex-direction: row;
+  gap: 20px;
 }
 
 .estufa h2 {
@@ -77,20 +77,29 @@ body {
 /* alerta */
 .container-alerta{
   background-color: #fff4de3b;
-  width: 330px;
-  height: 400px;
-  margin-left: 180px;
+  width: 70%;
+  height: auto;
+  margin-left: 0;
   border-radius: 20px;
+  margin-left: 100px;
+  margin-top: 0;
+  padding: 20px;
       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      text-align: center;
 
 }
 
 .container-alerta h1{
   display: flex;
   justify-content: center;
-  margin-top: 70px;
+  text-align: center;
+  
 }
-
+.alerta{
+  display: inline-block;
+  width: 45%; 
+  margin: 10px;
+}
 .alerta .imagem{
   display: flex;
   flex-direction: row;

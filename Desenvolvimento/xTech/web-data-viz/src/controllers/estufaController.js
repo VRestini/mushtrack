@@ -18,6 +18,7 @@ function buscarEstufas(req,res){
         })
     }
 }
+
 function cadastrarEstufas(req,res){
     let id_empresa = req.body.empresaServer; 
     let nome_estufa = req.body.nomeServer;   
@@ -47,6 +48,6 @@ function cadastrarEstufas(req,res){
 
 module.exports = {
     buscarEstufas,
-    cadastrarEstufas,
+    cadastrarEstufas
 
 };
