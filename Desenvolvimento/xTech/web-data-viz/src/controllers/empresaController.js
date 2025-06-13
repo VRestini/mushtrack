@@ -80,7 +80,7 @@ function cadastrar(req, res) {
     } else if (senha == undefined) {
         res.status(400).send("senha = undefined!");
     } else {
-        empresaModel.registrar(email, cnpj, nomeEmpresa, nomeRepresentante, senha)
+        empresaModel.cadastrar(email, cnpj, nomeEmpresa, nomeRepresentante, senha)
             .then(
                 function (result) {
                     res.json(result);
