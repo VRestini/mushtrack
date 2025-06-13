@@ -22,7 +22,7 @@ var cogumeloRouter = require("./src/routes/cogumelo")
 var alertaRouter = require("./src/routes/alerta")
 var estagioRouter = require("./src/routes/estagio")
 var dadosRouter = require("./src/routes/dados")
-
+var parametroRouter = require("./src/routes/parametro")
 
 
 app.use(express.json());
@@ -39,7 +39,7 @@ app.use("/cogumelo", cogumeloRouter)
 app.use("/alerta", alertaRouter),
 app.use("/estagio", estagioRouter)
 app.use("/dados", dadosRouter)
-
+app.use("/parametro", parametroRouter)
 
 
 app.listen(PORTA_APP, function () {

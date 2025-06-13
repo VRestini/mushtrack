@@ -56,7 +56,7 @@
         <div class="cards-container">
           <div class="card1">
             <img src="img/red.png" alt="" />
-            <h3>Crítico</h3>
+            <h3 id="status_estufa">Crítico</h3>
             <p>Status da Estufa</p>
             <span>Temperatura e Umidade</span>
           </div>
@@ -104,69 +104,16 @@
 </body>
 
 <script>
-  const horas = ['12:00 pm', '12:30 pm', '13:00 pm', '13:30 pm', '14:00 pm', '14:30 pm', '15:00 pm'];
-
-  // Temperatura
-  const ctxTemp = document.getElementById('graficoTemperatura').getContext('2d');
-  new Chart(ctxTemp, {
-    type: 'bar',
-    data: {
-      labels: horas,
-      datasets: [{
-        label: 'Temperatura (°C)',
-        data: [24, 22, 25, 27, 26, 23, 24],
-        backgroundColor: '#4E3324',
-        borderRadius: 5,
-      }]
-    },
-    options: {
-      responsive: true,
-      scales: {
-        y: {
-          beginAtZero: true,
-          suggestedMax: 35
-        }
-      }
-    }
-  });
-
-  // Umidade
-  const ctxUmi = document.getElementById('graficoUmidade').getContext('2d');
-  new Chart(ctxUmi, {
-    type: 'line',
-    data: {
-      labels: horas,
-      datasets: [{
-        label: 'Umidade (%)',
-        data: [80, 82, 78, 75, 79, 83, 81],
-        borderColor: '#4E3324',
-        tension: 0.3,
-        fill: true,
-        pointRadius: 4
-      }]
-    },
-    options: {
-      responsive: true,
-      scales: {
-        y: {
-          beginAtZero: true,
-          suggestedMax: 100
-        }
-      }
-    }
-  });
+  
 </script>
 
 </html>
-<!-- <script src="../js/dash.js"></script> -->
+<script src="../js/dash.js"></script> 
 <script src="../js/alertas.js"></script>
 <script>
-  window.onload = function(){
-    setTimeout(carregarFuncoes, 100);
-  }
-  function carregarFuncoes(){
-    buscarParametro()
-    buscarSensores()
-    carregarAlertas()
-  }
+ document.addEventListener('DOMContentLoaded', function() {
+      buscarEstagio();
+      buscarDadosEstufa();
+      buscarParametrosEstufa()
+    });
 </script>
