@@ -26,6 +26,7 @@ body {
 
 .estufa h2 {
   font-size: 24px;
+  color: #4E3324;
 }
 
 .estufa .user {
@@ -75,11 +76,11 @@ body {
 }
 
 .cards_alerta {
-  background-color: #B91C1C;
+  background-color: #ffd700;
 }
 
 .cards_alerta-amarelo {
-  background-color: orange;
+  background-color: #B91C1C;
 }
 
 .cards_alerta p {
@@ -165,6 +166,10 @@ body {
   gap: 10px;
 }
 
+.Cogumelo .conteudo h2{
+  color: white;
+}
+
 .Cogumelo h1 {
   color: #f9f9f9;
   font-size: 20px;
@@ -213,7 +218,7 @@ body {
 }
 
 .card1 p {
-  color: #425166;
+  color: #4E3324;
   font-size: 14px;
 }
 
@@ -222,15 +227,15 @@ body {
 }
 
 .cards_alerta {
-    background-color: #ffeb3b; /* amarelo */
-    border-left: 5px solid #fbc02d;
+    background-color: #fbc02d; 
+    border-left: 5px solid #ffff00;
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 8px;
 }
 
 .cards_alerta_critico {
-    background-color: #f44336; /* vermelho */
+    background-color: #f44336; 
     border-left: 5px solid #c62828;
     padding: 15px;
     margin-bottom: 10px;

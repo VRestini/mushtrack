@@ -1,6 +1,3 @@
-// =========================
-// PACOTE FINAL - alertas.js
-// =========================
 
 async function carregarAlertas() {
     try {
