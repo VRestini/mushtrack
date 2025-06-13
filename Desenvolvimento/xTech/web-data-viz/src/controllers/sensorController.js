@@ -8,6 +8,7 @@ function cadastrar(req, res) {
     var dtManutencao = req.body.dtManutencaoServer
     var dtInstalacao = req.body.dtInstalacaoServer
     var posicao = req.body.posicaoServer
+    var id_estufa = req.body.IdEstufaServer
 
 
     if (tipo == undefined) {
@@ -24,7 +25,7 @@ function cadastrar(req, res) {
         res.status(400).send("data de instalação = undefined!");
     } else if (posicao == undefined){
         res.status(400).send("Posição do sensor = undefined!");
-    } else {
+    }else {
         sensorModel.cadastrar(tipo, nome, status, numeroSeries, dtManutencao, dtInstalacao, posicao)
             .then(
                 function (result) {

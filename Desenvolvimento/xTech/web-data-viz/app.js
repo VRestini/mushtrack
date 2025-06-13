@@ -21,7 +21,6 @@ var estufaRouter = require("./src/routes/estufa")
 var cogumeloRouter = require("./src/routes/cogumelo")
 var alertaRouter = require("./src/routes/alerta")
 var estagioRouter = require("./src/routes/estagio")
-var dadosRouter = require("./src/routes/dados")
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -36,18 +35,17 @@ app.use("/estufa", estufaRouter)
 app.use("/cogumelo", cogumeloRouter)
 app.use("/alerta", alertaRouter),
 app.use("/estagio", estagioRouter)
-app.use("/dados", dadosRouter)
 
 app.listen(PORTA_APP, function () {
     console.log(`
     ##   ##  ######   #####             ####       ##     ######     ##              ##  ##    ####    ######  
     ##   ##  ##       ##  ##            ## ##     ####      ##      ####             ##  ##     ##         ##  
-    ##   ##  ##       ##  ##            ##  ##   ##  ##     ##     ##  ##            ##  ##     ##        ##   
+    ##   ##  ##       ##  ##            ##  ##   ##  ##     ##     ##  ##            ##  ##     ##        ##  
     ## # ##  ####     #####    ######   ##  ##   ######     ##     ######   ######   ##  ##     ##       ##    
-    #######  ##       ##  ##            ##  ##   ##  ##     ##     ##  ##            ##  ##     ##      ##     
+    #######  ##       ##  ##            ##  ##   ##  ##     ##     ##  ##            ##  ##     ##      ##    
     ### ###  ##       ##  ##            ## ##    ##  ##     ##     ##  ##             ####      ##     ##      
     ##   ##  ######   #####             ####     ##  ##     ##     ##  ##              ##      ####    ######  
-    \n\n\n                                                                                                 
+    \n\n\n                                                                                                
     Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar .: http://${HOST_APP}:${PORTA_APP} :. \n\n
     Você está rodando sua aplicação em ambiente de .:${process.env.AMBIENTE_PROCESSO}:. \n\n
     \tSe .:desenvolvimento:. você está se conectando ao banco local. \n
